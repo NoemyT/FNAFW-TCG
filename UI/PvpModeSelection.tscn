@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://kyakecb74vwy"]
+
+[ext_resource type="Script" uid="uid://bbjknubdtffdx" path="res://UI/pvp_mode_selection.gd" id="1_lfvtu"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_mnqjy"]
+[ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="2_lfvtu"]
+[ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="3_3kvp3"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_agbki"]
+[ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="5_tomgc"]
+[ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="6_k10ds"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ughp"]
+shader = ExtResource("1_mnqjy")
+shader_parameter/amount = 1.0000000475
+
+[node name="PvpModeSelection" type="Control" unique_id=1516858489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lfvtu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=945085497]
+material = SubResource("ShaderMaterial_7ughp")
+layout_mode = 0
+offset_left = -1487.0
+offset_top = -1308.0
+offset_right = 3622.0
+offset_bottom = 2369.0
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1616513774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -220.0
+offset_right = 250.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_lfvtu")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1777741804]
+layout_mode = 0
+offset_left = 56.5
+offset_top = 30.0
+offset_right = 443.5
+offset_bottom = 109.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("3_3kvp3")
+theme_override_font_sizes/font_size = 62
+text = "PVP MODE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="Button" parent="Panel" unique_id=41665088]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 150.0
+offset_right = 430.0
+offset_bottom = 210.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("5_tomgc")
+theme_override_styles/pressed = ExtResource("6_k10ds")
+theme_override_styles/hover = ExtResource("6_k10ds")
+text = "HOST"
+
+[node name="Join" type="Button" parent="Panel" unique_id=41182860]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 250.0
+offset_right = 430.0
+offset_bottom = 310.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("5_tomgc")
+theme_override_styles/pressed = ExtResource("6_k10ds")
+theme_override_styles/hover = ExtResource("6_k10ds")
+text = "JOIN"
+
+[node name="Back" type="Button" parent="Panel" unique_id=1305774985]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 350.0
+offset_right = 430.0
+offset_bottom = 404.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("5_tomgc")
+theme_override_styles/pressed = ExtResource("6_k10ds")
+theme_override_styles/hover = ExtResource("6_k10ds")
+text = "RETURN"
+
+[connection signal="pressed" from="Panel/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Panel/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]

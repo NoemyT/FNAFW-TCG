@@ -9,17 +9,16 @@ func hide_menu():
 	$Art.visible = false
 	$Panel.visible = false
 	$Panel/AiButton.disabled = true
-	$Panel/HostButton.disabled = true
-	$Panel/JoinButton.disabled = true
+	$Panel/PvpButton.disabled = true
 	$Panel/ExitButton.disabled = true
 
 
 func _on_ai_button_pressed() -> void:
-	pass
+	$AiModeSelection.visible = true
 
 
 func _on_pvp_button_pressed() -> void:
-	pass
+	$PvpModeSelection.visible = true
 
 
 func _on_exit_button_pressed() -> void:
