@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://bbsf7xv8bkjvf"]
+
+[ext_resource type="Script" uid="uid://cdnn1yfs70us2" path="res://UI/UI_Scripts/title_screen.gd" id="1_jqtpd"]
+[ext_resource type="Texture2D" uid="uid://dve7cr73e8dfr" path="res://Assets/Backgrounds/titleScreen.png" id="2_t8m8c"]
+[ext_resource type="Texture2D" uid="uid://cxlpsb82c5auq" path="res://Assets/Backgrounds/title.png" id="3_qlrno"]
+[ext_resource type="FontFile" uid="uid://4r1mcvgp8e1t" path="res://Assets/Fonts/Orbitron/static/Orbitron-ExtraBold.ttf" id="4_7rrbj"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="5_ggdw6"]
+[ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://ButtonStyle/normal_button.tres" id="6_voxst"]
+[ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://ButtonStyle/hov_pres_button.tres" id="7_mhuq5"]
+[ext_resource type="Texture2D" uid="uid://6uj6mcegwa8l" path="res://Assets/Icons/kenney_game-icons/audioOn.png" id="8_h7brc"]
+[ext_resource type="Texture2D" uid="uid://ct7iqg2hottl6" path="res://Assets/Icons/kenney_board-game-icons/book_closed.png" id="9_3c3n0"]
+[ext_resource type="Texture2D" uid="uid://r3v15c6pthhe" path="res://Assets/Icons/kenney_game-icons/information.png" id="10_n6hsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7invk"]
+atlas = ExtResource("2_t8m8c")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8vxo"]
+atlas = ExtResource("2_t8m8c")
+
+[sub_resource type="Animation" id="Animation_brl6n"]
+resource_name = "Boot"
+step = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art/Text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, -500), Vector2(960, 190)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Art/Characters:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 1800), Vector2(960, 600)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/TcgTitle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2600, 173), Vector2(1368.0001, 172.99998)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/AiButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-900, 850), Vector2(300, 850)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/PvpButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(810, 2500), Vector2(810, 850)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/ExitButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2520, 850), Vector2(1320, 850)]
+}
+
+[sub_resource type="Animation" id="Animation_5trnc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Art/Text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 190)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Art/Characters:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 600)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/TcgTitle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1368.0001, 172.99998)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/AiButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 850)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/PvpButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(810, 850)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/ExitButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1320, 850)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ianhm"]
+_data = {
+&"Boot": SubResource("Animation_brl6n"),
+&"RESET": SubResource("Animation_5trnc")
+}
+
+[node name="TitleScreen" type="Control" unique_id=100119724]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqtpd")
+
+[node name="Art" type="Node2D" parent="." unique_id=967152164]
+
+[node name="Background" type="Sprite2D" parent="Art" unique_id=1528885778]
+position = Vector2(960.00006, 540.00006)
+scale = Vector2(2.4, 2.2500002)
+texture = SubResource("AtlasTexture_7invk")
+region_enabled = true
+region_rect = Rect2(1, 1, 800, 480)
+
+[node name="Text" type="Sprite2D" parent="Art" unique_id=295712561]
+position = Vector2(960, 190)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_qlrno")
+region_enabled = true
+region_rect = Rect2(7, 0, 1087, 193)
+
+[node name="Characters" type="Sprite2D" parent="Art" unique_id=226779417]
+position = Vector2(960, 600)
+scale = Vector2(1.8, 1.8)
+texture = SubResource("AtlasTexture_m8vxo")
+region_enabled = true
+region_rect = Rect2(1, 482, 800, 480)
+
+[node name="Credits" type="Sprite2D" parent="Art" unique_id=991358395]
+position = Vector2(195, 1065)
+scale = Vector2(2, 2)
+texture = ExtResource("2_t8m8c")
+region_enabled = true
+region_rect = Rect2(1, 963, 188, 13)
+
+[node name="Panel" type="Panel" parent="." unique_id=1422466516]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TcgTitle" type="Label" parent="Panel" unique_id=1461187240]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1368.0001
+offset_top = 172.99998
+offset_right = 1549.0006
+offset_bottom = 268.0
+rotation = -0.17453292
+scale = Vector2(2, 2)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5803922)
+theme_override_colors/font_outline_color = Color(0.9607843, 0.003921569, 0.16470589, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("4_7rrbj")
+theme_override_font_sizes/font_size = 75
+text = "TCG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AiButton" type="Button" parent="Panel" unique_id=1842048200]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 850.0
+offset_right = 600.0
+offset_bottom = 930.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_ggdw6")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("6_voxst")
+theme_override_styles/pressed = ExtResource("7_mhuq5")
+theme_override_styles/hover = ExtResource("7_mhuq5")
+text = "AI MODE"
+
+[node name="PvpButton" type="Button" parent="Panel" unique_id=830382599]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 850.0
+offset_right = 1110.0
+offset_bottom = 930.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_ggdw6")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("6_voxst")
+theme_override_styles/pressed = ExtResource("7_mhuq5")
+theme_override_styles/hover = ExtResource("7_mhuq5")
+text = "PVP MODE"
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=101239530]
+layout_mode = 0
+offset_left = 1320.0
+offset_top = 850.0
+offset_right = 1620.0002
+offset_bottom = 930.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_ggdw6")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("6_voxst")
+theme_override_styles/pressed = ExtResource("7_mhuq5")
+theme_override_styles/hover = ExtResource("7_mhuq5")
+text = "QUIT"
+
+[node name="SoundButton" type="Button" parent="Panel" unique_id=215060522]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1862.0
+offset_right = 1920.0
+offset_bottom = 58.0
+toggle_mode = true
+icon = ExtResource("8_h7brc")
+flat = true
+
+[node name="TutorialButton" type="Button" parent="Panel" unique_id=1195776167]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1869.0
+offset_top = 72.0
+offset_right = 1941.0
+offset_bottom = 144.0
+scale = Vector2(0.65, 0.65)
+action_mode = 0
+icon = ExtResource("9_3c3n0")
+flat = true
+
+[node name="InfoButton" type="Button" parent="Panel" unique_id=1580584984]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1862.0
+offset_top = 132.0
+offset_right = 1920.0
+offset_bottom = 190.0
+icon = ExtResource("10_n6hsr")
+flat = true
+
+[node name="CreditsSC" type="Label" parent="Panel" unique_id=430005653]
+layout_mode = 0
+offset_left = 1247.0
+offset_top = 1023.0
+offset_right = 1919.0
+offset_bottom = 1052.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_ggdw6")
+theme_override_font_sizes/font_size = 22
+text = "Original Game By Scott Cawthon - @FNAF_ScottGames"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsLR" type="Label" parent="Panel" unique_id=545745152]
+layout_mode = 0
+offset_left = 1302.0
+offset_top = 1049.0
+offset_right = 1919.0
+offset_bottom = 1078.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_ggdw6")
+theme_override_font_sizes/font_size = 22
+text = "Original Soundtrack By Leon Riskin - @Leon_Riskin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669007494]
+libraries/ = SubResource("AnimationLibrary_ianhm")
+
+[connection signal="pressed" from="Panel/AiButton" to="." method="_on_ai_button_pressed"]
+[connection signal="pressed" from="Panel/PvpButton" to="." method="_on_pvp_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="toggled" from="Panel/SoundButton" to="." method="_on_sound_button_toggled"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="Panel/InfoButton" to="." method="_on_info_button_pressed"]
