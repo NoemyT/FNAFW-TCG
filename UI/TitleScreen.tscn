@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c2mh11ctxwdet" path="res://UI/DisconnectMenu.tscn" id="11_t8m8c"]
 [ext_resource type="PackedScene" uid="uid://c76hemb33ef1r" path="res://UI/AiModeSelection.tscn" id="12_qlrno"]
 [ext_resource type="PackedScene" uid="uid://kyakecb74vwy" path="res://UI/PvpModeSelection.tscn" id="13_7rrbj"]
+[ext_resource type="PackedScene" uid="uid://5jej2rbsx6oy" path="res://UI/InfoScreen.tscn" id="14_ggdw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7invk"]
 atlas = ExtResource("2_t8m8c")
@@ -290,7 +291,6 @@ theme_override_styles/hover = ExtResource("7_mhuq5")
 text = "QUIT"
 
 [node name="SoundButton" type="Button" parent="Panel" unique_id=215060522]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 1862.0
 offset_right = 1920.0
@@ -300,7 +300,6 @@ icon = ExtResource("8_h7brc")
 flat = true
 
 [node name="TutorialButton" type="Button" parent="Panel" unique_id=1195776167]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 1869.0
 offset_top = 72.0
@@ -312,7 +311,6 @@ icon = ExtResource("9_3c3n0")
 flat = true
 
 [node name="InfoButton" type="Button" parent="Panel" unique_id=1580584984]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 1862.0
 offset_top = 132.0
@@ -360,6 +358,11 @@ z_index = 1
 layout_mode = 1
 
 [node name="PvpModeSelection" parent="." unique_id=1516858489 instance=ExtResource("13_7rrbj")]
+visible = false
+z_index = 1
+layout_mode = 1
+
+[node name="InfoScreen" parent="." unique_id=998006801 instance=ExtResource("14_ggdw6")]
 visible = false
 z_index = 1
 layout_mode = 1

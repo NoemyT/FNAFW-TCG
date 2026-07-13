@@ -34,4 +34,4 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_info_button_pressed() -> void:
-	pass # Replace with function body.
+	$InfoScreen.visible = true

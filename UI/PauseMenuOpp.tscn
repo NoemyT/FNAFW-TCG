@@ -1,5 +1,17 @@
 [gd_scene format=3 uid="uid://b80b7y67p3srg"]
 
+[ext_resource type="Script" uid="uid://c3k30shxxg5n4" path="res://UI/UI_Scripts/pause_menu_opp.gd" id="1_6g3bf"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_wmow6"]
+[ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="2_6g3bf"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_ch3o7"]
+[ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="4_vynn4"]
+[ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="5_u55ig"]
+[ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="6_d04mc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnhfn"]
+shader = ExtResource("1_wmow6")
+shader_parameter/amount = 1.0000000475
+
 [node name="PauseMenuOpp" type="Control" unique_id=235125222]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +19,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6g3bf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1637492164]
+material = SubResource("ShaderMaterial_xnhfn")
+layout_mode = 0
+offset_left = -3158.0
+offset_top = -2050.0
+offset_right = 5456.0
+offset_bottom = 3316.0
+
+[node name="Panel" type="Panel" parent="." unique_id=137923194]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -175.0
+offset_right = 400.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_6g3bf")
+
+[node name="MenuButton" type="Button" parent="Panel" unique_id=421595483]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 360.0
+offset_bottom = 280.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_ch3o7")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("4_vynn4")
+theme_override_styles/pressed = ExtResource("5_u55ig")
+theme_override_styles/hover = ExtResource("5_u55ig")
+text = "MAIN MENU"
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=720274294]
+visible = false
+layout_mode = 0
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 740.0
+offset_bottom = 280.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_ch3o7")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("4_vynn4")
+theme_override_styles/pressed = ExtResource("5_u55ig")
+theme_override_styles/hover = ExtResource("5_u55ig")
+text = "QUIT"
+
+[node name="Label" type="Label" parent="Panel" unique_id=1373192915]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 64.0
+offset_right = 569.0
+offset_bottom = 145.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_d04mc")
+theme_override_font_sizes/font_size = 54
+text = "GAME PAUSED..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="Panel" unique_id=916188883]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 64.0
+offset_right = 746.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_d04mc")
+theme_override_font_sizes/font_size = 54
+text = "TIMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=2141401763]
+wait_time = 20.0
+
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]

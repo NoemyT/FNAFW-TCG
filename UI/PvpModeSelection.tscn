@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kyakecb74vwy"]
 
-[ext_resource type="Script" uid="uid://bbjknubdtffdx" path="res://UI/pvp_mode_selection.gd" id="1_lfvtu"]
+[ext_resource type="Script" uid="uid://bbjknubdtffdx" path="res://UI/UI_Scripts/pvp_mode_selection.gd" id="1_lfvtu"]
 [ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_mnqjy"]
 [ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="2_lfvtu"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="3_3kvp3"]

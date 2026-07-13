@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://2s2l2yxd3gs3"]
+
+[ext_resource type="Script" uid="uid://bshv4h6lv8sci" path="res://UI/UI_Scripts/result_screen.gd" id="1_qtik5"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="2_78nr2"]
+[ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="3_ycjm8"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_dm66p"]
+[ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="5_a1mcj"]
+[ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="6_hjlwv"]
+[ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="7_5lvqw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8dsh"]
+shader = ExtResource("2_78nr2")
+shader_parameter/amount = 1.0000000475
+
+[sub_resource type="Animation" id="Animation_mjgyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/MenuButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Exit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_dwgod"]
+resource_name = "Result"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/MenuButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Exit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10000793, 0.11000793, 0.12000793, 0.13000792, 0.14000793, 0.15000793, 0.16000792, 0.1700275, 0.1800275, 0.19002749, 0.2000275, 0.21002749, 0.22002749, 0.2300275, 0.24003023, 0.25003022, 0.26003024, 0.27003023, 0.28003022, 0.29003024, 0.30003023, 0.3100498, 0.3200498, 0.3300498, 0.3400498, 0.3500498, 0.36004978, 0.3700498, 0.3800044, 0.3900044, 0.40000442, 0.4100044, 0.4200044, 0.43000442, 0.4400044, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.5199948, 0.5299948, 0.5399948, 0.54999477, 0.5599948, 0.5699948, 0.5799948, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.730037, 0.74003696, 0.75003695, 0.76003695, 0.770037, 0.780037, 0.790037, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.8699955, 0.87999547, 0.88999546, 0.9099955, 0.9199955, 0.9299955, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nuy16"]
+_data = {
+&"RESET": SubResource("Animation_mjgyq"),
+&"Result": SubResource("Animation_dwgod")
+}
+
+[node name="ResultScreen" type="Control" unique_id=186214863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtik5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=54154233]
+material = SubResource("ShaderMaterial_n8dsh")
+layout_mode = 0
+offset_left = -3158.0
+offset_top = -2050.0
+offset_right = 5456.0
+offset_bottom = 3316.0
+
+[node name="Panel" type="Panel" parent="." unique_id=2111743571]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_ycjm8")
+
+[node name="MenuButton" type="Button" parent="Panel" unique_id=847646065]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 250.0
+offset_right = 475.0
+offset_bottom = 350.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_dm66p")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("5_a1mcj")
+theme_override_styles/pressed = ExtResource("6_hjlwv")
+theme_override_styles/hover = ExtResource("6_hjlwv")
+text = "MAIN MENU"
+
+[node name="Exit" type="Button" parent="Panel" unique_id=1674213048]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 400.0
+offset_right = 475.0
+offset_bottom = 500.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_dm66p")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("5_a1mcj")
+theme_override_styles/pressed = ExtResource("6_hjlwv")
+theme_override_styles/hover = ExtResource("6_hjlwv")
+text = "QUIT"
+
+[node name="Label" type="Label" parent="Panel" unique_id=720525880]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 75.0
+offset_right = 521.0
+offset_bottom = 181.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_5lvqw")
+theme_override_font_sizes/font_size = 84
+text = "VICTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1657208163]
+libraries/ = SubResource("AnimationLibrary_nuy16")
+
+[connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
