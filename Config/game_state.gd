@@ -4,6 +4,9 @@ enum GameMode { NONE, AI, PVP }
 enum AIType { NONE, ATTACK, SURVIVAL }
 enum PVPType { NONE, HOST, CLIENT }
 
+const OWNER_PLAYER = "player"
+const OWNER_OPPONENT = "opponent"
+
 var current_mode: GameMode = GameMode.NONE
 var current_ai_type: AIType = AIType.NONE
 var current_pvp_type: PVPType = PVPType.NONE

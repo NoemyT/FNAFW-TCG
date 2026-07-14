@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cufrhxk4nuxde" path="res://Assets/Backgrounds/battleBackgrounds.png" id="1_u22w4"]
 [ext_resource type="PackedScene" uid="uid://cp0isfg50qpxt" path="res://UI/PauseMenu.tscn" id="2_qeb68"]
 [ext_resource type="PackedScene" uid="uid://dguh14nvpdijx" path="res://Game/CardPlacement.tscn" id="3_ai2pf"]
+[ext_resource type="Script" uid="uid://dwdd7tysnfoef" path="res://Game/Scripts/deck.gd" id="4_jafba"]
 [ext_resource type="Texture2D" uid="uid://hp5501jkltbv" path="res://Assets/Cards/cardbacks4092021.png" id="4_ols6u"]
 [ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="5_c3soy"]
 [ext_resource type="Texture2D" uid="uid://drxqs586cacxt" path="res://Assets/Icons/kenney_board-game-icons/skull.png" id="6_plf5y"]
@@ -75,6 +76,9 @@ card_placement_owner = "player"
 [node name="Deckpile" type="Node2D" parent="." unique_id=1901776104]
 position = Vector2(1610, 960)
 scale = Vector2(1.5, 1.5)
+script = ExtResource("4_jafba")
+hand_path = NodePath("../Hand")
+cards_manager_path = NodePath("")
 
 [node name="Art" type="Sprite2D" parent="Deckpile" unique_id=2109712013]
 texture = SubResource("AtlasTexture_jslop")
@@ -150,4 +154,3 @@ vertical_alignment = 1
 
 [node name="Hand" type="Node2D" parent="." unique_id=1842465016]
 script = ExtResource("11_c1x7w")
-hand_y_pos = 960

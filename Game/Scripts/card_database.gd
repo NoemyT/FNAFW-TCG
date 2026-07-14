@@ -1,3 +1,5 @@
+extends Node
+
 const CARDS = {
 	"animdude" : {
 		"attack": 7,
@@ -444,5 +446,38 @@ const CARDS = {
 		"type" : "magic",
 		"skill": "3 dmg, single target",
 		"skill_script": "res://Scripts/Skills/mega_bite.gd"
+	},
+	"slasher" : {
+		"attack": null,
+		"health": null,
+		"char_region": Rect2(1214, 13, 300, 300),
+		"bg_region": Rect2(332, 337, 100, 128),
+		"scale": Vector2(0.2, 0.2),
+		"type" : "magic",
+		"skill": "3 dmg, single target",
+		"skill_script": "res://Scripts/Skills/mega_bite.gd"
 	}
 }
+
+func get_total_deck_size():
+	var total := 0
+	for card_key in CARDS.keys():
+		var data = CARDS[card_key]
+		if data["type"] == "entity":
+			total += 1
+		elif data["type"] == "magic":
+			total += 3
+	return total
+
+
+func build_shuffled_deck():
+	var deck: Array = []
+	for card_key in CARDS.keys():
+		var data = CARDS[card_key]
+		if data["type"] == "entity":
+			deck.append(card_key)
+		elif data["type"] == "magic":
+			for i in range(3):
+				deck.append(card_key)
+	deck.shuffle()
+	return deck

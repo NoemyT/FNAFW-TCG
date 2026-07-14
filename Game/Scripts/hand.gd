@@ -1,12 +1,12 @@
 extends Node2D
 
+@export var hand_y_pos = 1060
+@export var is_opp: bool
+
 const CARD_WIDTH = 190
 const BASE_WIDTH = 1920
 const DEFAULT_CARD_MOVE_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 1.2
-
-@export var hand_y_pos = 1060
-@export var is_opp: bool
 
 var hand = []
 
@@ -27,6 +27,7 @@ func update_hand_pos(speed):
 
 func calculate_card_pos(index):
 	var total_width = (hand.size() - 1) * CARD_WIDTH
+	@warning_ignore("integer_division")
 	var x_offset = (BASE_WIDTH / 2) + index * CARD_WIDTH - total_width / 2
 	return x_offset
 

@@ -102,7 +102,7 @@ theme_override_styles/pressed = ExtResource("6_1p4m1")
 theme_override_styles/hover = ExtResource("6_1p4m1")
 text = "QUIT"
 
-[node name="Audio" type="Button" parent="Panel" unique_id=1954754803]
+[node name="SoundButton" type="Button" parent="Panel" unique_id=1954754803]
 layout_mode = 0
 offset_left = 441.0
 offset_top = 542.0
@@ -115,4 +115,4 @@ flat = true
 [connection signal="pressed" from="Panel/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
-[connection signal="toggled" from="Panel/Audio" to="." method="_on_audio_toggled"]
+[connection signal="toggled" from="Panel/SoundButton" to="." method="_on_audio_toggled"]

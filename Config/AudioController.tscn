@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dg1kkd3ic38cg"]
+
+[ext_resource type="Script" uid="uid://bhwa5cdthlbtr" path="res://Config/audio_controller.gd" id="1_j2fq7"]
+[ext_resource type="AudioStream" uid="uid://6pa48qng5ess" path="res://Assets/Sounds/01 One For The Road.mp3" id="1_kc1ty"]
+[ext_resource type="AudioStream" uid="uid://dqsjk5185jirf" path="res://Assets/Sounds/04 Adventure Ahead.mp3" id="2_2oruy"]
+[ext_resource type="AudioStream" uid="uid://3u63mvnt2q6q" path="res://Assets/Sounds/05 Victory!.mp3" id="3_qlmi2"]
+[ext_resource type="AudioStream" uid="uid://cr54wbd1aprau" path="res://Assets/Sounds/27 Ice Cave (Unused).mp3" id="4_dss2y"]
+[ext_resource type="AudioStream" uid="uid://iv424tdevbov" path="res://Assets/Sounds/attack2.wav" id="5_kjity"]
+[ext_resource type="AudioStream" uid="uid://c2scslkkcodsn" path="res://Assets/Sounds/attack3.wav" id="6_j2fq7"]
+[ext_resource type="AudioStream" uid="uid://df234yxontyk8" path="res://Assets/Sounds/cheer.wav" id="7_ctp2s"]
+[ext_resource type="AudioStream" uid="uid://cc5sv8yu0t1d1" path="res://Assets/Sounds/death.wav" id="8_lfhhx"]
+[ext_resource type="AudioStream" uid="uid://dnypsi2n8xoxa" path="res://Assets/Sounds/clear.wav" id="9_mf6i1"]
+[ext_resource type="AudioStream" uid="uid://dweqg1mgi5cwf" path="res://Assets/Sounds/4th.wav" id="10_oa8uv"]
+[ext_resource type="AudioStream" uid="uid://buojv0xuispg4" path="res://Assets/Sounds/bite2b.wav" id="11_hm7ep"]
+
+[node name="AudioController" type="Node" unique_id=528986573]
+script = ExtResource("1_j2fq7")
+
+[node name="Menu" type="AudioStreamPlayer" parent="." unique_id=736630119]
+stream = ExtResource("1_kc1ty")
+
+[node name="Battle" type="AudioStreamPlayer" parent="." unique_id=450524463]
+process_mode = 3
+stream = ExtResource("2_2oruy")
+
+[node name="Victory" type="AudioStreamPlayer" parent="." unique_id=1603890847]
+stream = ExtResource("3_qlmi2")
+
+[node name="Defeat" type="AudioStreamPlayer" parent="." unique_id=532271616]
+stream = ExtResource("4_dss2y")
+
+[node name="Clash" type="AudioStreamPlayer" parent="." unique_id=914894326]
+stream = ExtResource("5_kjity")
+
+[node name="Direct" type="AudioStreamPlayer" parent="." unique_id=2055035055]
+stream = ExtResource("6_j2fq7")
+
+[node name="Cheer" type="AudioStreamPlayer" parent="." unique_id=674987583]
+stream = ExtResource("7_ctp2s")
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=964605996]
+stream = ExtResource("8_lfhhx")
+
+[node name="Clicking" type="AudioStreamPlayer" parent="." unique_id=937679670]
+stream = ExtResource("9_mf6i1")
+
+[node name="4thWall" type="AudioStreamPlayer" parent="." unique_id=1043495630]
+stream = ExtResource("10_oa8uv")
+
+[node name="MegaBite" type="AudioStreamPlayer" parent="." unique_id=1910016588]
+stream = ExtResource("11_hm7ep")

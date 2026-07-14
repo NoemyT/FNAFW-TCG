@@ -1,7 +1,13 @@
 extends Control
 
+const SOUND_ON = preload("res://Assets/Icons/kenney_game-icons/audioOn.png")
+const SOUND_OFF = preload("res://Assets/Icons/kenney_game-icons/audioOff.png")
+
 func _ready() -> void:
+	AudioController.play_menu_music()
 	$AnimationPlayer.play("Boot")
+	$Panel/SoundButton.button_pressed = AudioController.mute
+	$Panel/SoundButton.icon = SOUND_OFF if AudioController.mute else SOUND_ON
 
 
 func hide_menu():
@@ -14,10 +20,12 @@ func hide_menu():
 
 
 func _on_ai_button_pressed() -> void:
+	AudioController.play_menu_click()
 	$AiModeSelection.visible = true
 
 
 func _on_pvp_button_pressed() -> void:
+	AudioController.play_menu_click()
 	$PvpModeSelection.visible = true
 
 
@@ -26,12 +34,14 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_sound_button_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	AudioController.set_audio(toggled_on)
+	$Panel/SoundButton.icon = SOUND_OFF if toggled_on else SOUND_ON
 
 
 func _on_tutorial_button_pressed() -> void:
-	pass # Replace with function body.
+	AudioController.play_menu_click()
 
 
 func _on_info_button_pressed() -> void:
+	AudioController.play_menu_click()
 	$InfoScreen.visible = true

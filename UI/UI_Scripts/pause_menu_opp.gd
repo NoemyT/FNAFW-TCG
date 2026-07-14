@@ -1,15 +1,20 @@
 extends Control
 
-@onready var countdown_label: Label = $Panel/Timer
-@onready var menu_button: Button = $Panel/MenuButton
-@onready var exit_button: Button = $Panel/ExitButton
+@onready var countdown_label = $Panel/Timer
+@onready var menu_button = $Panel/MenuButton
+@onready var exit_button = $Panel/ExitButton
 
-const HOSTAGE_TIMEOUT: float = 20.0
-var time_left: float = HOSTAGE_TIMEOUT
+const HOSTAGE_TIMEOUT = 20.0
+const SOUND_ON = preload("res://Assets/Icons/kenney_game-icons/audioOn.png")
+const SOUND_OFF = preload("res://Assets/Icons/kenney_game-icons/audioOff.png")
+
+var time_left = HOSTAGE_TIMEOUT
 
 func _ready() -> void:
 	hide() 
 	visibility_changed.connect(_on_visibility_changed)
+	$Panel/SoundButton.button_pressed = AudioController.mute
+	$Panel/SoundButton.icon = SOUND_OFF if AudioController.mute else SOUND_ON
 
 
 func _process(delta: float) -> void:
@@ -25,7 +30,7 @@ func _process(delta: float) -> void:
 		update_label()
 
 
-func _on_visibility_changed():
+func _on_visibility_changed() -> void:
 	if visible:
 		start_countdown()
 	else:
@@ -61,6 +66,7 @@ func leave_match():
 
 
 func _on_menu_button_pressed() -> void:
+	AudioController.play_menu_click()
 	leave_match()
 	get_tree().change_scene_to_file("res://UI/TitleScreen.tscn")
 
@@ -68,3 +74,8 @@ func _on_menu_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	leave_match()
 	get_tree().quit()
+
+
+func _on_sound_button_toggled(toggled_on: bool) -> void:
+	AudioController.set_audio(toggled_on)
+	$Panel/SoundButton.icon = SOUND_OFF if toggled_on else SOUND_ON
