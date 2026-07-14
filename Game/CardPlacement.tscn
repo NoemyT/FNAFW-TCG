@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dguh14nvpdijx"]
+
+[ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="1_aqc3e"]
+[ext_resource type="Script" uid="uid://dyx5bf8d7vy78" path="res://Game/Scripts/card_placement.gd" id="1_uhk44"]
+[ext_resource type="Texture2D" uid="uid://b0mcc3r73ban0" path="res://Assets/Icons/kenney_board-game-icons/sword.png" id="2_53ycg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53ycg"]
+atlas = ExtResource("1_aqc3e")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhk44"]
+size = Vector2(100, 128)
+
+[node name="CardPlacement" type="Node2D" unique_id=482274551]
+script = ExtResource("1_uhk44")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=563085023]
+
+[node name="Art" type="Sprite2D" parent="Node2D" unique_id=1665133857]
+texture = SubResource("AtlasTexture_53ycg")
+region_enabled = true
+region_rect = Rect2(115, 473, 100, 128)
+
+[node name="Type" type="Sprite2D" parent="Node2D" unique_id=1589526996]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_53ycg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2043588632]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1300020197]
+shape = SubResource("RectangleShape2D_uhk44")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1183749505]

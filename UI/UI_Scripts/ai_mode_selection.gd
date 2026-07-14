@@ -5,11 +5,11 @@ func hide_menu():
 
 
 func _on_attack_pressed() -> void:
-	pass # Replace with function body.
+	GameState.set_ai_mode(GameState.AIType.ATTACK)
 
 
 func _on_survivability_pressed() -> void:
-	pass # Replace with function body.
+	GameState.set_ai_mode(GameState.AIType.SURVIVAL)
 
 
 func _on_back_pressed() -> void:

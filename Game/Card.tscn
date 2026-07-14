@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bwyq8b1eabcwt"]
+
+[ext_resource type="Texture2D" uid="uid://hp5501jkltbv" path="res://Assets/Cards/cardbacks4092021.png" id="1_axqsc"]
+[ext_resource type="Script" uid="uid://dbqngbvbwakmc" path="res://Game/Scripts/card.gd" id="1_nxe46"]
+[ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="2_nxe46"]
+[ext_resource type="Texture2D" uid="uid://dd7p7ye2uorsb" path="res://Assets/Characters/animdude.png" id="4_nxe46"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_xwtu2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0orm"]
+atlas = ExtResource("1_axqsc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4um"]
+atlas = ExtResource("2_nxe46")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcaiq"]
+atlas = ExtResource("2_nxe46")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr035"]
+atlas = ExtResource("4_nxe46")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287vj"]
+atlas = ExtResource("2_nxe46")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu04g"]
+atlas = ExtResource("2_nxe46")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shf4x"]
+size = Vector2(100, 128)
+
+[node name="Card" type="Node2D" unique_id=351751759]
+script = ExtResource("1_nxe46")
+
+[node name="Art" type="Node2D" parent="." unique_id=1504464684]
+
+[node name="Backgorund" type="Sprite2D" parent="Art" unique_id=1162287992]
+texture = SubResource("AtlasTexture_o0orm")
+region_enabled = true
+region_rect = Rect2(443, 138, 100, 128)
+
+[node name="Border" type="Sprite2D" parent="Art" unique_id=900758069]
+texture = SubResource("AtlasTexture_gt4um")
+region_enabled = true
+region_rect = Rect2(115, 473, 100, 128)
+
+[node name="Color" type="Sprite2D" parent="Art" unique_id=1481342225]
+texture = SubResource("AtlasTexture_tcaiq")
+region_enabled = true
+region_rect = Rect2(332, 337, 100, 128)
+
+[node name="Image" type="Sprite2D" parent="Art" unique_id=49404237]
+position = Vector2(0, -20)
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_lr035")
+region_enabled = true
+region_rect = Rect2(2, 0, 250, 250)
+
+[node name="Attack" type="Sprite2D" parent="Art" unique_id=287605263]
+position = Vector2(-30, 43)
+texture = SubResource("AtlasTexture_287vj")
+region_enabled = true
+region_rect = Rect2(544, 272, 16, 16)
+
+[node name="Hp" type="Sprite2D" parent="Art" unique_id=885113427]
+position = Vector2(10.000002, 43)
+scale = Vector2(1.3, 1.288)
+texture = SubResource("AtlasTexture_fu04g")
+region_enabled = true
+region_rect = Rect2(429, 148, 13, 12)
+
+[node name="AttackL" type="Label" parent="Art" unique_id=1149582175]
+offset_left = -30.0
+offset_top = 31.0
+offset_right = 10.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xwtu2")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HpL" type="Label" parent="Art" unique_id=525703625]
+offset_left = 10.0
+offset_top = 31.0
+offset_right = 50.0
+offset_bottom = 55.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xwtu2")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skill" type="Label" parent="Art" unique_id=773515110]
+visible = false
+offset_left = -40.0
+offset_top = 18.0
+offset_right = 40.0
+offset_bottom = 58.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_xwtu2")
+theme_override_font_sizes/font_size = 10
+text = "DOES THING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1893712278]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=795254441]
+shape = SubResource("RectangleShape2D_shf4x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=132242694]
