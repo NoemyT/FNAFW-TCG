@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://c0xvkqmqj76wv"]
+
+[ext_resource type="Texture2D" uid="uid://cufrhxk4nuxde" path="res://Assets/Backgrounds/battleBackgrounds.png" id="1_u22w4"]
+[ext_resource type="PackedScene" uid="uid://dguh14nvpdijx" path="res://Game/CardPlacement.tscn" id="3_ai2pf"]
+[ext_resource type="Script" uid="uid://dwdd7tysnfoef" path="res://Game/Scripts/deck.gd" id="4_jafba"]
+[ext_resource type="Texture2D" uid="uid://hp5501jkltbv" path="res://Assets/Cards/cardbacks4092021.png" id="4_ols6u"]
+[ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="5_c3soy"]
+[ext_resource type="Texture2D" uid="uid://drxqs586cacxt" path="res://Assets/Icons/kenney_board-game-icons/skull.png" id="6_plf5y"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="7_onavc"]
+[ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="8_6lfhs"]
+[ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="9_c1x7w"]
+[ext_resource type="Texture2D" uid="uid://bnqs1kv6o4nge" path="res://Assets/Icons/kenney_board-game-icons/suit_hearts.png" id="10_6lfhs"]
+[ext_resource type="Script" uid="uid://bfd3hmn1k7wxj" path="res://Game/Scripts/hand.gd" id="11_c1x7w"]
+[ext_resource type="Script" uid="uid://d0k2td5igakna" path="res://Game/Scripts/field_manager.gd" id="13_nm3ih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jslop"]
+atlas = ExtResource("4_ols6u")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3soy"]
+size = Vector2(100, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_him7f"]
+atlas = ExtResource("5_c3soy")
+
+[node name="PlayerSide" type="Node2D" unique_id=88612947]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1630855984]
+z_index = -10
+position = Vector2(960, 600.5)
+scale = Vector2(2.259, 2.264)
+texture = ExtResource("1_u22w4")
+region_enabled = true
+region_rect = Rect2(1, 1, 850, 530)
+
+[node name="Placements" type="Node2D" parent="." unique_id=199736919]
+
+[node name="CardPlacement" parent="Placements" unique_id=482274551 instance=ExtResource("3_ai2pf")]
+position = Vector2(1500, 670)
+scale = Vector2(1.5, 1.5)
+card_placement_type = "entity"
+card_placement_color = "red"
+
+[node name="CardPlacement2" parent="Placements" unique_id=152021840 instance=ExtResource("3_ai2pf")]
+position = Vector2(1295, 527)
+scale = Vector2(1.5, 1.5)
+card_placement_type = "entity"
+card_placement_color = "green"
+
+[node name="CardPlacement3" parent="Placements" unique_id=1745109210 instance=ExtResource("3_ai2pf")]
+position = Vector2(1295, 780)
+scale = Vector2(1.5, 1.5)
+card_placement_type = "entity"
+card_placement_color = "blue"
+
+[node name="CardPlacement4" parent="Placements" unique_id=1127750158 instance=ExtResource("3_ai2pf")]
+position = Vector2(1500, 420)
+scale = Vector2(1.5, 1.5)
+card_placement_type = "entity"
+card_placement_color = "yellow"
+
+[node name="CardPlacement5" parent="Placements" unique_id=1589770686 instance=ExtResource("3_ai2pf")]
+position = Vector2(1810, 600)
+scale = Vector2(1.5, 1.5)
+card_placement_type = "skill"
+
+[node name="Deckpile" type="Node2D" parent="." unique_id=1901776104]
+position = Vector2(1610, 1060)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_jafba")
+hand_path = NodePath("../Hand")
+field_manager_path = NodePath("../FieldManager")
+
+[node name="Art" type="Sprite2D" parent="Deckpile" unique_id=2109712013]
+texture = SubResource("AtlasTexture_jslop")
+region_enabled = true
+region_rect = Rect2(776, 5, 100, 128)
+
+[node name="Area2D" type="Area2D" parent="Deckpile" unique_id=216421825]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deckpile/Area2D" unique_id=228282268]
+shape = SubResource("RectangleShape2D_c3soy")
+
+[node name="Cemetery" type="Node2D" parent="." unique_id=837713508]
+z_index = -2
+position = Vector2(1810, 1060)
+scale = Vector2(1.5, 1.5)
+
+[node name="Art" type="Sprite2D" parent="Cemetery" unique_id=674751837]
+texture = SubResource("AtlasTexture_him7f")
+region_enabled = true
+region_rect = Rect2(115, 473, 100, 128)
+
+[node name="Icon" type="Sprite2D" parent="Cemetery/Art" unique_id=31956183]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_plf5y")
+
+[node name="AttackButton" type="Button" parent="." unique_id=1748239000]
+offset_left = 850.0
+offset_top = 462.0
+offset_right = 1070.0
+offset_bottom = 534.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_onavc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("8_6lfhs")
+theme_override_styles/pressed = ExtResource("9_c1x7w")
+theme_override_styles/hover = ExtResource("9_c1x7w")
+text = "ATTACK"
+
+[node name="EndTurnButton" type="Button" parent="." unique_id=565348864]
+offset_left = 850.0
+offset_top = 562.0
+offset_right = 1070.0
+offset_bottom = 634.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_onavc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("8_6lfhs")
+theme_override_styles/pressed = ExtResource("9_c1x7w")
+theme_override_styles/hover = ExtResource("9_c1x7w")
+text = "END TURN"
+
+[node name="DiscardButton" type="Button" parent="." unique_id=304069263]
+offset_left = 850.0
+offset_top = 662.0
+offset_right = 1070.0
+offset_bottom = 734.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("7_onavc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("8_6lfhs")
+theme_override_styles/pressed = ExtResource("9_c1x7w")
+theme_override_styles/hover = ExtResource("9_c1x7w")
+text = "DISCARD"
+
+[node name="Hp" type="Node2D" parent="." unique_id=1539473545]
+
+[node name="Sprite2D" type="Sprite2D" parent="Hp" unique_id=878223502]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(120.00001, 1104)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_6lfhs")
+
+[node name="PlayerHp" type="Label" parent="Hp" unique_id=963997966]
+offset_left = 165.0
+offset_top = 1060.0
+offset_right = 272.0
+offset_bottom = 1141.0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_onavc")
+theme_override_font_sizes/font_size = 64
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hand" type="Node2D" parent="." unique_id=1842465016]
+script = ExtResource("11_c1x7w")
+hand_y_pos = 1060
+
+[node name="FieldManager" type="Node2D" parent="." unique_id=1179653372]
+script = ExtResource("13_nm3ih")
+hand_path = NodePath("../Hand")
+placements_path = NodePath("../Placements")

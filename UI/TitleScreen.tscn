@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://6uj6mcegwa8l" path="res://Assets/Icons/kenney_game-icons/audioOn.png" id="8_h7brc"]
 [ext_resource type="Texture2D" uid="uid://ct7iqg2hottl6" path="res://Assets/Icons/kenney_board-game-icons/book_closed.png" id="9_3c3n0"]
 [ext_resource type="Texture2D" uid="uid://r3v15c6pthhe" path="res://Assets/Icons/kenney_game-icons/information.png" id="10_n6hsr"]
-[ext_resource type="PackedScene" uid="uid://c2mh11ctxwdet" path="res://UI/DisconnectMenu.tscn" id="11_t8m8c"]
-[ext_resource type="PackedScene" uid="uid://c76hemb33ef1r" path="res://UI/AiModeSelection.tscn" id="12_qlrno"]
 [ext_resource type="PackedScene" uid="uid://kyakecb74vwy" path="res://UI/PvpModeSelection.tscn" id="13_7rrbj"]
 [ext_resource type="PackedScene" uid="uid://5jej2rbsx6oy" path="res://UI/InfoScreen.tscn" id="14_ggdw6"]
 
@@ -21,9 +19,8 @@ atlas = ExtResource("2_t8m8c")
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8vxo"]
 atlas = ExtResource("2_t8m8c")
 
-[sub_resource type="Animation" id="Animation_brl6n"]
+[sub_resource type="Animation" id="Animation_qlrno"]
 resource_name = "Boot"
-step = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, -500), Vector2(960, 190)]
+"values": [Vector2(960, -500), Vector2(960, 200)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -46,7 +43,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 1800), Vector2(960, 600)]
+"values": [Vector2(960, 1800), Vector2(960, 660)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -58,7 +55,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2600, 173), Vector2(1368.0001, 172.99998)]
+"values": [Vector2(2600, 173), Vector2(1252, 173)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -70,7 +67,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-900, 850), Vector2(300, 850)]
+"values": [Vector2(-900, 892), Vector2(225, 892)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -82,7 +79,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(810, 2500), Vector2(810, 850)]
+"values": [Vector2(785, 2000), Vector2(785, 892)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -94,7 +91,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2520, 850), Vector2(1320, 850)]
+"values": [Vector2(2520, 892), Vector2(1310, 892)]
 }
 
 [sub_resource type="Animation" id="Animation_5trnc"]
@@ -109,7 +106,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(960, 190)]
+"values": [Vector2(960, 200)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -121,7 +118,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(960, 600)]
+"values": [Vector2(960, 660)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -133,7 +130,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1368.0001, 172.99998)]
+"values": [Vector2(1252, 173)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -145,7 +142,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(300, 850)]
+"values": [Vector2(225, 892)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -157,7 +154,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(810, 850)]
+"values": [Vector2(785, 892)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -169,12 +166,12 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1320, 850)]
+"values": [Vector2(1310, 892)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ianhm"]
 _data = {
-&"Boot": SubResource("Animation_brl6n"),
+&"Boot": SubResource("Animation_qlrno"),
 &"RESET": SubResource("Animation_5trnc")
 }
 
@@ -190,29 +187,30 @@ script = ExtResource("1_jqtpd")
 [node name="Art" type="Node2D" parent="." unique_id=967152164]
 
 [node name="Background" type="Sprite2D" parent="Art" unique_id=1528885778]
-position = Vector2(960.00006, 540.00006)
-scale = Vector2(2.4, 2.2500002)
+position = Vector2(960, 600)
+scale = Vector2(2.4, 2.5)
 texture = SubResource("AtlasTexture_7invk")
 region_enabled = true
 region_rect = Rect2(1, 1, 800, 480)
 
 [node name="Text" type="Sprite2D" parent="Art" unique_id=295712561]
-position = Vector2(960, 190)
-scale = Vector2(1.3, 1.3)
+position = Vector2(960, 200)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_qlrno")
 region_enabled = true
 region_rect = Rect2(7, 0, 1087, 193)
 
 [node name="Characters" type="Sprite2D" parent="Art" unique_id=226779417]
-position = Vector2(960, 600)
-scale = Vector2(1.8, 1.8)
+z_index = 2
+position = Vector2(960, 660)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_m8vxo")
 region_enabled = true
 region_rect = Rect2(1, 482, 800, 480)
 
 [node name="Credits" type="Sprite2D" parent="Art" unique_id=991358395]
-position = Vector2(195, 1065)
-scale = Vector2(2, 2)
+position = Vector2(242, 1183)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_t8m8c")
 region_enabled = true
 region_rect = Rect2(1, 963, 188, 13)
@@ -230,10 +228,10 @@ grow_vertical = 2
 [node name="TcgTitle" type="Label" parent="Panel" unique_id=1461187240]
 texture_filter = 2
 layout_mode = 0
-offset_left = 1368.0001
-offset_top = 172.99998
-offset_right = 1549.0006
-offset_bottom = 268.0
+offset_left = 1252.0
+offset_top = 173.0
+offset_right = 1552.001
+offset_bottom = 310.0
 rotation = -0.17453292
 scale = Vector2(2, 2)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5803922)
@@ -241,50 +239,53 @@ theme_override_colors/font_outline_color = Color(0.9607843, 0.003921569, 0.16470
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 4
+theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("4_7rrbj")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 100
 text = "TCG"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AiButton" type="Button" parent="Panel" unique_id=1842048200]
+z_index = 1
 layout_mode = 0
-offset_left = 300.0
-offset_top = 850.0
-offset_right = 600.0
-offset_bottom = 930.0
+offset_left = 225.0
+offset_top = 892.0
+offset_right = 575.0
+offset_bottom = 992.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_ggdw6")
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_voxst")
 theme_override_styles/pressed = ExtResource("7_mhuq5")
 theme_override_styles/hover = ExtResource("7_mhuq5")
 text = "AI MODE"
 
 [node name="PvpButton" type="Button" parent="Panel" unique_id=830382599]
+z_index = 1
 layout_mode = 0
-offset_left = 810.0
-offset_top = 850.0
-offset_right = 1110.0
-offset_bottom = 930.0
+offset_left = 785.0
+offset_top = 892.0
+offset_right = 1135.0
+offset_bottom = 992.001
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_ggdw6")
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_voxst")
 theme_override_styles/pressed = ExtResource("7_mhuq5")
 theme_override_styles/hover = ExtResource("7_mhuq5")
 text = "PVP MODE"
 
 [node name="ExitButton" type="Button" parent="Panel" unique_id=101239530]
+z_index = 1
 layout_mode = 0
-offset_left = 1320.0
-offset_top = 850.0
-offset_right = 1620.0002
-offset_bottom = 930.0
+offset_left = 1310.0
+offset_top = 892.0
+offset_right = 1660.0007
+offset_bottom = 992.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_ggdw6")
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("6_voxst")
 theme_override_styles/pressed = ExtResource("7_mhuq5")
 theme_override_styles/hover = ExtResource("7_mhuq5")
@@ -320,51 +321,43 @@ icon = ExtResource("10_n6hsr")
 flat = true
 
 [node name="CreditsSC" type="Label" parent="Panel" unique_id=430005653]
+z_index = 1
 layout_mode = 0
-offset_left = 1247.0
-offset_top = 1023.0
-offset_right = 1919.0
-offset_bottom = 1052.0
+offset_left = 1059.0
+offset_top = 1120.0
+offset_right = 1916.0
+offset_bottom = 1166.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_ggdw6")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 28
 text = "Original Game By Scott Cawthon - @FNAF_ScottGames"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsLR" type="Label" parent="Panel" unique_id=545745152]
 layout_mode = 0
-offset_left = 1302.0
-offset_top = 1049.0
-offset_right = 1919.0
-offset_bottom = 1078.0
+offset_left = 1061.0
+offset_top = 1154.0
+offset_right = 1915.0
+offset_bottom = 1200.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_ggdw6")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 28
 text = "Original Soundtrack By Leon Riskin - @Leon_Riskin"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669007494]
 libraries/ = SubResource("AnimationLibrary_ianhm")
 
-[node name="DisconnectMenu" parent="." unique_id=627034204 instance=ExtResource("11_t8m8c")]
-visible = false
-layout_mode = 1
-
-[node name="AiModeSelection" parent="." unique_id=621176131 instance=ExtResource("12_qlrno")]
-visible = false
-z_index = 1
-layout_mode = 1
-
 [node name="PvpModeSelection" parent="." unique_id=1516858489 instance=ExtResource("13_7rrbj")]
 visible = false
-z_index = 1
+z_index = 4
 layout_mode = 1
 
 [node name="InfoScreen" parent="." unique_id=998006801 instance=ExtResource("14_ggdw6")]
 visible = false
-z_index = 1
+z_index = 4
 layout_mode = 1
 
 [connection signal="pressed" from="Panel/AiButton" to="." method="_on_ai_button_pressed"]

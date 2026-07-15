@@ -1,27 +1,31 @@
 extends Node2D
 
-@export var hand_y_pos = 1060
+@export var hand_y_pos = 1000
 @export var is_opp: bool
 
-const CARD_WIDTH = 190
+const CARD_WIDTH = 130
 const BASE_WIDTH = 1920
 const DEFAULT_CARD_MOVE_SPEED = 0.1
-const DEFAULT_CARD_SCALE = 1.2
+const DEFAULT_CARD_SCALE = 1
 
 var hand = []
 
 func add_card_to_hand(card, speed):
 	if card not in hand:
-		hand.insert(0, card)
+		if is_opp:
+			hand.insert(0, card)
+		else:
+			hand.append(card)
 		update_hand_pos(speed)
 	else:
-		animate_card_to_pos(card, card.hand_pos, DEFAULT_CARD_MOVE_SPEED)
+		animate_card_to_pos(card, card.hand_position, DEFAULT_CARD_MOVE_SPEED)
+
 
 func update_hand_pos(speed):
 	for i in range(hand.size()):
 		var new_pos = Vector2(calculate_card_pos(i), hand_y_pos)
 		var card = hand[i]
-		card.hand_pos = new_pos
+		card.hand_position = new_pos
 		animate_card_to_pos(card, new_pos, speed)
 
 

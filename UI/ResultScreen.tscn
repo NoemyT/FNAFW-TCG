@@ -8,7 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="6_hjlwv"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="7_5lvqw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8dsh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ov4h3"]
 shader = ExtResource("2_78nr2")
 shader_parameter/amount = 1.0000000475
 
@@ -50,9 +50,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [null]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["VICTORY"]
+}
 
-[sub_resource type="Animation" id="Animation_dwgod"]
-resource_name = "Result"
+[sub_resource type="Animation" id="Animation_memax"]
+resource_name = "ResultDefeat"
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -90,14 +102,79 @@ tracks/2/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["DEFEAT"]
+}
+
+[sub_resource type="Animation" id="Animation_dwgod"]
+resource_name = "ResultWin"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/MenuButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Exit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10000793, 0.11000793, 0.12000793, 0.13000792, 0.14000793, 0.15000793, 0.16000792, 0.1700275, 0.1800275, 0.19002749, 0.2000275, 0.21002749, 0.22002749, 0.2300275, 0.24003023, 0.25003022, 0.26003024, 0.27003023, 0.28003022, 0.29003024, 0.30003023, 0.3100498, 0.3200498, 0.3300498, 0.3400498, 0.3500498, 0.36004978, 0.3700498, 0.3800044, 0.3900044, 0.40000442, 0.4100044, 0.4200044, 0.43000442, 0.4400044, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.5199948, 0.5299948, 0.5399948, 0.54999477, 0.5599948, 0.5699948, 0.5799948, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.730037, 0.74003696, 0.75003695, 0.76003695, 0.770037, 0.780037, 0.790037, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.8699955, 0.87999547, 0.88999546, 0.9099955, 0.9199955, 0.9299955, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 0.64705884, 0, 1), Color(1, 1, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1), Color(0.29411766, 0, 0.50980395, 1), Color(0.93333334, 0.50980395, 0.93333334, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["VICTORY"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nuy16"]
 _data = {
 &"RESET": SubResource("Animation_mjgyq"),
-&"Result": SubResource("Animation_dwgod")
+&"ResultDefeat": SubResource("Animation_memax"),
+&"ResultWin": SubResource("Animation_dwgod")
 }
 
-[node name="ResultScreen" type="Control" unique_id=186214863]
+[node name="ResultScreenVictory" type="Control" unique_id=186214863]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,8 +183,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qtik5")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=54154233]
-material = SubResource("ShaderMaterial_n8dsh")
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1336790159]
+material = SubResource("ShaderMaterial_ov4h3")
 layout_mode = 0
 offset_left = -3158.0
 offset_top = -2050.0

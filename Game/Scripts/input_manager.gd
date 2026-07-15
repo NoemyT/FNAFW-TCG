@@ -6,13 +6,16 @@ signal left_mouse_button_released
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_DECK = 4
 
+@export var player_side_path: NodePath
+
 var field_manager_reference
 var deck_reference
 var inputs_disabled = false
 
 func _ready() -> void:
-	field_manager_reference = $"../FieldManager"
-	deck_reference = $"../Deckile"
+	var player_side = get_node(player_side_path)
+	field_manager_reference = player_side.get_node("FieldManager")
+	deck_reference = player_side.get_node("Deckpile")
 
 
 func _input(event: InputEvent) -> void:
@@ -39,4 +42,7 @@ func raycast_at_cursor():
 			if card_found:
 				field_manager_reference.card_selected(card_found)
 		elif result_collision_mask == COLLISION_MASK_DECK:
-			deck_reference.draw_card()
+			if GameState.current_mode == GameState.GameMode.AI:
+				deck_reference.draw_card_local()
+			elif GameState.current_mode == GameState.GameMode.PVP:
+				deck_reference.deck_clicked_networked()

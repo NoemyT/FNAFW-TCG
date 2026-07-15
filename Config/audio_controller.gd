@@ -29,16 +29,15 @@ func play_victory_music():
 	$Victory.play()
 
 
-func stop_victory_music():
-	$Victory.stop()
-
-
 func play_defeat_music():
 	$Death.play()
 	$Defeat.play()
 
 
-func stop_defeat_music():
+func stop_result_music():
+	$Cheer.stop()
+	$Victory.stop()
+	$Death.stop()
 	$Defeat.stop()
 
 

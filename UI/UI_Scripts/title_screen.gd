@@ -21,7 +21,9 @@ func hide_menu():
 
 func _on_ai_button_pressed() -> void:
 	AudioController.play_menu_click()
-	$AiModeSelection.visible = true
+	AudioController.stop_menu_music()
+	GameState.set_ai_mode(GameState.AIType.ATTACK)
+	get_tree().change_scene_to_file("res://Game/Duel.tscn")
 
 
 func _on_pvp_button_pressed() -> void:

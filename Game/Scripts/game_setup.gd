@@ -4,11 +4,11 @@ const STARTING_HEALTH = 20
 
 func host_set_up():
 	#MultiplayerManager.game_active = true
-	$PlayerHealth.text = str(STARTING_HEALTH)
+	$Hp/PlayerHp.text = str(STARTING_HEALTH)
 	#MultiplayerManager.opp_field.get_node("OppHealth").text = str(STARTING_HEALTH)
 	$DuelManager.player_health = STARTING_HEALTH
 	$DuelManager.opponent_health = STARTING_HEALTH
-	await $Deck.draw_first_hand(true)
+	await $Deckpile.draw_first_hand_networked(true)
 	$EndTurnButton.visible = true
 	$EndTurnButton.disabled = false
 	$InputManager.inputs_disabled = false
@@ -16,8 +16,8 @@ func host_set_up():
 
 func client_set_up():
 	#MultiplayerManager.game_active = true
-	$PlayerHealth.text = str(STARTING_HEALTH)
+	$Hp/PlayerHp.text = str(STARTING_HEALTH)
 	#MultiplayerManager.opp_field.get_node("OppHealth").text = str(STARTING_HEALTH)
 	$DuelManager.player_health = STARTING_HEALTH
 	$DuelManager.opponent_health = STARTING_HEALTH
-	$Deck.draw_first_hand(false)
+	$Deckpile.draw_first_hand_networked(false)

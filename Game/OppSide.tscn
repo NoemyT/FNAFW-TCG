@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dguh14nvpdijx" path="res://Game/CardPlacement.tscn" id="1_esvlj"]
 [ext_resource type="Texture2D" uid="uid://hp5501jkltbv" path="res://Assets/Cards/cardbacks4092021.png" id="2_57cdw"]
+[ext_resource type="Script" uid="uid://dwdd7tysnfoef" path="res://Game/Scripts/deck.gd" id="2_ppvt0"]
 [ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="3_byhbu"]
 [ext_resource type="Texture2D" uid="uid://drxqs586cacxt" path="res://Assets/Icons/kenney_board-game-icons/skull.png" id="4_4uqwu"]
 [ext_resource type="Texture2D" uid="uid://bnqs1kv6o4nge" path="res://Assets/Icons/kenney_board-game-icons/suit_hearts.png" id="5_byhbu"]
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="6_4uqwu"]
 [ext_resource type="Script" uid="uid://bfd3hmn1k7wxj" path="res://Game/Scripts/hand.gd" id="7_4uqwu"]
+[ext_resource type="Script" uid="uid://d0k2td5igakna" path="res://Game/Scripts/field_manager.gd" id="9_wsoeo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppvt0"]
 atlas = ExtResource("2_57cdw")
@@ -19,50 +21,55 @@ atlas = ExtResource("3_byhbu")
 [node name="Placements" type="Node2D" parent="." unique_id=276555147]
 
 [node name="CardPlacement" parent="Placements" unique_id=482274551 instance=ExtResource("1_esvlj")]
-position = Vector2(480, 720)
+position = Vector2(420, 780)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "red"
-card_placement_owner = "opp"
 
 [node name="CardPlacement2" parent="Placements" unique_id=1710303725 instance=ExtResource("1_esvlj")]
-position = Vector2(665, 360)
+position = Vector2(625, 420)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "green"
-card_placement_owner = "opp"
 
 [node name="CardPlacement3" parent="Placements" unique_id=831951211 instance=ExtResource("1_esvlj")]
-position = Vector2(665, 610)
+position = Vector2(625, 670)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "blue"
-card_placement_owner = "opp"
 
 [node name="CardPlacement4" parent="Placements" unique_id=573258610 instance=ExtResource("1_esvlj")]
-position = Vector2(480, 467)
+position = Vector2(420, 527)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "yellow"
-card_placement_owner = "opp"
 
 [node name="CardPlacement5" parent="Placements" unique_id=442793061 instance=ExtResource("1_esvlj")]
-position = Vector2(110, 540)
+position = Vector2(110, 600)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "opponent"
 card_placement_type = "skill"
-card_placement_owner = "opp"
 
 [node name="Deckpile" type="Node2D" parent="." unique_id=236121115]
-position = Vector2(310, 120)
+position = Vector2(310, 140)
 scale = Vector2(1.5, 1.5)
+script = ExtResource("2_ppvt0")
+owner_id = "opponent"
+hand_path = NodePath("../Hand")
+field_manager_path = NodePath("../FieldManager")
 
 [node name="Art" type="Sprite2D" parent="Deckpile" unique_id=143951774]
 texture = SubResource("AtlasTexture_ppvt0")
 region_enabled = true
-region_rect = Rect2(443, 270, 100, 128)
+region_rect = Rect2(776, 5, 100, 128)
 
 [node name="Cemetery" type="Node2D" parent="." unique_id=411145288]
-position = Vector2(110, 120)
+z_index = -2
+position = Vector2(110, 140)
 scale = Vector2(1.5, 1.5)
 
 [node name="Art" type="Sprite2D" parent="Cemetery" unique_id=1130316063]
@@ -79,15 +86,15 @@ texture = ExtResource("4_4uqwu")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hp" unique_id=111198738]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(120, 1000)
+position = Vector2(1688.0001, 116.00001)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_byhbu")
 
 [node name="OppHp" type="Label" parent="Hp" unique_id=1440856582]
-offset_left = 165.0
-offset_top = 959.5
-offset_right = 272.0
-offset_bottom = 1040.5
+offset_left = 1733.0
+offset_top = 72.0
+offset_right = 1840.0
+offset_bottom = 153.0
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("6_4uqwu")
 theme_override_font_sizes/font_size = 64
@@ -95,7 +102,13 @@ text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Node2D" type="Node2D" parent="." unique_id=64815075]
+[node name="Hand" type="Node2D" parent="." unique_id=64815075]
 script = ExtResource("7_4uqwu")
-hand_y_pos = 120
+hand_y_pos = 130
 is_opp = true
+
+[node name="FieldManager" type="Node2D" parent="." unique_id=88687000]
+script = ExtResource("9_wsoeo")
+owner_id = "opponent"
+hand_path = NodePath("../Hand")
+placements_path = NodePath("../Placements")

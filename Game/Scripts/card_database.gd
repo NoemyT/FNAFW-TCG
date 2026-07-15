@@ -403,9 +403,10 @@ const CARDS = {
 		"char_region": Rect2(17, 1, 150, 150),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.3, 0.3),
-		"type" : "magic",
+		"type" : "skill",
+		"color": "purple",
 		"skill": "1 damage to all enemies",
-		"skill_script": "res://Scripts/Skills/pizza_wheel.gd"
+		"skill_script": "res://Game/Scripts/Skills/pizza_wheel.gd"
 	},
 	"pizzaWheel2" : {
 		"attack": null,
@@ -413,9 +414,10 @@ const CARDS = {
 		"char_region": Rect2(4, 31, 220, 220),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.22, 0.22),
-		"type" : "magic",
+		"type" : "skill",
+		"color": "purple",
 		"skill": "2 damage to all enemies",
-		"skill_script": "res://Scripts/Skills/pizza_wheel_2.gd"
+		"skill_script": "res://Game/Scripts/Skills/pizza_wheel_2.gd"
 	},
 	"4thWall" : {
 		"attack": null,
@@ -423,9 +425,10 @@ const CARDS = {
 		"char_region": Rect2(5, 1, 192, 370),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.18, 0.18),
-		"type" : "magic",
+		"type" : "skill",
+		"color": "purple",
 		"skill": "4 damage to all enemies",
-		"skill_script": "res://Scripts/Skills/4th_wall.gd"
+		"skill_script": "res://Game/Scripts/Skills/4th_wall.gd"
 	},
 	"jackOBomb" : {
 		"attack": null,
@@ -433,9 +436,10 @@ const CARDS = {
 		"char_region": Rect2(106, 203, 100, 100),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.5, 0.5),
-		"type" : "magic",
+		"type" : "skill",
+		"color": "purple",
 		"skill": "1-3 dmg x2, single target",
-		"skill_script": "res://Scripts/Skills/jack_o_bomb.gd"
+		"skill_script": "res://Game/Scripts/Skills/jack_o_bomb.gd"
 	},
 	"megaBite" : {
 		"attack": null,
@@ -443,9 +447,10 @@ const CARDS = {
 		"char_region": Rect2(1214, 13, 300, 300),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.2, 0.2),
-		"type" : "magic",
+		"type" : "skill",
+		"color": "purple",
 		"skill": "3 dmg, single target",
-		"skill_script": "res://Scripts/Skills/mega_bite.gd"
+		"skill_script": "res://Game/Scripts/Skills/mega_bite.gd"
 	},
 	"slasher" : {
 		"attack": null,
@@ -453,31 +458,34 @@ const CARDS = {
 		"char_region": Rect2(1214, 13, 300, 300),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.2, 0.2),
-		"type" : "magic",
-		"skill": "3 dmg, single target",
-		"skill_script": "res://Scripts/Skills/mega_bite.gd"
+		"type" : "skill",
+		"color": "purple",
+		"skill": "10% to instakill opponent",
+		"skill_script": "res://Game/Scripts/Skills/mega_bite.gd"
 	}
 }
 
-func get_total_deck_size():
-	var total := 0
-	for card_key in CARDS.keys():
-		var data = CARDS[card_key]
-		if data["type"] == "entity":
-			total += 1
-		elif data["type"] == "magic":
-			total += 3
-	return total
-
-
-func build_shuffled_deck():
+func build_shuffled_deck() -> Array:
 	var deck: Array = []
 	for card_key in CARDS.keys():
 		var data = CARDS[card_key]
 		if data["type"] == "entity":
 			deck.append(card_key)
-		elif data["type"] == "magic":
-			for i in range(3):
-				deck.append(card_key)
+		# TODO: reativar quando os scripts de skill existirem
+		#elif data["type"] == "skill":
+		#	for i in range(3):
+		#		deck.append(card_key)
 	deck.shuffle()
 	return deck
+
+
+func get_total_deck_size() -> int:
+	var total := 0
+	for card_key in CARDS.keys():
+		var data = CARDS[card_key]
+		if data["type"] == "entity":
+			total += 1
+		# TODO: reativar quando os scripts de skill existirem
+		#elif data["type"] == "skill":
+		#	total += 3
+	return total

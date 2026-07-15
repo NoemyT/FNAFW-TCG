@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://di7atmjxwrshk"]
+
+[ext_resource type="Script" uid="uid://daa1uqks0jmwr" path="res://Game/Scripts/duel_manager_ai.gd" id="1_42mei"]
+[ext_resource type="PackedScene" uid="uid://c0xvkqmqj76wv" path="res://Game/PlayerSide.tscn" id="1_n13sf"]
+[ext_resource type="PackedScene" uid="uid://d18sklc8411mp" path="res://Game/OppSide.tscn" id="2_42mei"]
+[ext_resource type="Script" uid="uid://6k3pvgmaxnhf" path="res://Game/Scripts/input_manager.gd" id="3_r5aac"]
+[ext_resource type="PackedScene" uid="uid://2s2l2yxd3gs3" path="res://UI/ResultScreen.tscn" id="5_r5aac"]
+[ext_resource type="PackedScene" uid="uid://cp0isfg50qpxt" path="res://UI/PauseMenu.tscn" id="6_n05kr"]
+
+[node name="Duel" type="Node2D" unique_id=1629973112]
+
+[node name="PlayerSide" parent="." unique_id=88612947 instance=ExtResource("1_n13sf")]
+
+[node name="OppSide" parent="." unique_id=187769977 instance=ExtResource("2_42mei")]
+
+[node name="DuelManager" type="Node" parent="." unique_id=1315504972]
+script = ExtResource("1_42mei")
+player_side_path = NodePath("../PlayerSide")
+opp_side_path = NodePath("../OppSide")
+input_manager_path = NodePath("../InputManager")
+result_screen_path = NodePath("../ResultScreenVictory")
+pause_menu_path = NodePath("../PauseMenu")
+
+[node name="InputManager" type="Node2D" parent="." unique_id=1199967330]
+script = ExtResource("3_r5aac")
+player_side_path = NodePath("../PlayerSide")
+
+[node name="ResultScreenVictory" parent="." unique_id=186214863 instance=ExtResource("5_r5aac")]
+visible = false
+offset_left = 960.0
+offset_top = 600.0
+offset_right = 960.0
+offset_bottom = 600.0
+
+[node name="PauseMenu" parent="." unique_id=396849778 instance=ExtResource("6_n05kr")]
+visible = false
+offset_left = 960.0
+offset_top = 600.0
+offset_right = 960.0
+offset_bottom = 600.0

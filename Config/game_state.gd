@@ -1,7 +1,7 @@
 extends Node
 
 enum GameMode { NONE, AI, PVP }
-enum AIType { NONE, ATTACK, SURVIVAL }
+enum AIType { NONE, ATTACK }
 enum PVPType { NONE, HOST, CLIENT }
 
 const OWNER_PLAYER = "player"
