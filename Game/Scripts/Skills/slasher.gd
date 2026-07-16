@@ -13,12 +13,12 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	duel_manager_ref.player_skills_node.get_node("AnimationPlayer").play("Slasher")
 	if hit:
 		AudioController.play_stab()
-	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)
+	await duel_manager_ref.wait(0.75)
 	if hit:
 		duel_manager_ref.opponent_health = max(0, duel_manager_ref.opponent_health - INSTAKILL_DAMAGE)
 		duel_manager_ref.opp_side.get_node("Hp/OppHp").text = str(duel_manager_ref.opponent_health)
 	duel_manager_ref._destroy_card(skill_card, GameState.OWNER_PLAYER)
-	if duel_manager_ref.player_health == 0 or duel_manager_ref.opponent_health == 0:
+	if duel_manager_ref.opponent_health == 0:
 		duel_manager_ref.end_game()
 		return
 	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)
@@ -33,12 +33,12 @@ func trigger_skill_opp(duel_manager_ref, skill_card, input_manager_ref):
 	duel_manager_ref.get_opp_skills_node().get_node("AnimationPlayer").play("Slasher")
 	if hit:
 		AudioController.play_stab()
-	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)
+	await duel_manager_ref.wait(0.75)
 	if hit:
 		duel_manager_ref.player_health = max(0, duel_manager_ref.player_health - INSTAKILL_DAMAGE)
 		duel_manager_ref.player_side.get_node("Hp/PlayerHp").text = str(duel_manager_ref.player_health)
 	duel_manager_ref._destroy_card(skill_card, GameState.OWNER_OPPONENT)
-	if duel_manager_ref.player_health == 0 or duel_manager_ref.opponent_health == 0:
+	if duel_manager_ref.player_health == 0:
 		duel_manager_ref.end_game()
 		return
 	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)

@@ -7,6 +7,7 @@ extends Node2D
 const CARD_DRAW_SPEED = 0.4
 const STARTING_HAND_SIZE = 7
 const MAX_DRAWS_PER_TURN = 3
+const MAX_HAND_SIZE = 7
 
 var deck: Array = []
 var draws_this_turn := MAX_DRAWS_PER_TURN
@@ -38,6 +39,8 @@ func _draw_starting_hand_local() -> void:
 
 func draw_card_local():
 	if draws_this_turn >= MAX_DRAWS_PER_TURN:
+		return
+	if get_node(hand_path).hand.size() >= MAX_HAND_SIZE:
 		return
 	draws_this_turn += 1
 	var card_name = deck[0]

@@ -1,6 +1,6 @@
 extends Node
 
-const DAMAGE = 4
+const DAMAGE = 3
 
 var needs_target_sync = false
 

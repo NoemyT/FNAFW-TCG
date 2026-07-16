@@ -427,7 +427,7 @@ const CARDS = {
 		"scale": Vector2(0.18, 0.18),
 		"type" : "skill",
 		"color": "purple",
-		"skill": "4 damage to all enemies",
+		"skill": "3 damage to all enemies",
 		"skill_script": "res://Game/Scripts/Skills/4th_wall.gd"
 	},
 	"jackOBomb" : {

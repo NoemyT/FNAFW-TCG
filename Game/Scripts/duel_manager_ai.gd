@@ -9,12 +9,11 @@ extends Node
 @export var opp_skills_path: NodePath
 
 const CARD_MOVE_SPEED = 0.1
-const TURN_TIME = 0.75
-const ATTACK_TIME = 0.1125
+const TURN_TIME = 1
+const ATTACK_TIME = 0.15
 const STARTING_HEALTH = 20
 const BATTLE_POS_OFFSET = 25
 const DIRECT_ATTACK_LUNGE = 1400.0
-const MAX_HAND_SIZE = 7
 
 var player_side: Node
 var opp_side: Node
@@ -36,8 +35,6 @@ var game_over := false
 
 
 func _ready() -> void:
-	AudioController.play_battle_music()
-
 	player_side = get_node(player_side_path)
 	opp_side = get_node(opp_side_path)
 	input_manager = get_node(input_manager_path)
@@ -119,7 +116,7 @@ func opp_turn():
 	var opp_deck = opp_side.get_node("Deckpile")
 	opp_deck.reset_draw()
 	var opp_hand = opp_side.get_node("Hand")
-	while opp_deck.deck.size() > 0 and opp_hand.hand.size() < MAX_HAND_SIZE and opp_deck.can_draw():
+	while opp_deck.deck.size() > 0 and opp_hand.hand.size() < opp_deck.MAX_HAND_SIZE and opp_deck.can_draw():
 		opp_deck.draw_card_local()
 		await wait(TURN_TIME)
 
@@ -151,9 +148,12 @@ func _ai_try_place_card() -> void:
 
 	var skills = opp_hand.hand.filter(func(c): return c.card_type == "skill")
 	for card in skills:
-		if opp_field_manager.try_place_card(card):
-			await card.skill_script.trigger_skill_opp(self, card, input_manager)
-			break
+		if player_cards_on_field:
+			if opp_field_manager.try_place_card(card):
+				await card.skill_script.trigger_skill_opp(self, card, input_manager)
+				break
+		else:
+			return
 
 
 func _end_opp_turn() -> void:
@@ -176,11 +176,14 @@ func resolve_attacks(attacking_owner):
 		var blocker = _find_matching_color_defender(card, defending_list)
 		if blocker:
 			await _clash(card, blocker, attacking_owner)
+		elif not blocker and attacking_owner == GameState.OWNER_OPPONENT:
+			await _direct_attack(card, attacking_owner)
+			if player_health == 0:
+				return
 		else:
 			await _direct_attack(card, attacking_owner)
-		if player_health == 0 or opponent_health == 0:
-			end_game()
-			return
+			if opponent_health == 0:
+				return
 
 
 func _find_matching_color_defender(card, defending_list):
@@ -191,7 +194,7 @@ func _find_matching_color_defender(card, defending_list):
 
 
 func _direct_attack(card, attacker_owner) -> void:
-	card.z_index = 5
+	card.z_index = 7
 	var lunge_offset = Vector2(-DIRECT_ATTACK_LUNGE, 0) if attacker_owner == GameState.OWNER_PLAYER else Vector2(DIRECT_ATTACK_LUNGE, 0)
 
 	var lunge_tween = get_tree().create_tween()
@@ -201,10 +204,16 @@ func _direct_attack(card, attacker_owner) -> void:
 
 	if attacker_owner == GameState.OWNER_PLAYER:
 		opponent_health = max(0, opponent_health - card.attack)
+		print("chegou no end_game pv", Time.get_ticks_msec())
 		opp_side.get_node("Hp/OppHp").text = str(opponent_health)
 	else:
 		player_health = max(0, player_health - card.attack)
+		print("chegou no end_game av", Time.get_ticks_msec())
 		player_side.get_node("Hp/PlayerHp").text = str(player_health)
+
+	if player_health == 0 or opponent_health == 0:
+		end_game()
+		return
 
 	var return_tween = get_tree().create_tween()
 	return_tween.tween_property(card, "position", card.card_placement.position, CARD_MOVE_SPEED)

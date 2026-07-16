@@ -105,7 +105,7 @@ vertical_alignment = 1
 
 [node name="Hand" type="Node2D" parent="." unique_id=64815075]
 script = ExtResource("7_4uqwu")
-hand_y_pos = 130
+hand_y_pos = 140
 is_opp = true
 
 [node name="FieldManager" type="Node2D" parent="." unique_id=88687000]
