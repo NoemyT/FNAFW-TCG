@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="6_4uqwu"]
 [ext_resource type="Script" uid="uid://bfd3hmn1k7wxj" path="res://Game/Scripts/hand.gd" id="7_4uqwu"]
 [ext_resource type="Script" uid="uid://d0k2td5igakna" path="res://Game/Scripts/field_manager.gd" id="9_wsoeo"]
+[ext_resource type="PackedScene" uid="uid://b54ggikwl3ufx" path="res://Game/FieldSkills.tscn" id="10_2kf3g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppvt0"]
 atlas = ExtResource("2_57cdw")
@@ -112,3 +113,9 @@ script = ExtResource("9_wsoeo")
 owner_id = "opponent"
 hand_path = NodePath("../Hand")
 placements_path = NodePath("../Placements")
+field_skills_path = NodePath("../FieldSkills")
+
+[node name="FieldSkills" parent="." unique_id=1146735414 instance=ExtResource("10_2kf3g")]
+position = Vector2(220, 600)
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)

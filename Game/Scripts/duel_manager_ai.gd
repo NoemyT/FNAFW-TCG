@@ -1,28 +1,32 @@
 extends Node
 
-const CARD_MOVE_SPEED = 0.1
-const TURN_TIME = 0.75
-const ATTACK_TIME = 0.1125
-const STARTING_HEALTH = 20
-const BATTLE_POS_OFFSET = 25
-const DIRECT_ATTACK_LUNGE = 1300.0
-const MAX_HAND_SIZE = 7
-
 @export var player_side_path: NodePath
 @export var opp_side_path: NodePath
 @export var input_manager_path: NodePath
 @export var result_screen_path: NodePath
 @export var pause_menu_path: NodePath
+@export var player_skills_path: NodePath
+@export var opp_skills_path: NodePath
+
+const CARD_MOVE_SPEED = 0.1
+const TURN_TIME = 0.75
+const ATTACK_TIME = 0.1125
+const STARTING_HEALTH = 20
+const BATTLE_POS_OFFSET = 25
+const DIRECT_ATTACK_LUNGE = 1400.0
+const MAX_HAND_SIZE = 7
 
 var player_side: Node
 var opp_side: Node
 var input_manager: Node
 var result_screen: Control
 var pause_menu: Control
+var player_skills_node: Node
+var opp_skills_node: Node
 
 var turn_timer: Timer
-var player_cards_on_field: Array = []
-var opp_cards_on_field: Array = []
+var player_cards_on_field = []
+var opp_cards_on_field  = []
 var player_health: int
 var opponent_health: int
 var first_turn := true
@@ -39,6 +43,8 @@ func _ready() -> void:
 	input_manager = get_node(input_manager_path)
 	result_screen = get_node(result_screen_path)
 	pause_menu = get_node(pause_menu_path)
+	player_skills_node = get_node(player_skills_path)
+	opp_skills_node = get_node(opp_skills_path)
 
 	turn_timer = Timer.new()
 	turn_timer.one_shot = true
@@ -59,15 +65,21 @@ func _ready() -> void:
 	enable_attack_btn(false)
 
 
+func get_opp_skills_node():
+	return opp_skills_node
+
+
 func _on_card_placed(card, which_owner) -> void:
-	if card.card_type != "entity":
-		return # TODO: acionar skill_script quando os scripts de skill existirem
 	if which_owner == GameState.OWNER_PLAYER:
-		player_cards_on_field.append(card)
-		if not first_turn and not attacked_this_turn and not is_opp_turn and not game_over:
-			enable_attack_btn(true)
+		if card.card_type == "entity":
+			player_cards_on_field.append(card)
+			if not first_turn and not attacked_this_turn and not is_opp_turn and not game_over:
+				enable_attack_btn(true)
+		else:
+			card.skill_script.trigger_skill(self, card, input_manager)
 	else:
-		opp_cards_on_field.append(card)
+		if card.card_type == "entity":
+			opp_cards_on_field.append(card)
 
 
 func _on_attack_button_pressed() -> void:
@@ -136,7 +148,12 @@ func _ai_try_place_card() -> void:
 				await wait(TURN_TIME)
 				placed_any = true
 				break
-	# TODO: jogar carta de magia automaticamente quando os scripts de skill existirem
+
+	var skills = opp_hand.hand.filter(func(c): return c.card_type == "skill")
+	for card in skills:
+		if opp_field_manager.try_place_card(card):
+			await card.skill_script.trigger_skill_opp(self, card, input_manager)
+			break
 
 
 func _end_opp_turn() -> void:

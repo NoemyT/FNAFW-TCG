@@ -455,13 +455,13 @@ const CARDS = {
 	"slasher" : {
 		"attack": null,
 		"health": null,
-		"char_region": Rect2(1214, 13, 300, 300),
+		"char_region": Rect2(6, 305, 200, 75),
 		"bg_region": Rect2(332, 337, 100, 128),
 		"scale": Vector2(0.2, 0.2),
 		"type" : "skill",
 		"color": "purple",
 		"skill": "10% to instakill opponent",
-		"skill_script": "res://Game/Scripts/Skills/mega_bite.gd"
+		"skill_script": "res://Game/Scripts/Skills/slasher.gd"
 	}
 }
 
@@ -471,10 +471,9 @@ func build_shuffled_deck() -> Array:
 		var data = CARDS[card_key]
 		if data["type"] == "entity":
 			deck.append(card_key)
-		# TODO: reativar quando os scripts de skill existirem
-		#elif data["type"] == "skill":
-		#	for i in range(3):
-		#		deck.append(card_key)
+		elif data["type"] == "skill":
+			for i in range(3):
+				deck.append(card_key)
 	deck.shuffle()
 	return deck
 
@@ -485,7 +484,6 @@ func get_total_deck_size() -> int:
 		var data = CARDS[card_key]
 		if data["type"] == "entity":
 			total += 1
-		# TODO: reativar quando os scripts de skill existirem
-		#elif data["type"] == "skill":
-		#	total += 3
+		elif data["type"] == "skill":
+			total += 3
 	return total

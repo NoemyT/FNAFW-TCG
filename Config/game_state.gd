@@ -25,12 +25,3 @@ func reset() -> void:
 	current_mode = GameMode.NONE
 	current_ai_type = AIType.NONE
 	current_pvp_type = PVPType.NONE
-
-func get_mode_description() -> String:
-	match current_mode:
-		GameMode.AI:
-			return "AI - " + AIType.keys()[current_ai_type]
-		GameMode.PVP:
-			return "PVP - " + PVPType.keys()[current_pvp_type]
-		_:
-			return "No game mode selected"

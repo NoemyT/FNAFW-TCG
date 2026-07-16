@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://d0m5noap0y4e3" path="res://Assets/Characters/megaBite.png" id="4_x2d7n"]
 [ext_resource type="Texture2D" uid="uid://c4aw4pi3qh8x4" path="res://Assets/Characters/jackOBomb.png" id="5_hmw6p"]
 [ext_resource type="Texture2D" uid="uid://c4f30v3ta8474" path="res://Assets/Skills/Free Smoke Fx  Pixel 05.png" id="6_unbln"]
+[ext_resource type="AudioStream" uid="uid://youqkhju66uw" path="res://Assets/Sounds/bomb.wav" id="7_8eid2"]
+[ext_resource type="AudioStream" uid="uid://dvuyuai74lik7" path="res://Assets/Sounds/throw.wav" id="7_yy3ag"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53ycg"]
 atlas = ExtResource("1_aqc3e")
@@ -64,6 +66,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Bomb:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_unbln"]
@@ -175,6 +189,42 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Throw:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Throw2:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Throw3:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_uhk44"]
@@ -364,6 +414,54 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Bomb:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Throw:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Throw2:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Throw3:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x2d7n"]
 _data = {
@@ -447,3 +545,15 @@ scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_yy3ag")
 region_enabled = true
 region_rect = Rect2(25, 411, 11, 12)
+
+[node name="Throw" type="AudioStreamPlayer" parent="." unique_id=1582485839]
+stream = ExtResource("7_yy3ag")
+
+[node name="Throw2" type="AudioStreamPlayer" parent="." unique_id=1484924453]
+stream = ExtResource("7_yy3ag")
+
+[node name="Throw3" type="AudioStreamPlayer" parent="." unique_id=953499779]
+stream = ExtResource("7_yy3ag")
+
+[node name="Bomb" type="AudioStreamPlayer" parent="." unique_id=1433121298]
+stream = ExtResource("7_8eid2")

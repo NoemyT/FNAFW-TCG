@@ -59,3 +59,7 @@ func play_direct_attack():
 
 func play_menu_click():
 	$Clicking.play()
+
+
+func play_stab():
+	$Stab.play()

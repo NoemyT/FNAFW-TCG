@@ -546,9 +546,11 @@ _data = {
 }
 
 [node name="Card" type="Node2D" unique_id=351751759]
+z_index = 1
 script = ExtResource("1_nxe46")
 
 [node name="Backgorund" type="Sprite2D" parent="." unique_id=1162287992]
+z_index = -1
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_o0orm")
 region_enabled = true
@@ -556,7 +558,6 @@ region_rect = Rect2(776, 5, 100, 128)
 metadata/_edit_lock_ = true
 
 [node name="Art" type="Node2D" parent="." unique_id=1504464684]
-z_index = -1
 scale = Vector2(1.5, 1.5)
 
 [node name="Border" type="Sprite2D" parent="Art" unique_id=900758069]
@@ -613,16 +614,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Skill" type="Label" parent="." unique_id=773515110]
-visible = false
 offset_left = -66.0
 offset_top = 30.0
 offset_right = 66.0
 offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_xwtu2")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1893712278]
 metadata/_edit_lock_ = true

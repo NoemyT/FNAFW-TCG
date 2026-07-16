@@ -1,0 +1,1024 @@
+[gd_scene format=3 uid="uid://b54ggikwl3ufx"]
+
+[ext_resource type="Texture2D" uid="uid://brysuarvv87fx" path="res://Assets/Characters/4thWall.png" id="1_mtvxn"]
+[ext_resource type="Texture2D" uid="uid://dcu1vnqkc5d4c" path="res://Assets/Characters/pizzaWheel.png" id="2_wfxuw"]
+[ext_resource type="Texture2D" uid="uid://bc0wu3gkohgqr" path="res://Assets/Characters/pizzaWheel2.png" id="3_uta3p"]
+[ext_resource type="AudioStream" uid="uid://c68oyhldvf5x3" path="res://Assets/Sounds/pizza2.wav" id="4_6qm7l"]
+[ext_resource type="AudioStream" uid="uid://cgbhfwcpmm6hn" path="res://Assets/Sounds/pizza4.wav" id="5_cxhcr"]
+[ext_resource type="Texture2D" uid="uid://jie3oe2xo4xs" path="res://Assets/Characters/slasher.png" id="6_t7m71"]
+
+[sub_resource type="Animation" id="Animation_vqag7"]
+resource_name = "4thWall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("4thWall:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("4thWall:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_mtvxn")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("4thWall:region_enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("4thWall:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(5, 1, 192, 370)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("4thWall:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("4thWall:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1380, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PizzaWheel:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PizzaWheel2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Slasher:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_os86i"]
+resource_name = "PizzaWheel"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PizzaWheel/PizzaWheel12:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PizzaWheel/PizzaWheel13:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PizzaWheel/PizzaWheel12:region_enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PizzaWheel/PizzaWheel12:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wfxuw")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PizzaWheel/PizzaWheel12:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PizzaWheel/PizzaWheel12:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.049999997, 0.059999995, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.23999342, 0.24999343, 0.25999343, 0.26999342, 0.2799934, 0.28999344, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.420009, 0.43000898, 0.440009, 0.450009, 0.46000898, 0.470009, 0.48, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PizzaWheel/PizzaWheel12:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(60, -30), Vector2(-1400, -30)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PizzaWheel/PizzaWheel13:region_enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PizzaWheel/PizzaWheel13:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wfxuw")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PizzaWheel/PizzaWheel13:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PizzaWheel/PizzaWheel13:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 30), Vector2(-1420, 30)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("PizzaWheel/PizzaWheel13:region_rect")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.01999999, 0.02999999, 0.03999999, 0.04999999, 0.059999987, 0.069999985, 0.07999999, 0.08999999, 0.099999994, 0.10999999, 0.11999999, 0.13, 0.13999999, 0.14999999, 0.16, 0.16999999, 0.17999999, 0.19, 0.19999999, 0.21, 0.21999998, 0.22999999, 0.24, 0.24999341, 0.25999343, 0.26999342, 0.2799934, 0.2899934, 0.29999343, 0.31, 0.32, 0.32999998, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.420009, 0.43000898, 0.440009, 0.450009, 0.46000898, 0.470009, 0.48, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("4thWall:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PizzaWheel:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("PizzaWheel2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("PizzaWheel/PizzaWheel11:texture")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wfxuw")]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("PizzaWheel/PizzaWheel11:region_enabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PizzaWheel/PizzaWheel11:region_rect")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.030000001, 0.04, 0.049999997, 0.059999995, 0.07, 0.08, 0.09, 0.1, 0.11, 0.120000005, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.23999342, 0.24999344, 0.25999343, 0.26999342, 0.2799934, 0.28999344, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35000002, 0.36, 0.37, 0.38, 0.39000002, 0.4, 0.410009, 0.420009, 0.430009, 0.440009, 0.450009, 0.460009, 0.47, 0.48000002, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150), Rect2(168, 152, 150, 150), Rect2(17, 303, 150, 150), Rect2(168, 303, 150, 150), Rect2(17, 1, 150, 150), Rect2(168, 1, 150, 150), Rect2(17, 152, 150, 150)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PizzaWheel/PizzaWheel11:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1380, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("PizzaWheel/PizzaWheel11:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("PizzaWheel/PizzaWheel11:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Pizza:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Pizza3:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Slasher:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_irdsa"]
+resource_name = "PizzaWheel2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("4thWall:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PizzaWheel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PizzaWheel2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PizzaWheel2/PizzaWheel2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_uta3p")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PizzaWheel2/PizzaWheel2:region_enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PizzaWheel2/PizzaWheel2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1380, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PizzaWheel2/PizzaWheel2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PizzaWheel2/PizzaWheel2:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.089999996, 0.099999994, 0.11, 0.12, 0.13, 0.14, 0.14999999, 0.16, 0.17, 0.18, 0.19000001, 0.2, 0.21000001, 0.22, 0.23, 0.24, 0.25, 0.26, 0.26999998, 0.28, 0.29, 0.3, 0.31, 0.32000002, 0.33, 0.34, 0.35000002, 0.36, 0.37, 0.38000003, 0.39000002, 0.4, 0.41000003, 0.42, 0.42999998, 0.44, 0.45, 0.45999998, 0.47, 0.48, 0.48999998, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PizzaWheel2/PizzaWheel2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PizzaWheel2/PizzaWheel22:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_uta3p")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PizzaWheel2/PizzaWheel22:region_enabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PizzaWheel2/PizzaWheel22:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, -30), Vector2(-1420, -30)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("PizzaWheel2/PizzaWheel22:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("PizzaWheel2/PizzaWheel22:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("PizzaWheel2/PizzaWheel22:region_rect")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.049999997, 0.059999995, 0.07, 0.08, 0.089999996, 0.099999994, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16000001, 0.17, 0.18, 0.19, 0.2, 0.21000001, 0.22, 0.23, 0.24000001, 0.25, 0.26, 0.27, 0.28, 0.29, 0.29999998, 0.31, 0.32, 0.32999998, 0.33999997, 0.35, 0.35999998, 0.37, 0.38, 0.39, 0.39999998, 0.41, 0.42, 0.43, 0.44000003, 0.45000002, 0.46, 0.47000003, 0.48000002, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220), Rect2(4, 252, 220, 220), Rect2(225, 252, 220, 220), Rect2(446, 252, 220, 220), Rect2(4, 31, 220, 220), Rect2(225, 31, 220, 220), Rect2(446, 31, 219, 220)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Pizza:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Pizza3:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Slasher:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_inr1l"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("4thWall:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PizzaWheel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PizzaWheel2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PizzaWheel2/PizzaWheel2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PizzaWheel2/PizzaWheel2:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(225, 31, 220, 220)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PizzaWheel2/PizzaWheel2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PizzaWheel2/PizzaWheel22:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80, -30)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PizzaWheel2/PizzaWheel22:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PizzaWheel/PizzaWheel11:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PizzaWheel/PizzaWheel11:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PizzaWheel/PizzaWheel13:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PizzaWheel/PizzaWheel12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Pizza:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Pizza3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Slasher:region_rect")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(6, 1, 200, 75)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Slasher:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Slasher:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wfhyh"]
+resource_name = "Slasher"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slasher:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(6, 1, 200, 75), Rect2(6, 77, 200, 75), Rect2(6, 153, 200, 75), Rect2(6, 229, 200, 75), Rect2(6, 305, 200, 75), Rect2(6, 381, 200, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Slasher:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PizzaWheel2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PizzaWheel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("4thWall:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Slasher:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1380, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_os86i"]
+_data = {
+&"4thWall": SubResource("Animation_vqag7"),
+&"PizzaWheel": SubResource("Animation_os86i"),
+&"PizzaWheel2": SubResource("Animation_irdsa"),
+&"RESET": SubResource("Animation_inr1l"),
+&"Slasher": SubResource("Animation_wfhyh")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6etv8"]
+atlas = ExtResource("6_t7m71")
+
+[node name="FieldSkills" type="Node2D" unique_id=1146735414]
+z_index = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1102627360]
+libraries/ = SubResource("AnimationLibrary_os86i")
+speed_scale = 0.5
+
+[node name="4thWall" type="Sprite2D" parent="." unique_id=116465195]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_mtvxn")
+region_enabled = true
+region_rect = Rect2(5, 1, 192, 370)
+
+[node name="PizzaWheel" type="Node2D" parent="." unique_id=2083238746]
+visible = false
+
+[node name="PizzaWheel12" type="Sprite2D" parent="PizzaWheel" unique_id=676610769]
+position = Vector2(60, -30)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_wfxuw")
+region_enabled = true
+region_rect = Rect2(17, 1, 150, 150)
+
+[node name="PizzaWheel13" type="Sprite2D" parent="PizzaWheel" unique_id=1695031174]
+position = Vector2(100, 30)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_wfxuw")
+region_enabled = true
+region_rect = Rect2(17, 1, 150, 150)
+
+[node name="PizzaWheel11" type="Sprite2D" parent="PizzaWheel" unique_id=1962150346]
+z_index = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_wfxuw")
+region_enabled = true
+region_rect = Rect2(17, 1, 150, 150)
+
+[node name="PizzaWheel2" type="Node2D" parent="." unique_id=1710260690]
+visible = false
+
+[node name="PizzaWheel2" type="Sprite2D" parent="PizzaWheel2" unique_id=715356809]
+visible = false
+z_index = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_uta3p")
+region_enabled = true
+region_rect = Rect2(225, 31, 220, 220)
+
+[node name="PizzaWheel22" type="Sprite2D" parent="PizzaWheel2" unique_id=579560897]
+visible = false
+position = Vector2(-80, -30)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_uta3p")
+region_enabled = true
+region_rect = Rect2(4, 31, 220, 220)
+
+[node name="Pizza" type="AudioStreamPlayer" parent="." unique_id=486879222]
+stream = ExtResource("4_6qm7l")
+volume_db = -5.0
+max_polyphony = 3
+
+[node name="Pizza3" type="AudioStreamPlayer" parent="." unique_id=2119827240]
+stream = ExtResource("5_cxhcr")
+volume_db = -5.0
+max_polyphony = 3
+
+[node name="Slasher" type="Sprite2D" parent="." unique_id=1923060589]
+visible = false
+texture = SubResource("AtlasTexture_6etv8")
+region_enabled = true
+region_rect = Rect2(6, 1, 200, 75)

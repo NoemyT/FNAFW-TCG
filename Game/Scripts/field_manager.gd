@@ -5,6 +5,7 @@ signal card_placed(card)
 @export_enum("player", "opponent") var owner_id: String = GameState.OWNER_PLAYER
 @export var hand_path: NodePath
 @export var placements_path: NodePath
+@export var field_skills_path: NodePath
 
 const COLLISION_MASK_CARD = 1
 const DEFAULT_CARD_SPEED = 0.1
@@ -13,11 +14,13 @@ const ENLARGE_CARD_SCALE = 1.1
 
 var hand_reference
 var placements_reference
+var field_skills_reference
 var is_hovering
 
 func _ready() -> void:
 	hand_reference = get_node(hand_path)
 	placements_reference = get_node(placements_path)
+	field_skills_reference = get_node(field_skills_path)
 
 
 func card_selected(card):

@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 		esc_hold_time = 0.0
 
 
-func _input(event):
+func _input(event) -> void:
 	if event.is_action_pressed("Fullscreen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -78,7 +78,7 @@ func notify_opponent_quit():
 		paused = false
 
 
-func _on_peer_disconnected(peer_id):
+func _on_peer_disconnected(peer_id) -> void:
 	opponent_paused = false
 	if pause_menu_opp:
 		get_tree().paused = false

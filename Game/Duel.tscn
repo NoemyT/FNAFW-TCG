@@ -20,6 +20,8 @@ opp_side_path = NodePath("../OppSide")
 input_manager_path = NodePath("../InputManager")
 result_screen_path = NodePath("../ResultScreenVictory")
 pause_menu_path = NodePath("../PauseMenu")
+player_skills_path = NodePath("../PlayerSide/FieldSkills")
+opp_skills_path = NodePath("../OppSide/FieldSkills")
 
 [node name="InputManager" type="Node2D" parent="." unique_id=1199967330]
 script = ExtResource("3_r5aac")
@@ -27,6 +29,7 @@ player_side_path = NodePath("../PlayerSide")
 
 [node name="ResultScreenVictory" parent="." unique_id=186214863 instance=ExtResource("5_r5aac")]
 visible = false
+z_index = 10
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0
@@ -38,3 +41,6 @@ offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0
 offset_bottom = 600.0
+
+[editable path="PlayerSide"]
+[editable path="OppSide"]

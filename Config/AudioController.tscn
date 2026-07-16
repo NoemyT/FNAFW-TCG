@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dnypsi2n8xoxa" path="res://Assets/Sounds/clear.wav" id="9_mf6i1"]
 [ext_resource type="AudioStream" uid="uid://dweqg1mgi5cwf" path="res://Assets/Sounds/4th.wav" id="10_oa8uv"]
 [ext_resource type="AudioStream" uid="uid://buojv0xuispg4" path="res://Assets/Sounds/bite2b.wav" id="11_hm7ep"]
+[ext_resource type="AudioStream" uid="uid://ci65ny0v0we3i" path="res://Assets/Sounds/stab.wav" id="13_ctp2s"]
 
 [node name="AudioController" type="Node" unique_id=528986573]
 script = ExtResource("1_j2fq7")
@@ -49,3 +50,6 @@ stream = ExtResource("10_oa8uv")
 
 [node name="MegaBite" type="AudioStreamPlayer" parent="." unique_id=1910016588]
 stream = ExtResource("11_hm7ep")
+
+[node name="Stab" type="AudioStreamPlayer" parent="." unique_id=549560785]
+stream = ExtResource("13_ctp2s")

@@ -11,6 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="9_c1x7w"]
 [ext_resource type="Texture2D" uid="uid://bnqs1kv6o4nge" path="res://Assets/Icons/kenney_board-game-icons/suit_hearts.png" id="10_6lfhs"]
 [ext_resource type="Script" uid="uid://bfd3hmn1k7wxj" path="res://Game/Scripts/hand.gd" id="11_c1x7w"]
+[ext_resource type="PackedScene" uid="uid://b54ggikwl3ufx" path="res://Game/FieldSkills.tscn" id="13_00fny"]
 [ext_resource type="Script" uid="uid://d0k2td5igakna" path="res://Game/Scripts/field_manager.gd" id="13_nm3ih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jslop"]
@@ -152,3 +153,8 @@ hand_y_pos = 1060
 script = ExtResource("13_nm3ih")
 hand_path = NodePath("../Hand")
 placements_path = NodePath("../Placements")
+field_skills_path = NodePath("../FieldSkills")
+
+[node name="FieldSkills" parent="." unique_id=1146735414 instance=ExtResource("13_00fny")]
+position = Vector2(1700, 600)
+scale = Vector2(1.5, 1.5)

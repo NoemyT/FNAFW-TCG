@@ -3,10 +3,10 @@ extends Node2D
 signal left_mouse_button_clicked
 signal left_mouse_button_released
 
+@export var player_side_path: NodePath
+
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_DECK = 4
-
-@export var player_side_path: NodePath
 
 var field_manager_reference
 var deck_reference
