@@ -22,6 +22,7 @@ AudioController="*uid://dg1kkd3ic38cg"
 CardDatabase="*uid://ced786xyx7srb"
 CardFactory="*uid://c653sdepngu7v"
 PlayerInputs="*uid://d2aah8maqba5"
+MultiplayerManager="*uid://drr8wpwm2wppg"
 
 [display]
 

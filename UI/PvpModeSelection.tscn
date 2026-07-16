@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_agbki"]
 [ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="5_tomgc"]
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="6_k10ds"]
+[ext_resource type="Script" uid="uid://b1go8nxy8y8hh" path="res://UI/UI_Scripts/connect_indicator.gd" id="8_3kvp3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ughp"]
 shader = ExtResource("1_mnqjy")
@@ -70,7 +71,36 @@ theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = ExtResource("5_tomgc")
 theme_override_styles/pressed = ExtResource("6_k10ds")
 theme_override_styles/hover = ExtResource("6_k10ds")
+theme_override_styles/disabled = ExtResource("6_k10ds")
 text = "HOST"
+
+[node name="IndicatorHost" type="Label" parent="Panel" unique_id=295910055]
+layout_mode = 0
+offset_left = 300.5
+offset_top = 155.0
+offset_right = 324.5
+offset_bottom = 204.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 37
+vertical_alignment = 1
+script = ExtResource("8_3kvp3")
+
+[node name="HostError" type="Label" parent="Panel" unique_id=1156249004]
+visible = false
+layout_mode = 0
+offset_left = 175.0
+offset_top = 215.0
+offset_right = 327.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 13
+text = "Failed setting up host"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_3kvp3")
 
 [node name="Join" type="Button" parent="Panel" unique_id=41182860]
 layout_mode = 0
@@ -85,6 +115,34 @@ theme_override_styles/normal = ExtResource("5_tomgc")
 theme_override_styles/pressed = ExtResource("6_k10ds")
 theme_override_styles/hover = ExtResource("6_k10ds")
 text = "JOIN"
+
+[node name="IndicatorJoin" type="Label" parent="Panel" unique_id=466895188]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 255.0
+offset_right = 331.0
+offset_bottom = 304.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 37
+vertical_alignment = 1
+script = ExtResource("8_3kvp3")
+
+[node name="JoinError" type="Label" parent="Panel" unique_id=886910513]
+visible = false
+layout_mode = 0
+offset_left = 175.0
+offset_top = 314.0
+offset_right = 325.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_agbki")
+theme_override_font_sizes/font_size = 13
+text = "Failed at join attempt"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_3kvp3")
 
 [node name="Back" type="Button" parent="Panel" unique_id=1305774985]
 layout_mode = 0

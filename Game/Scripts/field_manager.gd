@@ -32,8 +32,25 @@ func try_place_card(card) -> Node:
 	var slot = _find_open_slot_for(card)
 	if not slot:
 		return null
-	_place_card(card, slot)
+
+	if GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_PLAYER:
+		var player_id = multiplayer.get_unique_id()
+		_place_card_for_all(player_id, str(card.name), str(slot.name))
+		rpc("_place_card_for_all", player_id, str(card.name), str(slot.name))
+	else:
+		_place_card(card, slot)
+
 	return slot
+
+
+@rpc("any_peer")
+func _place_card_for_all(player_id, card_name, slot_name) -> void:
+	if multiplayer.get_unique_id() == player_id:
+		_place_card(get_node(card_name), placements_reference.get_node(slot_name))
+	else:
+		var opp_fm = MultiplayerManager.opp_field.get_node("FieldManager")
+		var opp_placements = MultiplayerManager.opp_field.get_node("Placements")
+		opp_fm._place_card(opp_fm.get_node(card_name), opp_placements.get_node(slot_name))
 
 
 func _find_open_slot_for(card) -> Node:

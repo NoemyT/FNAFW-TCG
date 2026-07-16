@@ -19,12 +19,14 @@ func _on_menu_pressed() -> void:
 	AudioController.play_menu_click()
 	PlayerInputs.trigger_pause_menu()
 	AudioController.stop_battle_music()
+	MultiplayerManager.reset()
 	GameState.reset()
 	get_tree().change_scene_to_file("res://UI/TitleScreen.tscn")
 
 
 func _on_exit_pressed() -> void:
 	PlayerInputs.trigger_pause_menu()
+	MultiplayerManager.reset()
 	get_tree().quit()
 
 
