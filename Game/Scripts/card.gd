@@ -2,6 +2,8 @@ extends Node2D
 
 signal hovered
 signal hovered_off
+@warning_ignore("unused_signal")
+signal skill_result_received(data)
 
 var card_owner
 var hand_position

@@ -14,6 +14,9 @@
 
 [node name="PlayerSide" parent="." unique_id=88612947 instance=ExtResource("1_dmjdk")]
 
+[node name="FieldManager" parent="PlayerSide" index="8" unique_id=1179653372]
+duel_manager_path = NodePath("../../DuelManager")
+
 [node name="OppSide" parent="." unique_id=187769977 instance=ExtResource("2_6c25j")]
 
 [node name="DuelManager" type="Node" parent="." unique_id=1315504972]

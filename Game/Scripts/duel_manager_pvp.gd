@@ -62,6 +62,7 @@ func _ready() -> void:
 	is_my_turn = GameState.current_pvp_type == GameState.PVPType.HOST
 	enable_end_turn_btn(is_my_turn)
 	enable_attack_btn(false)
+	input_manager.inputs_disabled = not is_my_turn
 
 
 func get_opp_skills_node():
@@ -75,7 +76,8 @@ func _on_card_placed(card, which_owner) -> void:
 			if not first_turn and not attacked_this_turn and is_my_turn and not game_over:
 				enable_attack_btn(true)
 		else:
-			card.skill_script.trigger_skill(self, card, input_manager)
+			if is_my_turn:
+				card.skill_script.trigger_skill(self, card, input_manager)
 	else:
 		if card.card_type == "entity":
 			opp_cards_on_field.append(card)
@@ -91,8 +93,7 @@ func _on_attack_button_pressed() -> void:
 	enable_attack_btn(false)
 	enable_end_turn_btn(false)
 
-	rpc("_remote_resolve_attacks")
-	await resolve_attacks(GameState.OWNER_PLAYER)
+	await resolve_attacks()
 
 	if game_over:
 		return
@@ -100,9 +101,23 @@ func _on_attack_button_pressed() -> void:
 	enable_end_turn_btn(true)
 
 
+func _resolve_single_attack(card, defending_list, attacking_owner) -> void:
+	var blocker = _find_matching_color_defender(card, defending_list)
+	if blocker:
+		await _clash(card, blocker, attacking_owner)
+	else:
+		await _direct_attack(card, attacking_owner)
+
+
 @rpc("any_peer")
-func _remote_resolve_attacks() -> void:
-	await resolve_attacks(GameState.OWNER_OPPONENT)
+func _remote_resolve_single_attack(card_name) -> void:
+	var name_str = String(card_name)
+	if not opp_side.get_node("FieldManager").has_node(name_str):
+		return
+	var card = opp_side.get_node("FieldManager").get_node(name_str)
+	if card.defeated:
+		return
+	await _resolve_single_attack(card, player_cards_on_field, GameState.OWNER_OPPONENT)
 
 
 func _on_end_turn_button_pressed() -> void:
@@ -130,24 +145,16 @@ func _remote_start_turn() -> void:
 
 
 # ---------- Combat ----------
-func resolve_attacks(attacking_owner):
-	var attacking_list = (player_cards_on_field if attacking_owner == GameState.OWNER_PLAYER else opp_cards_on_field).duplicate()
-	var defending_list = opp_cards_on_field if attacking_owner == GameState.OWNER_PLAYER else player_cards_on_field
+func resolve_attacks() -> void:
+	var attacking_list = player_cards_on_field.duplicate()
 
 	for card in attacking_list:
 		if game_over or card.defeated:
 			continue
-		var blocker = _find_matching_color_defender(card, defending_list)
-		if blocker:
-			await _clash(card, blocker, attacking_owner)
-		elif not blocker and attacking_owner == GameState.OWNER_OPPONENT:
-			await _direct_attack(card, attacking_owner)
-			if player_health == 0:
-				return
-		else:
-			await _direct_attack(card, attacking_owner)
-			if opponent_health == 0:
-				return
+		rpc("_remote_resolve_single_attack", card.name)
+		await _resolve_single_attack(card, opp_cards_on_field, GameState.OWNER_PLAYER)
+		if game_over:
+			return
 
 
 func _find_matching_color_defender(card, defending_list):

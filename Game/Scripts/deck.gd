@@ -56,6 +56,7 @@ func can_draw():
 
 
 # ---------- PVP mode: host-authoritative, networked ----------
+@warning_ignore("unused_parameter")
 func draw_first_hand_networked(is_host):
 	deck_timer.start()
 	await deck_timer.timeout

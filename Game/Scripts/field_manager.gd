@@ -6,6 +6,7 @@ signal card_placed(card)
 @export var hand_path: NodePath
 @export var placements_path: NodePath
 @export var field_skills_path: NodePath
+@export var duel_manager_path: NodePath
 
 const COLLISION_MASK_CARD = 1
 const DEFAULT_CARD_SPEED = 0.1
@@ -29,6 +30,11 @@ func card_selected(card):
 
 
 func try_place_card(card) -> Node:
+	if GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_PLAYER:
+		var duel_manager = get_node(duel_manager_path)
+		if not duel_manager.is_my_turn:
+			return null
+
 	var slot = _find_open_slot_for(card)
 	if not slot:
 		return null
@@ -51,6 +57,15 @@ func _place_card_for_all(player_id, card_name, slot_name) -> void:
 		var opp_fm = MultiplayerManager.opp_field.get_node("FieldManager")
 		var opp_placements = MultiplayerManager.opp_field.get_node("Placements")
 		opp_fm._place_card(opp_fm.get_node(card_name), opp_placements.get_node(slot_name))
+
+
+@rpc("any_peer")
+func relay_skill_result(card_name, data) -> void:
+	var opp_field_manager = MultiplayerManager.opp_field.get_node("FieldManager")
+	var name_str = String(card_name)
+	if not opp_field_manager.has_node(name_str):
+		return
+	opp_field_manager.get_node(name_str).skill_result_received.emit(data)
 
 
 func _find_open_slot_for(card) -> Node:

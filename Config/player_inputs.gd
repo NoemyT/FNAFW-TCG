@@ -78,6 +78,7 @@ func notify_opponent_quit():
 		paused = false
 
 
+@warning_ignore("unused_parameter")
 func _on_peer_disconnected(peer_id) -> void:
 	opponent_paused = false
 	if pause_menu_opp:
