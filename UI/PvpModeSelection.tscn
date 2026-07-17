@@ -118,9 +118,9 @@ text = "JOIN"
 
 [node name="IndicatorJoin" type="Label" parent="Panel" unique_id=466895188]
 layout_mode = 0
-offset_left = 291.0
+offset_left = 299.0
 offset_top = 255.0
-offset_right = 331.0
+offset_right = 323.0
 offset_bottom = 304.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_agbki")
