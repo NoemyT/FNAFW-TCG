@@ -1,3 +1,27 @@
 # Godot 4+ specific ignores
 .godot/
-/android/
+.nomedia
+
+# Godot 3 specific ignores (uncomment if using Godot 3)
+# .import/
+
+# Export profiles and sensitive credentials
+export_credentials.cfg
+# export.cfg   # Uncomment if you want to keep export configurations purely local
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono/C# specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Standard build artifact outputs (adjust based on your custom paths)
+build/
+bin/
+*.apk
+*.exe
+
+# Project assets (not redistributed — see credits)
+Assets/
