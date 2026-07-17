@@ -3,11 +3,10 @@ extends Node
 const INSTAKILL_CHANCE = 0.1
 const INSTAKILL_DAMAGE = 20
 
-var needs_target_sync = true
-
 func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	duel_manager_ref.enable_end_turn_btn(false)
+	duel_manager_ref.enable_attack_btn(false)
 	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)
 	var hit = randf() < INSTAKILL_CHANCE
 	if GameState.current_mode == GameState.GameMode.PVP:
@@ -25,6 +24,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 		return
 	await duel_manager_ref.wait(duel_manager_ref.TURN_TIME)
 	duel_manager_ref.enable_end_turn_btn(true)
+	duel_manager_ref.refresh_attack_btn_visibility()
 	input_manager_ref.inputs_disabled = false
 
 

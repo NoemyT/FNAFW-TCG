@@ -2,7 +2,7 @@ extends Node
 
 const CARD_SCENE = preload("res://Game/Card.tscn")
 
-func create_card(card_name, owner_id) -> Node2D:
+func create_card(card_name, owner_id):
 	var card_data = CardDatabase.CARDS[card_name]
 	var new_card = CARD_SCENE.instantiate()
 	new_card.card_owner = owner_id

@@ -15,7 +15,8 @@ func _on_disconnected() -> void:
 	_handle_disconnect()
 
 
-func _on_peer_disconnected(_id: int) -> void:
+@warning_ignore("unused_parameter")
+func _on_peer_disconnected(peer_id) -> void:
 	if not game_active:
 		return
 	_handle_disconnect()

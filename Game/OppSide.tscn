@@ -54,6 +54,7 @@ position = Vector2(110, 600)
 scale = Vector2(1.5, 1.5)
 card_placement_owner = "opponent"
 card_placement_type = "skill"
+card_placement_color = "purple"
 
 [node name="Deckpile" type="Node2D" parent="." unique_id=236121115]
 position = Vector2(310, 140)
@@ -69,7 +70,7 @@ region_enabled = true
 region_rect = Rect2(776, 5, 100, 128)
 
 [node name="Cemetery" type="Node2D" parent="." unique_id=411145288]
-z_index = -2
+z_index = -1
 position = Vector2(110, 140)
 scale = Vector2(1.5, 1.5)
 

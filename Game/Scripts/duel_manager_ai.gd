@@ -14,6 +14,7 @@ const ATTACK_TIME = 0.15
 const STARTING_HEALTH = 20
 const BATTLE_POS_OFFSET = 25
 const DIRECT_ATTACK_LUNGE = 1400.0
+const CARD_MOVING_Z_INDEX = 3
 
 var player_side: Node
 var opp_side: Node
@@ -25,13 +26,15 @@ var opp_skills_node: Node
 
 var turn_timer: Timer
 var player_cards_on_field = []
-var opp_cards_on_field  = []
+var opp_cards_on_field = []
 var player_health: int
 var opponent_health: int
 var first_turn := true
 var is_opp_turn := false
 var attacked_this_turn := false
 var game_over := false
+var player_cemetery_z_counter := 0
+var opp_cemetery_z_counter := 0
 
 
 func _ready() -> void:
@@ -70,8 +73,7 @@ func _on_card_placed(card, which_owner) -> void:
 	if which_owner == GameState.OWNER_PLAYER:
 		if card.card_type == "entity":
 			player_cards_on_field.append(card)
-			if not first_turn and not attacked_this_turn and not is_opp_turn and not game_over:
-				enable_attack_btn(true)
+			refresh_attack_btn_visibility()
 		else:
 			card.skill_script.trigger_skill(self, card, input_manager)
 	else:
@@ -93,6 +95,11 @@ func _on_attack_button_pressed() -> void:
 		return
 	input_manager.inputs_disabled = false
 	enable_end_turn_btn(true)
+
+
+func refresh_attack_btn_visibility():
+	var can_attack = not first_turn and not attacked_this_turn and not is_opp_turn and not game_over and not player_cards_on_field.is_empty()
+	enable_attack_btn(can_attack)
 
 
 func _on_end_turn_button_pressed() -> void:
@@ -194,7 +201,7 @@ func _find_matching_color_defender(card, defending_list):
 
 
 func _direct_attack(card, attacker_owner) -> void:
-	card.z_index = 7
+	card.z_index = 5
 	var lunge_offset = Vector2(-DIRECT_ATTACK_LUNGE, 0) if attacker_owner == GameState.OWNER_PLAYER else Vector2(DIRECT_ATTACK_LUNGE, 0)
 
 	var lunge_tween = get_tree().create_tween()
@@ -204,11 +211,9 @@ func _direct_attack(card, attacker_owner) -> void:
 
 	if attacker_owner == GameState.OWNER_PLAYER:
 		opponent_health = max(0, opponent_health - card.attack)
-		print("chegou no end_game pv", Time.get_ticks_msec())
 		opp_side.get_node("Hp/OppHp").text = str(opponent_health)
 	else:
 		player_health = max(0, player_health - card.attack)
-		print("chegou no end_game av", Time.get_ticks_msec())
 		player_side.get_node("Hp/PlayerHp").text = str(player_health)
 
 	if player_health == 0 or opponent_health == 0:
@@ -217,7 +222,7 @@ func _direct_attack(card, attacker_owner) -> void:
 
 	var return_tween = get_tree().create_tween()
 	return_tween.tween_property(card, "position", card.card_placement.position, CARD_MOVE_SPEED)
-	card.z_index = 0
+	card.z_index = 1
 	await wait(TURN_TIME)
 
 
@@ -242,7 +247,7 @@ func _clash(attacking_card, defending_card, attacker_owner) -> void:
 	attacking_card.get_node("HpL").text = str(attacking_card.health)
 
 	await wait(TURN_TIME)
-	attacking_card.z_index = 0
+	attacking_card.z_index = 1
 
 	var destroyed = false
 	if attacking_card.health == 0:
@@ -265,11 +270,16 @@ func _destroy_card(card, card_owner) -> void:
 	card.card_placement.card_placed_in = false
 	card.card_placement = null
 	card.get_node("Area2D/CollisionShape2D").disabled = true
+	card.z_index = CARD_MOVING_Z_INDEX
 
 	if card_owner == GameState.OWNER_PLAYER:
 		player_cards_on_field.erase(card)
+		player_cemetery_z_counter += 1
+		card.z_index = player_cemetery_z_counter
 	else:
 		opp_cards_on_field.erase(card)
+		opp_cemetery_z_counter += 1
+		card.z_index = opp_cemetery_z_counter
 
 	var cemetery = player_side.get_node("Cemetery") if card_owner == GameState.OWNER_PLAYER else opp_side.get_node("Cemetery")
 	var move_tween = get_tree().create_tween()

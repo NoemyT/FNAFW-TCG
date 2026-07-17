@@ -36,7 +36,7 @@ func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_sound_button_toggled(toggled_on: bool) -> void:
+func _on_sound_button_toggled(toggled_on) -> void:
 	AudioController.set_audio(toggled_on)
 	$Panel/SoundButton.icon = SOUND_OFF if toggled_on else SOUND_ON
 

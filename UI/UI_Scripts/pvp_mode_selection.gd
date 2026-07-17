@@ -14,7 +14,7 @@ func hide_menu():
 	$".".visible = false
 
 
-func _process(delta: float) -> void:
+func _process(delta) -> void:
 	if is_connecting and attempted_action == "host":
 		broadcast_timer += delta
 		if broadcast_timer >= BROADCAST_INTERVAL:
@@ -107,7 +107,8 @@ func _teardown_connection_attempt() -> void:
 	GameState.reset()
 
 
-func _on_peer_connected(_id: int) -> void:
+@warning_ignore("unused_parameter")
+func _on_peer_connected(peer_id) -> void:
 	_on_connection_established()
 
 

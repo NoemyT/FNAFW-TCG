@@ -484,7 +484,7 @@ atlas = ExtResource("5_hmw6p")
 atlas = ExtResource("6_unbln")
 
 [node name="CardPlacement" type="Node2D" unique_id=482274551]
-z_index = -2
+z_index = -1
 script = ExtResource("1_uhk44")
 
 [node name="Art" type="Node2D" parent="." unique_id=563085023]

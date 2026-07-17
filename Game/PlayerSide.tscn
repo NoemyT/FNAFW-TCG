@@ -26,7 +26,7 @@ atlas = ExtResource("5_c3soy")
 [node name="PlayerSide" type="Node2D" unique_id=88612947]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1630855984]
-z_index = -10
+z_index = -5
 position = Vector2(960, 600.5)
 scale = Vector2(2.259, 2.264)
 texture = ExtResource("1_u22w4")
@@ -38,36 +38,43 @@ region_rect = Rect2(1, 1, 850, 530)
 [node name="CardPlacement" parent="Placements" unique_id=482274551 instance=ExtResource("3_ai2pf")]
 position = Vector2(1500, 670)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "player"
 card_placement_type = "entity"
 card_placement_color = "red"
 
 [node name="CardPlacement2" parent="Placements" unique_id=152021840 instance=ExtResource("3_ai2pf")]
 position = Vector2(1295, 527)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "player"
 card_placement_type = "entity"
 card_placement_color = "green"
 
 [node name="CardPlacement3" parent="Placements" unique_id=1745109210 instance=ExtResource("3_ai2pf")]
 position = Vector2(1295, 780)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "player"
 card_placement_type = "entity"
 card_placement_color = "blue"
 
 [node name="CardPlacement4" parent="Placements" unique_id=1127750158 instance=ExtResource("3_ai2pf")]
 position = Vector2(1500, 420)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "player"
 card_placement_type = "entity"
 card_placement_color = "yellow"
 
 [node name="CardPlacement5" parent="Placements" unique_id=1589770686 instance=ExtResource("3_ai2pf")]
 position = Vector2(1810, 600)
 scale = Vector2(1.5, 1.5)
+card_placement_owner = "player"
 card_placement_type = "skill"
+card_placement_color = "purple"
 
 [node name="Deckpile" type="Node2D" parent="." unique_id=1901776104]
 position = Vector2(1610, 1060)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("4_jafba")
+owner_id = "player"
 hand_path = NodePath("../Hand")
 field_manager_path = NodePath("../FieldManager")
 
@@ -85,7 +92,7 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_c3soy")
 
 [node name="Cemetery" type="Node2D" parent="." unique_id=837713508]
-z_index = -2
+z_index = -1
 position = Vector2(1810, 1060)
 scale = Vector2(1.5, 1.5)
 
@@ -100,6 +107,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_plf5y")
 
 [node name="AttackButton" type="Button" parent="." unique_id=1748239000]
+z_index = -1
 offset_left = 850.0
 offset_top = 502.0
 offset_right = 1070.0
@@ -113,6 +121,7 @@ theme_override_styles/hover = ExtResource("9_c1x7w")
 text = "ATTACK"
 
 [node name="EndTurnButton" type="Button" parent="." unique_id=565348864]
+z_index = -1
 offset_left = 850.0
 offset_top = 622.0
 offset_right = 1070.0
@@ -151,6 +160,7 @@ hand_y_pos = 1060
 
 [node name="FieldManager" type="Node2D" parent="." unique_id=1179653372]
 script = ExtResource("13_nm3ih")
+owner_id = "player"
 hand_path = NodePath("../Hand")
 placements_path = NodePath("../Placements")
 field_skills_path = NodePath("../FieldSkills")

@@ -10,7 +10,6 @@ const COLOR_MAP = {
 	"yellow": Color8(255, 255, 0, 255),
 	"green": Color8(0, 255, 0, 255),
 }
-
 const ICON_TEXTURE = {
 	"entity": preload("res://Assets/Icons/kenney_board-game-icons/sword.png"),
 	"skill": preload("res://Assets/Icons/kenney_board-game-icons/book_open.png")

@@ -29,7 +29,7 @@ player_side_path = NodePath("../PlayerSide")
 
 [node name="ResultScreenVictory" parent="." unique_id=186214863 instance=ExtResource("5_r5aac")]
 visible = false
-z_index = 10
+z_index = 12
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0

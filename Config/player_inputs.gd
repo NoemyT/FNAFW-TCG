@@ -13,7 +13,7 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 
 
-func _process(delta: float) -> void:
+func _process(delta) -> void:
 	if not pause_menu:
 		return
 

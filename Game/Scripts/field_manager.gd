@@ -12,6 +12,8 @@ const COLLISION_MASK_CARD = 1
 const DEFAULT_CARD_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 1
 const ENLARGE_CARD_SCALE = 1.1
+const ON_FIELD_Z_INDEX = 1
+const CARD_MOVING_Z_INDEX = 3
 
 var hand_reference
 var placements_reference
@@ -29,7 +31,7 @@ func card_selected(card):
 		try_place_card(card)
 
 
-func try_place_card(card) -> Node:
+func try_place_card(card):
 	if GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_PLAYER:
 		var duel_manager = get_node(duel_manager_path)
 		if not duel_manager.is_my_turn:
@@ -85,12 +87,14 @@ func _find_open_slot_for(card) -> Node:
 func _place_card(card, slot) -> void:
 	hand_reference.remove_card_from_hand(card)
 
+	card.z_index = CARD_MOVING_Z_INDEX
+
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(card, "position", slot.position, DEFAULT_CARD_SPEED)
 	tween.tween_property(card, "scale", Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE), DEFAULT_CARD_SPEED)
+	tween.chain().tween_callback(func(): card.z_index = ON_FIELD_Z_INDEX)
 
-	card.z_index = -1
 	card.card_placement = slot
 	slot.card_placed_in = true
 
@@ -157,7 +161,7 @@ func highlight_card(card, hovered):
 		return
 	if hovered:
 		card.scale = Vector2(ENLARGE_CARD_SCALE, ENLARGE_CARD_SCALE)
-		card.z_index = 2
+		card.z_index = 3
 	else:
 		card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
-		card.z_index = 1
+		card.z_index = 2

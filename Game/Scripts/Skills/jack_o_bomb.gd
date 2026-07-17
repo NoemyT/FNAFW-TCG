@@ -1,10 +1,9 @@
 extends Node
 
-var needs_target_sync = true
-
 func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	duel_manager_ref.enable_end_turn_btn(false)
+	duel_manager_ref.enable_attack_btn(false)
 	await duel_manager_ref.wait(1.0)
 	var damage_1 = randi_range(1, 3)
 	var damage_2 = randi_range(1, 3)
@@ -33,6 +32,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	duel_manager_ref._destroy_card(skill_card, GameState.OWNER_PLAYER)
 	await duel_manager_ref.wait(1.0)
 	duel_manager_ref.enable_end_turn_btn(true)
+	duel_manager_ref.refresh_attack_btn_visibility()
 	input_manager_ref.inputs_disabled = false
 
 

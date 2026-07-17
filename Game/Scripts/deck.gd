@@ -9,7 +9,7 @@ const STARTING_HAND_SIZE = 7
 const MAX_DRAWS_PER_TURN = 3
 const MAX_HAND_SIZE = 7
 
-var deck: Array = []
+var deck = []
 var draws_this_turn := MAX_DRAWS_PER_TURN
 var deck_timer: Timer
 var remote_deck_count := -1
@@ -104,7 +104,7 @@ func draw_card_networked(card_name):
 
 
 # ---------- Shared spawn ----------
-func _spawn_card(card_name: String) -> void:
+func _spawn_card(card_name) -> void:
 	var new_card = CardFactory.create_card(card_name, owner_id)
 	new_card.position = self.position
 	get_node(field_manager_path).add_child(new_card)

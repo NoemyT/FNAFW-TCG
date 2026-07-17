@@ -465,7 +465,7 @@ const CARDS = {
 	}
 }
 
-func build_shuffled_deck() -> Array:
+func build_shuffled_deck():
 	var deck: Array = []
 	for card_key in CARDS.keys():
 		var data = CARDS[card_key]
@@ -478,7 +478,7 @@ func build_shuffled_deck() -> Array:
 	return deck
 
 
-func get_total_deck_size() -> int:
+func get_total_deck_size():
 	var total := 0
 	for card_key in CARDS.keys():
 		var data = CARDS[card_key]

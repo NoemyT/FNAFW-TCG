@@ -13,14 +13,14 @@ func _ready() -> void:
 	add_child(timer)
 
 
-func start() -> void:
+func start():
 	dot_count = 0
 	text = ""
 	visible = true
 	timer.start()
 
 
-func stop() -> void:
+func stop():
 	visible = false
 	timer.stop()
 
