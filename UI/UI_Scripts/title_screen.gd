@@ -43,6 +43,7 @@ func _on_sound_button_toggled(toggled_on) -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	AudioController.play_menu_click()
+	$Tutorial.visible = true
 
 
 func _on_info_button_pressed() -> void:

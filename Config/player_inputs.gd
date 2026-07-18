@@ -16,6 +16,8 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if not pause_menu:
 		return
+	if MultiplayerManager.disconnect_menu and MultiplayerManager.disconnect_menu.visible:
+		return
 
 	if Input.is_action_pressed("QuitOrPause"):
 		esc_hold_time += delta

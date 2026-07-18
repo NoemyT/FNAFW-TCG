@@ -37,19 +37,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
+offset_left = -325.0
+offset_top = -400.0
+offset_right = 325.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_irh57")
 
 [node name="Label" type="Label" parent="Panel" unique_id=2125910176]
 layout_mode = 0
-offset_left = 54.5
+offset_left = 129.5
 offset_top = 40.0
-offset_right = 445.5
+offset_right = 520.5
 offset_bottom = 141.0
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("3_4byac")
@@ -60,21 +60,47 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1152027341]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 180.0
-offset_right = 470.0
-offset_bottom = 420.0
+offset_left = 35.0
+offset_top = 150.0
+offset_right = 615.0
+offset_bottom = 660.0
 theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("4_34eg7")
-theme_override_font_sizes/normal_font_size = 18
-text = "Write about the game later"
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center][font_size=28][b]FNAF World: TCG[/b][/font_size][/center]
+
+[i]This is a non-commercial, non-profit fangame inspired by FNAF World, created by Scott Cawthon. All Five Nights at Freddy's characters, names, and related media are property of Scott Cawthon. This project is not affiliated with, endorsed by, or sponsored by Scott Cawthon or Steel Wool Studios.[/i]
+
+[b]Art and Assets[/b]
+Character and skill sprites are ripped from FNAF World (originally created by Scott Cawthon), obtained via [url=https://www.spriters-resource.com/pc_computer/fnafworld/]The Spriters Resource[/url].
+
+Smoke effect by BDragon1727, obtained via [url=https://bdragon1727.itch.io/free-smoke-fx-pixel-2]Free Smoke Fx Pixel 2[/url].
+
+Card related assets (background, color, border, icons) by cafeDraw, obtained via [url=https://cafedraw.itch.io/fantasy-card-assets]Fantasy Card Assets[/url].
+
+[b]UI Icons[/b]
+Icons by Kenney, obtained via [url=https://kenney.nl/assets/game-icons]Game Icons[/url] & [url=https://kenney.nl/assets/board-game-icons]Board Game Icons[/url].
+
+[b]Music and Sound Effects[/b]
+Original soundtracks are ripped from FNAF World (originally composed by Leon Riskin), obtained via [url=https://downloads.khinsider.com/game-soundtracks/album/five-nights-at-freddy-s-world-fnaf-world-soundtrack]KHInsider (Video Game Music)[/url].
+
+Sound effects for skills, attacks, and menu clicking are ripped from FNAF World (originally created by Scott Cawthon), obtained via [url=https://sounds.spriters-resource.com/pc_computer/fnafworld/asset/541312/]The Sounds Resource[/url].
+
+[b]Fonts[/b]
+[font=res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf]Orbitron by Matt McInerney[/font] ([url=https://fonts.google.com/specimen/Orbitron?categoryFilters=Feeling:%2FExpressive%2FFuturistic&preview.script=Latn]Google Fonts[/url]).
+
+[b]Game Engine[/b]
+Made with [url=https://godotengine.org]Godot Engine[/url].
+
+[b]Thanks to:[/b]
+[p fill]General thanks and shoutouts to the Godot community, for documentation, tutorials, discussions and other interactions, including YouTube channels like [url=https://www.youtube.com/@BarrysDevHell]Barry's dev Hell[/url], [url=https://www.youtube.com/@godotgamelab]GodotGameLab[/url] and [url=https://www.youtube.com/@ClearAtlas/featured]Atlas[/url] & [url=https://www.youtube.com/@ClearCode/featured]Clear Code[/url] by Christian Koch.[/p]"
 
 [node name="Return" type="Button" parent="Panel" unique_id=839157197]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 471.0
-offset_right = 400.0
-offset_bottom = 551.0
+offset_left = 175.0
+offset_top = 680.0
+offset_right = 475.0
+offset_bottom = 760.0
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_34eg7")
 theme_override_font_sizes/font_size = 38
@@ -83,4 +109,5 @@ theme_override_styles/pressed = ExtResource("6_ucn12")
 theme_override_styles/hover = ExtResource("6_ucn12")
 text = "RETURN"
 
+[connection signal="meta_clicked" from="Panel/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="Panel/Return" to="." method="_on_return_pressed"]

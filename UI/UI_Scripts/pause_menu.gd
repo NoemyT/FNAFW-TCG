@@ -33,3 +33,8 @@ func _on_exit_pressed() -> void:
 func _on_audio_toggled(toggled_on) -> void:
 	AudioController.set_audio(toggled_on)
 	$Panel/SoundButton.icon = SOUND_OFF if toggled_on else SOUND_ON
+
+
+func _on_tutorial_button_pressed() -> void:
+	AudioController.play_menu_click()
+	$Tutorial.visible = true

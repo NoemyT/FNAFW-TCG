@@ -8,6 +8,8 @@
 [ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="5_cvf32"]
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="6_1p4m1"]
 [ext_resource type="Texture2D" uid="uid://6uj6mcegwa8l" path="res://Assets/Icons/kenney_game-icons/audioOn.png" id="7_erhd8"]
+[ext_resource type="Texture2D" uid="uid://ct7iqg2hottl6" path="res://Assets/Icons/kenney_board-game-icons/book_closed.png" id="9_qxt2n"]
+[ext_resource type="PackedScene" uid="uid://brytqyplwvp40" path="res://UI/Tutorial.tscn" id="10_cvf32"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qxoyc"]
 shader = ExtResource("1_pbsus")
@@ -116,7 +118,23 @@ toggle_mode = true
 icon = ExtResource("7_erhd8")
 flat = true
 
+[node name="TutorialButton" type="Button" parent="Panel" unique_id=1601972838]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 549.0
+offset_right = 462.0
+offset_bottom = 621.0
+scale = Vector2(0.65, 0.65)
+action_mode = 0
+icon = ExtResource("9_qxt2n")
+flat = true
+
+[node name="Tutorial" parent="." unique_id=582162352 instance=ExtResource("10_cvf32")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="Panel/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Panel/Exit" to="." method="_on_exit_pressed"]
 [connection signal="toggled" from="Panel/SoundButton" to="." method="_on_audio_toggled"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]

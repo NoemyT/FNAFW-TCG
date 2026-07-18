@@ -8,6 +8,8 @@
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="5_u55ig"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="6_d04mc"]
 [ext_resource type="Texture2D" uid="uid://6uj6mcegwa8l" path="res://Assets/Icons/kenney_game-icons/audioOn.png" id="7_ch3o7"]
+[ext_resource type="Texture2D" uid="uid://ct7iqg2hottl6" path="res://Assets/Icons/kenney_board-game-icons/book_closed.png" id="9_u55ig"]
+[ext_resource type="PackedScene" uid="uid://brytqyplwvp40" path="res://UI/Tutorial.tscn" id="10_d04mc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnhfn"]
 shader = ExtResource("1_wmow6")
@@ -111,9 +113,25 @@ text = "TIMER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TutorialButton" type="Button" parent="Panel" unique_id=1359036606]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 302.0
+offset_right = 774.0
+offset_bottom = 374.0
+scale = Vector2(0.65, 0.65)
+action_mode = 0
+icon = ExtResource("9_u55ig")
+flat = true
+
 [node name="Timer" type="Timer" parent="." unique_id=2141401763]
 wait_time = 20.0
+
+[node name="Tutorial" parent="." unique_id=582162352 instance=ExtResource("10_d04mc")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Panel/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="toggled" from="Panel/SoundButton" to="." method="_on_sound_button_toggled"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]

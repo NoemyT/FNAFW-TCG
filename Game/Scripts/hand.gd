@@ -37,10 +37,16 @@ func calculate_card_pos(index):
 
 
 func animate_card_to_pos(card, pos, speed):
+	card.get_node("Area2D/CollisionShape2D").disabled = true
+
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(card, "position", pos, speed)
 	tween.tween_property(card, "scale", Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE), speed)
+	tween.chain().tween_callback(func():
+		if is_instance_valid(card) and not card.card_placement:
+			card.get_node("Area2D/CollisionShape2D").disabled = false
+	)
 
 
 func remove_card_from_hand(card):

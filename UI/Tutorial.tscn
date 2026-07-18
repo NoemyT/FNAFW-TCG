@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://brytqyplwvp40"]
+
+[ext_resource type="Script" uid="uid://dfkws1x07x2ki" path="res://UI/UI_Scripts/tutorial.gd" id="1_qu5wh"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="2_apw85"]
+[ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="2_qouqw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opivs"]
+shader = ExtResource("2_apw85")
+shader_parameter/amount = 1.0000000475
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgbfa"]
+bg_color = Color(0.38039216, 0.6, 0.76862746, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.17254902, 0.40392157, 0.50980395, 1)
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu5wh"]
+bg_color = Color(0.38039216, 0.6, 0.76862746, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.17254902, 0.40392157, 0.50980395, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouqw"]
+bg_color = Color(0.38039216, 0.6, 0.76862746, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.6, 0.76862746, 0.34901962)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opivs"]
+bg_color = Color(0.38039216, 0.6, 0.76862746, 0.9019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.6, 0.76862746, 0.9019608)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apw85"]
+bg_color = Color(0.17254902, 0.40392157, 0.50980395, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(1, 0.6, 0.76862746, 1)
+
+[node name="Tutorial" type="Control" unique_id=582162352]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qu5wh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=674711361]
+material = SubResource("ShaderMaterial_opivs")
+layout_mode = 0
+offset_left = -1487.0
+offset_top = -1308.0
+offset_right = 3622.0
+offset_bottom = 2369.0
+metadata/_edit_lock_ = true
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=813217909]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -856.0
+offset_top = -493.0
+offset_right = 856.0
+offset_bottom = 493.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vgbfa")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_qu5wh")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_qouqw")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_opivs")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_apw85")
+current_tab = 0
+
+[node name="Basics" type="Panel" parent="TabContainer" unique_id=1809848824]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Title" type="Label" parent="TabContainer/Basics" unique_id=812253126]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 856.0
+offset_bottom = 151.0
+theme_override_colors/font_outline_color = Color(0.76862746, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_qouqw")
+theme_override_font_sizes/font_size = 64
+text = "FNAF WORLD TCG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="RichTextLabel" parent="TabContainer/Basics" unique_id=1218837951]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 142.0
+offset_right = 839.0
+offset_bottom = 912.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/book_closed.png[/img] [b][outline_size=2][outline_color=red]TUTORIAL[/outline_color][/outline_size][/b][/center]
+
+[p fill]FNAF WORLD TCG, is as its name implies, a card game that bases itself from the World of Five Nights at Freddy's  by Scott Cawthon. In this game you the player will be able to play a rather simple game of cards, against a basic AI or you can play with, or in this case against, a friend on the PvP [color=yellow][hint=\"Peer-to-Peer, both machines must be on the same network\"]P2P[/hint][/color] mode.[/p]
+
+
+[center][img width=26]res://Assets/Icons/kenney_game-icons/mouse.png[/img] [b][outline_size=2][outline_color=red]CONTROLS[/outline_color][/outline_size][/b][/center]
+
+[ul]
+MOUSE - Most interactions, everything can be done just with the mouse
+F - To toggle fullscreen
+ESC - [b]Tap[/b] to pause, [b]Hold[/b] to close the game
+[/ul]
+
+
+[center][img width=26]res://Assets/Icons/kenney_game-icons/home.png[/img]  [b][outline_size=2][outline_color=red]TITLE SCREEN[/outline_color][/outline_size][/b][/center]
+
+[center][img width=600]res://Assets/Tutorial/TitleScreen.png[/img][/center]
+
+"
+fit_content = true
+scroll_active = false
+
+[node name="Right" type="RichTextLabel" parent="TabContainer/Basics" unique_id=1560984228]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 56.0
+offset_right = 1621.0
+offset_bottom = 913.0
+bbcode_enabled = true
+text = "[p fill]In the [b]Title Screen[/b] you will find 6 buttons, 3 big ones with 2 of them being related to game modes, 1 to quit the game, and the other 3 small ones being on the top-right side of the screen, each of them are:[/p]
+
+[ul]
+AI MODE - Clicking it will start a match against the basic AI
+PVP MODE - Clicking it will open a second menu (we'll talk about it in a bit) for PvP matchmaking
+QUIT - Clicking it will close the game
+Sound Icon - [b]Mutes[/b] or [b]unmutes[/b] the game based on which state it currently is
+Book Icon - It's the button for opening the tutorial
+Info Icon - It has the credits/attribuitions to the assets providers
+[/ul]
+
+
+[center][img width=26]res://Assets/Icons/kenney_game-icons/multiplayer.png[/img] [b][outline_size=2][outline_color=red]PvP MODE MENU[/outline_color][/outline_size][/b][/center]
+
+[center][img width=300]res://Assets/Tutorial/PvpMenu.png[/img][/center]
+
+
+[p fill]Within this menu you are given 3 choices, to [b]Host[/b] a match, [b]Join[/b] a match, or to simply return to the title screen. You can also cancel your choice by clicking any of the other buttons. [color=red]But[/color], like it was mentioned before, the PvP in this game operates in a P2P basis, therefore not only both machines need to have a network connection, it must be the same network for both machines. However, you and your friend(s), don't need to be physically on the same place to play, instead you can use a VPN service like [url=https://www.radmin-vpn.com/]Radmin[/url], to create a private network, where both can connect, and the games automatic ip detection will let you play toghether.[/p]
+"
+fit_content = true
+scroll_active = false
+
+[node name="Game 1" type="Panel" parent="TabContainer" unique_id=212691036]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="TabContainer/Game 1" unique_id=1949421483]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 856.0
+offset_bottom = 151.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_qouqw")
+theme_override_font_sizes/font_size = 64
+text = "GAMEPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left2" type="RichTextLabel" parent="TabContainer/Game 1" unique_id=208147035]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 142.0
+offset_right = 839.0
+offset_bottom = 931.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_collection.png[/img] [b][outline_size=2][outline_color=red]CARDS[/outline_color][/outline_size][/b][/center]
+
+[p fill]The cards in FNAF WORLD TCG, consist of 2 types and 5 colors. The types are [b]Entity[/b] and [b]Skill[/b], with the entity cards being divided by the colors: [color=red]RED[/color], [color=green]GREEN[/color], [color=yellow]YELLOW[/color] and [color=blue]BLUE[/color], while the skill cards are colored [color=violet]PURPLE[/color].[/p]
+
+[center][img width=100]res://Assets/Tutorial/Card.png[/img][/center]
+[center][font_size=12]- Freddy is a entity card, of the [color=green]Green[/color] group[/font_size][/center]
+
+[center][img width=18]res://Assets/Icons/kenney_board-game-icons/card_down_outline.png[/img] [b][outline_size=2][outline_color=red]ARENA[/outline_color][/outline_size][/b][/center]
+
+[p fill]The Arena is where the matches will take place, weather it is against the AI or against another player, your side of the Arena can be seen on the image bellow. In it you can see the places where your cards can be placed, deck of cards, cemetery, action buttons and health. When on a match your opponents side of the Arena is basically a mirror of yours.[/p]
+
+[center][img width=420]res://Assets/Tutorial/PlayerSide.png[/img][/center]
+[center][font_size=12]- The player's side of the Arena[/font_size][/center]
+
+
+
+"
+fit_content = true
+scroll_active = false
+
+[node name="Right2" type="RichTextLabel" parent="TabContainer/Game 1" unique_id=2100032076]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 56.0
+offset_right = 1621.0
+offset_bottom = 913.0
+bbcode_enabled = true
+text = "[center][img width=420]res://Assets/Tutorial/Arena.png[/img][/center]
+[center][font_size=12]- The Arena during a match[/font_size][/center]
+
+[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_take.png[/img] [b][outline_size=2][outline_color=red]DRAWING CARDS[/outline_color][/outline_size][/b][/center]
+
+[p fill]You can draw cards by clicking on your deck. The deck is composed of 54 cards, 35 of them being entity cards, and 18 being skill cards. On the first turn, both you and the opponent will automatically draw 7 cards. After that you and your opponent can draw up to 3 cards per turn, however your hands size is limited to 7 cards at a time. Keep in mind however that if, for example, you had had 6 cards upon starting a new turn, and made your first draw, after freeing up your hand by playing a card, while it still is your turn, you may make any leftover draws.[/p]
+
+[center][img width=18]res://Assets/Icons/kenney_board-game-icons/card_place.png[/img] [b][outline_size=2][outline_color=red]PLACING CARDS[/outline_color][/outline_size][/b][/center]
+
+[p]You can place cards by clicking them on your hand, that is as long as you have a free slot of the same color as the card you are trying to place. So you can place a entity card on each free entity slot as long as their colors match, and while it is your turn. Skill cards work similarly, the main diference being that, skill cards take action upon being placed, so after the skill finishes the card will automatically move itself to the cemitery. This allows the player to use as many skills they have in hand during their turn. Just keep in mind that aside from one skill ([color=violet]Slasher[/color]), the skills act upon entities on field, so playing these cards when there aren't opponent entities on field you'll just be wasting that skill card.[/p]"
+fit_content = true
+scroll_active = false
+
+[node name="Game 2" type="Panel" parent="TabContainer" unique_id=544293600]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="TabContainer/Game 2" unique_id=1600617656]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 13.0
+offset_right = 856.0
+offset_bottom = 151.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_qouqw")
+theme_override_font_sizes/font_size = 64
+text = "GAMEPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left2" type="RichTextLabel" parent="TabContainer/Game 2" unique_id=1379232049]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 142.0
+offset_right = 807.0
+offset_bottom = 978.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_fan.png[/img] [b][outline_size=2][outline_color=red]ATTACKING[/outline_color][/outline_size][/b][/center]
+
+[p fill]Attacking can be done from the second player's turn and foward. When you can attack the button labeled ATTACK will become visible and you'll be able to perform an attack towards your opponent side of the Arena for that turn. The attack can be divided in 2 types: [b]Direct Attacks[/b], where the units directly damages a player's health points, and [b]Clash Attacks[/b], which happen when a attacking entity is being blocked by an opposing entity of the same color. On clash attacks, the entities will mutually damage each other, and in the case of their health points being expended, they will be moved to the cemitery, freeing up the slot they were occupying.[/p]
+
+[center][img width=400]res://Assets/Tutorial/ArenaWithCards.png[/img][/center]
+
+[center][font_size=12]- By starting an attack, Nightmare Fredbear and Plushtrap as well as Phantom BB and Nightmare Freddy would engage on clash attacks for being part of the same color group, while Nightmarionne would directly attack the opponents health points as it isn't being blocked by another [color=green]green[/color] entity.[/font_size][/center]
+
+[center][img width=18]res://Assets/Icons/kenney_board-game-icons/book_open.png[/img] [b][outline_size=2][outline_color=red]SKILLS[/outline_color][/outline_size][/b][/center]
+
+[p fill]Skills are cards that can be used to damage the opponents units or their health points without having to attack them. There are currently 6 skills in the game, they are:[/p]
+
+[ul]
+Pizza Wheel				    4th Wall
+Pizza Wheel 2				Jack-O-Bomb
+Mega Bite						Slasher
+[/ul]									
+
+
+"
+fit_content = true
+scroll_active = false
+
+[node name="Right2" type="RichTextLabel" parent="TabContainer/Game 2" unique_id=877449942]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 56.0
+offset_right = 1621.0
+offset_bottom = 913.0
+bbcode_enabled = true
+text = "[p fill]Both versions of Pizza Wheel and 4th Wall are skills capable of damaging all of your opponent units, so if you want to clean up the field before launching an attack they're your go to skills. Mega Bite and Jack-O-Bomb are targeted skills, upon playing one of them, they will randomly select an opponent unit and act upon them. Finally Slasher is a skill that allows you to directly damage your opponent by instantly winning the game!, that is however, if you hit the luck 10% chance of that happening.[/p]
+
+[center][img width=18]res://Assets/Icons/kenney_board-game-icons/hourglass.png[/img] [b][outline_size=2][outline_color=red]ENDING YOUR TURN[/outline_color][/outline_size][/b][/center]
+
+[p fill]After you performed every action you can during your turn, you may end it by pressing the END TURN button, plan your actions accordingly, a turn ended badly may cause a swift defeat.[/p]
+
+[center][img width=26]res://Assets/Icons/kenney_game-icons/trophy.png[/img] [b][outline_size=2][outline_color=red]WINNING or LOSING[/outline_color][/outline_size][/b] [img width=18]res://Assets/Icons/kenney_board-game-icons/skull.png[/img][/center]
+
+[p fill]The game can end in many ways. It ends when yours or your opponent's health points reaches 0, if both players run out of cards, in which case, the one who wins is, the one with more health points, and in the case of both having the same amount of HP, it ends with a Draw.[/p]
+
+[center][img width=18]res://Assets/Icons/kenney_game-icons/pause.png[/img] [b][outline_size=2][outline_color=red]PAUSING[/outline_color][/outline_size][/b][/center]
+
+[p fill]It's also worth noting that during matches you can pause the game, in the AI mode it doesn't have any downsides, you can use the pause menu to quit a match, mute the game or read the tutorial. It is the same on the PvP mode, but with a small change, to prevent hostage keeping, your opponent (or you), will be presented with a menu of their own, in which after 20 seconds it's possible to quite the match, without settling it first. But in case of abuse of the pause menu, remember that it still is possible to quit the game by just closing it (or holding ESC), you won't lose anything.[/p]
+
+[center][img width=26]res://Assets/Icons/kenney_game-icons/multiplayer.png[/img] [b][outline_size=2][outline_color=red]DISCONNECTING on PvP MATCHES[/outline_color][/outline_size][/b][/center]
+
+[p fill]In case your or your opponent lose their connection during a match a menu informing of their connection loss will pop up, so that you may go back to the title screen or quit the game.[/p]"
+fit_content = true
+scroll_active = false
+
+[node name="Close" type="Button" parent="." unique_id=1158050862]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1778.0
+offset_top = 101.5
+offset_right = -108.0
+offset_bottom = -1048.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.6, 0.76862746, 1)
+theme_override_colors/font_outline_color = Color(0.17254902, 0.40392157, 0.50980395, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "X"
+flat = true
+
+[connection signal="meta_clicked" from="TabContainer/Basics/Right" to="." method="_on_right_meta_clicked"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

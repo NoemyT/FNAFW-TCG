@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ct7iqg2hottl6" path="res://Assets/Icons/kenney_board-game-icons/book_closed.png" id="9_3c3n0"]
 [ext_resource type="Texture2D" uid="uid://r3v15c6pthhe" path="res://Assets/Icons/kenney_game-icons/information.png" id="10_n6hsr"]
 [ext_resource type="PackedScene" uid="uid://kyakecb74vwy" path="res://UI/PvpModeSelection.tscn" id="13_7rrbj"]
+[ext_resource type="PackedScene" uid="uid://brytqyplwvp40" path="res://UI/Tutorial.tscn" id="13_ggdw6"]
 [ext_resource type="PackedScene" uid="uid://5jej2rbsx6oy" path="res://UI/InfoScreen.tscn" id="14_ggdw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7invk"]
@@ -359,6 +360,15 @@ layout_mode = 1
 visible = false
 z_index = 4
 layout_mode = 1
+
+[node name="Tutorial" parent="." unique_id=582162352 instance=ExtResource("13_ggdw6")]
+visible = false
+z_index = 4
+layout_mode = 1
+offset_left = 480.0
+offset_top = 300.0
+offset_right = -480.0
+offset_bottom = -300.0
 
 [connection signal="pressed" from="Panel/AiButton" to="." method="_on_ai_button_pressed"]
 [connection signal="pressed" from="Panel/PvpButton" to="." method="_on_pvp_button_pressed"]

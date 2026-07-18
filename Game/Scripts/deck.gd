@@ -110,13 +110,7 @@ func _spawn_card(card_name) -> void:
 	get_node(field_manager_path).add_child(new_card)
 	new_card.name = "Card"
 
-	new_card.get_node("Area2D/CollisionShape2D").disabled = true
 	get_node(hand_path).add_card_to_hand(new_card, CARD_DRAW_SPEED)
-	get_tree().create_timer(CARD_DRAW_SPEED).timeout.connect(
-		func():
-			if is_instance_valid(new_card):
-				new_card.get_node("Area2D/CollisionShape2D").disabled = false
-	)
 
 	if owner_id == GameState.OWNER_OPPONENT:
 		new_card.get_node("AnimationPlayer").play("card_flip_opponent")
