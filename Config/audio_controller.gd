@@ -39,6 +39,8 @@ func stop_result_music():
 	$Victory.stop()
 	$Death.stop()
 	$Defeat.stop()
+	$Noise.stop()
+	$Draw.stop()
 
 
 func play_4th_wall():
@@ -63,3 +65,8 @@ func play_menu_click():
 
 func play_stab():
 	$Stab.play()
+
+
+func play_draw():
+	$Noise.play()
+	$Draw.play()

@@ -111,6 +111,10 @@ func _on_end_turn_button_pressed() -> void:
 	input_manager.inputs_disabled = true
 
 	first_turn = false
+
+	if _check_for_stalemate():
+		return
+
 	await opp_turn()
 
 
@@ -167,6 +171,10 @@ func _end_opp_turn() -> void:
 	player_side.get_node("Deckpile").reset_draw()
 	is_opp_turn = false
 	attacked_this_turn = false
+
+	if _check_for_stalemate():
+		return
+
 	enable_end_turn_btn(true)
 	enable_attack_btn(not player_cards_on_field.is_empty())
 	input_manager.inputs_disabled = false
@@ -319,3 +327,38 @@ func end_game():
 		AudioController.stop_battle_music()
 		AudioController.play_victory_music()
 		result_screen.get_node("AnimationPlayer").play("ResultWin")
+
+
+func _check_for_stalemate() -> bool:
+	var player_deck = player_side.get_node("Deckpile").deck
+	var player_hand = player_side.get_node("Hand").hand
+	var opp_deck = opp_side.get_node("Deckpile").deck
+	var opp_hand = opp_side.get_node("Hand").hand
+
+	var player_out_of_cards = player_deck.is_empty() and player_hand.is_empty() and player_cards_on_field.is_empty()
+	var opp_out_of_cards = opp_deck.is_empty() and opp_hand.is_empty() and opp_cards_on_field.is_empty()
+
+	if player_out_of_cards and opp_out_of_cards:
+		_end_game_stalemate()
+		return true
+	return false
+
+
+func _end_game_stalemate() -> void:
+	if game_over:
+		return
+	game_over = true
+	enable_attack_btn(false)
+	enable_end_turn_btn(false)
+	result_screen.visible = true
+	AudioController.stop_battle_music()
+
+	if player_health == opponent_health:
+		AudioController.play_draw_music()
+		result_screen.get_node("AnimationPlayer").play("ResultDraw")
+	elif player_health > opponent_health:
+		AudioController.play_victory_music()
+		result_screen.get_node("AnimationPlayer").play("ResultWin")
+	else:
+		AudioController.play_defeat_music()
+		result_screen.get_node("AnimationPlayer").play("ResultDefeat")
