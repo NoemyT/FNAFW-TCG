@@ -11,7 +11,7 @@ extends Node
 
 const CARD_MOVE_SPEED = 0.1
 const TURN_TIME = 1
-const ATTACK_TIME = 0.15
+const ATTACK_TIME = 0.2
 const STARTING_HEALTH = 20
 const BATTLE_POS_OFFSET = 25
 const DIRECT_ATTACK_LUNGE = 1400.0

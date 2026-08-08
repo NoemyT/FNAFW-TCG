@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dfkws1x07x2ki" path="res://UI/UI_Scripts/tutorial.gd" id="1_qu5wh"]
 [ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="2_apw85"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="2_qouqw"]
+[ext_resource type="VideoStream" uid="uid://b5m0d6sbrxrje" path="res://Assets/Tutorial/place.ogv" id="4_apw85"]
+[ext_resource type="VideoStream" uid="uid://ckwsymux7h3mf" path="res://Assets/Tutorial/attack.ogv" id="5_5wnqk"]
+[ext_resource type="VideoStream" uid="uid://bxgw1ln77jkj2" path="res://Assets/Tutorial/skill.ogv" id="6_1xsou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_opivs"]
 shader = ExtResource("2_apw85")
@@ -93,11 +96,110 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_opivs")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_apw85")
 current_tab = 0
 
-[node name="Basics" type="Panel" parent="TabContainer" unique_id=1809848824]
+[node name="How To Play" type="Panel" parent="TabContainer" unique_id=949966608]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Title" type="Label" parent="TabContainer/Basics" unique_id=812253126]
+[node name="Title" type="Label" parent="TabContainer/How To Play" unique_id=606886207]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -427.5
+offset_right = 427.5
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.76862746, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_qouqw")
+theme_override_font_sizes/font_size = 64
+text = "FNAF WORLD TCG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="RichTextLabel" parent="TabContainer/How To Play" unique_id=1243338783]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 154.0
+offset_right = 714.0
+offset_bottom = 177.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_game-icons/mouse.png[/img] [b][outline_size=2][outline_color=red]CLICK A CARD TO PLAY IT[/outline_color][/outline_size][/b][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TabContainer/How To Play" unique_id=1940530103]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 196.0
+offset_right = 694.0
+offset_bottom = 516.0
+stream = ExtResource("4_apw85")
+autoplay = true
+loop = true
+
+[node name="2" type="RichTextLabel" parent="TabContainer/How To Play" unique_id=1836624905]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 538.0
+offset_right = 714.0
+offset_bottom = 561.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/sword.png[/img] [b][outline_size=2][outline_color=red]ATTACK YOUR OPPONENT[/outline_color][/outline_size][/b][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="TabContainer/How To Play" unique_id=1061079065]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 581.0
+offset_right = 694.0
+offset_bottom = 901.0
+stream = ExtResource("5_5wnqk")
+autoplay = true
+loop = true
+
+[node name="3" type="RichTextLabel" parent="TabContainer/How To Play" unique_id=1349699592]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 154.0
+offset_right = 1482.0
+offset_bottom = 177.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/book_open.png[/img] [b][outline_size=2][outline_color=red]USE SKILLS[/outline_color][/outline_size][/b][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="TabContainer/How To Play" unique_id=627853609]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 197.0
+offset_right = 1462.0
+offset_bottom = 517.0
+stream = ExtResource("6_1xsou")
+autoplay = true
+loop = true
+
+[node name="4" type="RichTextLabel" parent="TabContainer/How To Play" unique_id=609782794]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 538.0
+offset_right = 1482.0
+offset_bottom = 901.0
+bbcode_enabled = true
+text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/suit_hearts.png[/img] [b][outline_size=2][outline_color=red]REDUCE THE OPPONENT HP TO 0[/outline_color][/outline_size][/b][/center]
+
+
+[center][img]res://Assets/Tutorial/Health.png[/img][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="About 1" type="Panel" parent="TabContainer" unique_id=1809848824]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Title" type="Label" parent="TabContainer/About 1" unique_id=812253126]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 13.0
@@ -111,7 +213,7 @@ text = "FNAF WORLD TCG"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Left" type="RichTextLabel" parent="TabContainer/Basics" unique_id=1218837951]
+[node name="Left" type="RichTextLabel" parent="TabContainer/About 1" unique_id=1218837951]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 142.0
@@ -140,7 +242,7 @@ ESC - [b]Tap[/b] to pause, [b]Hold[/b] to close the game
 fit_content = true
 scroll_active = false
 
-[node name="Right" type="RichTextLabel" parent="TabContainer/Basics" unique_id=1560984228]
+[node name="Right" type="RichTextLabel" parent="TabContainer/About 1" unique_id=1560984228]
 layout_mode = 0
 offset_left = 919.0
 offset_top = 56.0
@@ -169,12 +271,12 @@ Info Icon - It has the credits/attribuitions to the assets providers
 fit_content = true
 scroll_active = false
 
-[node name="Game 1" type="Panel" parent="TabContainer" unique_id=212691036]
+[node name="About 2" type="Panel" parent="TabContainer" unique_id=212691036]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
-[node name="Label" type="Label" parent="TabContainer/Game 1" unique_id=1949421483]
+[node name="Label" type="Label" parent="TabContainer/About 2" unique_id=1949421483]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 13.0
@@ -188,7 +290,7 @@ text = "GAMEPLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Left2" type="RichTextLabel" parent="TabContainer/Game 1" unique_id=208147035]
+[node name="Left2" type="RichTextLabel" parent="TabContainer/About 2" unique_id=208147035]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 142.0
@@ -215,7 +317,7 @@ text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_c
 fit_content = true
 scroll_active = false
 
-[node name="Right2" type="RichTextLabel" parent="TabContainer/Game 1" unique_id=2100032076]
+[node name="Right2" type="RichTextLabel" parent="TabContainer/About 2" unique_id=2100032076]
 layout_mode = 0
 offset_left = 919.0
 offset_top = 56.0
@@ -235,12 +337,12 @@ text = "[center][img width=420]res://Assets/Tutorial/Arena.png[/img][/center]
 fit_content = true
 scroll_active = false
 
-[node name="Game 2" type="Panel" parent="TabContainer" unique_id=544293600]
+[node name="About 3" type="Panel" parent="TabContainer" unique_id=544293600]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
-[node name="Label" type="Label" parent="TabContainer/Game 2" unique_id=1600617656]
+[node name="Label" type="Label" parent="TabContainer/About 3" unique_id=1600617656]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 13.0
@@ -254,7 +356,7 @@ text = "GAMEPLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Left2" type="RichTextLabel" parent="TabContainer/Game 2" unique_id=1379232049]
+[node name="Left2" type="RichTextLabel" parent="TabContainer/About 3" unique_id=1379232049]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 142.0
@@ -284,7 +386,7 @@ Mega Bite						Slasher
 fit_content = true
 scroll_active = false
 
-[node name="Right2" type="RichTextLabel" parent="TabContainer/Game 2" unique_id=877449942]
+[node name="Right2" type="RichTextLabel" parent="TabContainer/About 3" unique_id=877449942]
 layout_mode = 0
 offset_left = 919.0
 offset_top = 56.0
@@ -329,5 +431,5 @@ theme_override_font_sizes/font_size = 20
 text = "X"
 flat = true
 
-[connection signal="meta_clicked" from="TabContainer/Basics/Right" to="." method="_on_right_meta_clicked"]
+[connection signal="meta_clicked" from="TabContainer/About 1/Right" to="." method="_on_right_meta_clicked"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
