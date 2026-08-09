@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dpvbcuwhecmi2"]
 
+[ext_resource type="Script" uid="uid://bmcavlcu38kyb" path="res://UI/UI_Scripts/coin_flip.gd" id="1_k8v0j"]
 [ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_knlwb"]
 [ext_resource type="Texture2D" uid="uid://cprqujsrjb8co" path="res://Assets/Icons/CoinFull64.png" id="2_knlwb"]
+[ext_resource type="Texture2D" uid="uid://cp7x3bgd86go1" path="res://Assets/Icons/Coin64x64.png" id="3_h1e36"]
+[ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_rkasq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rkasq"]
 shader = ExtResource("1_knlwb")
 shader_parameter/amount = 1.0000000475
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3r1ud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1e36"]
 atlas = ExtResource("2_knlwb")
@@ -55,6 +60,14 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("2_knlwb")
 region = Rect2(64, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ql4p"]
+atlas = ExtResource("3_h1e36")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iabd7"]
+atlas = ExtResource("3_h1e36")
+region = Rect2(64, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7jqt6"]
 animations = [{
 "frames": [{
@@ -96,7 +109,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Flip",
-"speed": 10.0
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ql4p")
+}],
+"loop": 0,
+"name": &"Heads",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iabd7")
+}],
+"loop": 0,
+"name": &"Tails",
+"speed": 5.0
 }]
 
 [node name="CoinFlip" type="Control" unique_id=478217651]
@@ -106,6 +135,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k8v0j")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1696068160]
 material = SubResource("ShaderMaterial_rkasq")
@@ -115,7 +145,36 @@ offset_top = -2050.0
 offset_right = 5456.0
 offset_bottom = 3316.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2109489182]
+[node name="Panel" type="Panel" parent="." unique_id=571028849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3r1ud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel" unique_id=2109489182]
+position = Vector2(150, 120)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7jqt6")
 animation = &"Flip"
-frame_progress = 0.060855918
+
+[node name="Label" type="Label" parent="Panel" unique_id=1179668705]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 220.0
+offset_right = 268.0
+offset_bottom = 249.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("4_rkasq")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1

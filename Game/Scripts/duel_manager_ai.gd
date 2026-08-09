@@ -7,6 +7,7 @@ extends Node
 @export var pause_menu_path: NodePath
 @export var player_skills_path: NodePath
 @export var opp_skills_path: NodePath
+@export var coin_flip_path: NodePath
 
 const CARD_MOVE_SPEED = 0.1
 const TURN_TIME = 1
@@ -23,6 +24,7 @@ var result_screen: Control
 var pause_menu: Control
 var player_skills_node: Node
 var opp_skills_node: Node
+var coin_flip: Control
 
 var turn_timer: Timer
 var player_cards_on_field = []
@@ -45,6 +47,11 @@ func _ready() -> void:
 	pause_menu = get_node(pause_menu_path)
 	player_skills_node = get_node(player_skills_path)
 	opp_skills_node = get_node(opp_skills_path)
+	coin_flip = get_node(coin_flip_path)
+
+	input_manager.inputs_disabled = true
+	enable_end_turn_btn(false)
+	enable_attack_btn(false)
 
 	turn_timer = Timer.new()
 	turn_timer.one_shot = true
@@ -61,8 +68,16 @@ func _ready() -> void:
 	player_side.get_node("AttackButton").pressed.connect(_on_attack_button_pressed)
 	player_side.get_node("EndTurnButton").pressed.connect(_on_end_turn_button_pressed)
 
-	enable_end_turn_btn(true)
-	enable_attack_btn(false)
+	await get_tree().create_timer(0.2).timeout
+
+	var player_starts = randf() < 0.5
+	await coin_flip.flip(player_starts)
+
+	if player_starts:
+		enable_end_turn_btn(true)
+		input_manager.inputs_disabled = false
+	else:
+		await opp_turn()
 
 
 func get_opp_skills_node():
@@ -133,7 +148,7 @@ func opp_turn():
 
 	await _ai_try_place_card()
 
-	if not opp_cards_on_field.is_empty():
+	if not first_turn and not opp_cards_on_field.is_empty():
 		await resolve_attacks(GameState.OWNER_OPPONENT)
 		if game_over:
 			return
@@ -171,6 +186,7 @@ func _end_opp_turn() -> void:
 	player_side.get_node("Deckpile").reset_draw()
 	is_opp_turn = false
 	attacked_this_turn = false
+	first_turn = false
 
 	if _check_for_stalemate():
 		return

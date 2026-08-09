@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://ci65ny0v0we3i" path="res://Assets/Sounds/stab.wav" id="13_ctp2s"]
 [ext_resource type="AudioStream" uid="uid://82barde3cxee" path="res://Assets/Sounds/08 Underneath.mp3" id="14_mf6i1"]
 [ext_resource type="AudioStream" uid="uid://bi2mmrmoxuefq" path="res://Assets/Sounds/CMPTR_Low_Tech_Stat.wav" id="15_oa8uv"]
+[ext_resource type="AudioStream" uid="uid://d3rdkhhkgalr8" path="res://Assets/Sounds/ElectricGuitarGliss.wav" id="16_oa8uv"]
 
 [node name="AudioController" type="Node" unique_id=528986573]
 script = ExtResource("1_j2fq7")
@@ -61,3 +62,6 @@ stream = ExtResource("14_mf6i1")
 
 [node name="Noise" type="AudioStreamPlayer" parent="." unique_id=1384812312]
 stream = ExtResource("15_oa8uv")
+
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=1179814782]
+stream = ExtResource("16_oa8uv")

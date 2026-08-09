@@ -70,3 +70,7 @@ func play_stab():
 func play_draw():
 	$Noise.play()
 	$Draw.play()
+
+
+func play_coin():
+	$Coin.play()

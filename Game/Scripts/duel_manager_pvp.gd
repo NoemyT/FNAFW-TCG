@@ -8,6 +8,7 @@ extends Node
 @export var pause_menu_opp_path: NodePath
 @export var player_skills_path: NodePath
 @export var opp_skills_path: NodePath
+@export var coin_flip_path: NodePath
 
 const CARD_MOVE_SPEED = 0.1
 const TURN_TIME = 1
@@ -25,6 +26,7 @@ var pause_menu: Control
 var pause_menu_opp: Control
 var player_skills_node: Node
 var opp_skills_node: Node
+var coin_flip: Control
 
 var turn_timer: Timer
 var player_cards_on_field = []
@@ -48,6 +50,7 @@ func _ready() -> void:
 	pause_menu_opp = get_node(pause_menu_opp_path)
 	player_skills_node = get_node(player_skills_path)
 	opp_skills_node = get_node(opp_skills_path)
+	coin_flip = get_node(coin_flip_path)
 
 	turn_timer = Timer.new()
 	turn_timer.one_shot = true
@@ -62,14 +65,36 @@ func _ready() -> void:
 	player_side.get_node("AttackButton").pressed.connect(_on_attack_button_pressed)
 	player_side.get_node("EndTurnButton").pressed.connect(_on_end_turn_button_pressed)
 
-	is_my_turn = GameState.current_pvp_type == GameState.PVPType.HOST
+	enable_end_turn_btn(false)
+	enable_attack_btn(false)
+	input_manager.inputs_disabled = true
+
+	if GameState.current_pvp_type == GameState.PVPType.HOST:
+		await get_tree().create_timer(0.2).timeout
+		var host_starts = randf() < 0.5
+		rpc("_remote_coin_flip", host_starts)
+		_do_coin_flip(host_starts)
+
+
+func get_opp_skills_node():
+	return opp_skills_node
+
+
+func _do_coin_flip(host_starts) -> void:
+	var is_host = GameState.current_pvp_type == GameState.PVPType.HOST
+	var local_starts = host_starts if is_host else not host_starts
+
+	await coin_flip.flip(local_starts)
+
+	is_my_turn = local_starts
 	enable_end_turn_btn(is_my_turn)
 	enable_attack_btn(false)
 	input_manager.inputs_disabled = not is_my_turn
 
 
-func get_opp_skills_node():
-	return opp_skills_node
+@rpc("any_peer")
+func _remote_coin_flip(host_starts) -> void:
+	_do_coin_flip(host_starts)
 
 
 func _on_card_placed(card, which_owner) -> void:
