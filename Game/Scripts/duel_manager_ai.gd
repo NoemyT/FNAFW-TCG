@@ -246,8 +246,9 @@ func _direct_attack(card, attacker_owner) -> void:
 
 	var return_tween = get_tree().create_tween()
 	return_tween.tween_property(card, "position", card.card_placement.position, CARD_MOVE_SPEED)
-	card.z_index = 1
 	await wait(TURN_TIME)
+
+	card.z_index = 1
 
 
 func _clash(attacking_card, defending_card, attacker_owner) -> void:

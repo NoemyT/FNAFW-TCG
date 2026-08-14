@@ -5,8 +5,8 @@ signal flip_finished
 @onready var coin_sprite: AnimatedSprite2D = $Panel/AnimatedSprite2D
 @onready var result_label: Label = $Panel/Label
 
-const SPIN_DURATION = 2.0
-const RESULT_DISPLAY_TIME = 1.5
+const SPIN_DURATION = 1.5
+const RESULT_DISPLAY_TIME = 1
 
 var flip_animation := "Flip"
 var heads_animation := "Heads"

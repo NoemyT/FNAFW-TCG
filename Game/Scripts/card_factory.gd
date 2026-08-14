@@ -12,14 +12,17 @@ func create_card(card_name, owner_id):
 	sprite.region_enabled = true
 	sprite.region_rect = card_data["char_region"]
 	sprite.scale = card_data["scale"]
+	sprite.position = card_data["char_position"]
 
-	var bg_color = new_card.get_node("Art/Color")
-	bg_color.texture = load("res://Assets/Cards/pixelCardAssest_V01.png")
-	bg_color.region_enabled = true
-	bg_color.region_rect = card_data["bg_region"]
+	var color = new_card.get_node("Art/Color")
+	color.texture = load("res://Assets/Cards/pixelCardAssest_V01.png")
+	color.region_enabled = true
+	color.region_rect = card_data["color_region"]
 
 	new_card.card_type = card_data["type"]
 	new_card.card_color = card_data["color"]
+
+	new_card.get_node("Name").text = card_data["name"]
 
 	if new_card.card_type == "entity":
 		new_card.get_node("Skill").visible = false

@@ -13,6 +13,7 @@ config_version=5
 config/name="FNAF-WOLRD-TCG"
 run/main_scene="uid://bbsf7xv8bkjvf"
 config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="uid://bpkvweptpqwgl"
 
 [autoload]
 
@@ -27,10 +28,9 @@ MultiplayerManager="*uid://drr8wpwm2wppg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1200
-window/size/window_width_override=960
-window/size/window_height_override=600
+window/size/window_width_override=1440
+window/size/window_height_override=900
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=0
 
 [input]
 
@@ -53,3 +53,4 @@ Fullscreen={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_s3tc_bptc=true

@@ -8,6 +8,7 @@ signal skill_result_received(data)
 var card_owner
 var hand_position
 var card_placement
+
 var card_type
 var card_color
 var health
