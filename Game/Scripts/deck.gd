@@ -3,6 +3,7 @@ extends Node2D
 @export_enum("player", "opponent") var owner_id: String = GameState.OWNER_PLAYER
 @export var hand_path: NodePath
 @export var field_manager_path: NodePath
+@export var draw_label: Label
 
 const CARD_DRAW_SPEED = 0.4
 const STARTING_HAND_SIZE = 7
@@ -26,6 +27,15 @@ func _ready() -> void:
 		_draw_starting_hand_local()
 	elif GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_OPPONENT:
 		remote_deck_count = CardDatabase.get_total_deck_size()
+
+
+func _process(_delta) -> void:
+	if not draw_label:
+		return
+	if GameState.OWNER_PLAYER and draws_this_turn < MAX_DRAWS_PER_TURN and get_node(hand_path).hand.size() < MAX_HAND_SIZE:
+		draw_label.visible = true
+	else:
+		draw_label.visible = false
 
 
 func _build_deck() -> void:
