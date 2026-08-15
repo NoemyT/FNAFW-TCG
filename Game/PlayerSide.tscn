@@ -86,23 +86,24 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deckpile/Area2D" unique_id=228282268]
 shape = SubResource("RectangleShape2D_c3soy")
 
-[node name="DrawLabel" type="Label" parent="Deckpile" unique_id=233943014]
+[node name="DrawLabel" type="RichTextLabel" parent="Deckpile" unique_id=1229630867]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
+offset_left = -33.0
 offset_top = 65.0
-offset_right = 24.0
-offset_bottom = 88.0
+offset_right = 33.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("7_onavc")
-theme_override_font_sizes/font_size = 18
-text = "DRAW"
+theme_override_fonts/normal_font = ExtResource("7_onavc")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]DRAW[/pulse]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -169,7 +170,7 @@ text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Hand" type="Node2D" parent="." unique_id=1842465016]
+[node name="Hand" type="Node2D" parent="." unique_id=1744494174]
 script = ExtResource("11_c1x7w")
 hand_y_pos = 1060
 

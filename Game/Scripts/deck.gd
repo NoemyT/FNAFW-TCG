@@ -3,7 +3,7 @@ extends Node2D
 @export_enum("player", "opponent") var owner_id: String = GameState.OWNER_PLAYER
 @export var hand_path: NodePath
 @export var field_manager_path: NodePath
-@export var draw_label: Label
+@export var draw_label: RichTextLabel
 
 const CARD_DRAW_SPEED = 0.4
 const STARTING_HAND_SIZE = 7
