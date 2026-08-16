@@ -32,7 +32,7 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if not draw_label:
 		return
-	if GameState.OWNER_PLAYER and draws_this_turn < MAX_DRAWS_PER_TURN and get_node(hand_path).hand.size() < MAX_HAND_SIZE:
+	if GameState.OWNER_PLAYER and GameState.is_player_turn and draws_this_turn < MAX_DRAWS_PER_TURN and get_node(hand_path).hand.size() < MAX_HAND_SIZE:
 		draw_label.visible = true
 	else:
 		draw_label.visible = false

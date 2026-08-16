@@ -81,15 +81,18 @@ func get_opp_skills_node():
 
 
 func _do_coin_flip(host_starts) -> void:
+	PlayerInputs.block_pause = true
 	var is_host = GameState.current_pvp_type == GameState.PVPType.HOST
 	var local_starts = host_starts if is_host else not host_starts
 
 	await coin_flip.flip(local_starts)
 
 	is_my_turn = local_starts
+	GameState.is_player_turn = is_my_turn
 	enable_end_turn_btn(is_my_turn)
 	enable_attack_btn(false)
 	input_manager.inputs_disabled = not is_my_turn
+	PlayerInputs.block_pause = false
 
 
 @rpc("any_peer")
@@ -162,6 +165,7 @@ func _on_end_turn_button_pressed() -> void:
 
 	first_turn = false
 	is_my_turn = false
+	GameState.is_player_turn = false
 	rpc("_remote_start_turn")
 	_check_for_stalemate()
 
@@ -170,6 +174,7 @@ func _on_end_turn_button_pressed() -> void:
 func _remote_start_turn() -> void:
 	first_turn = false
 	is_my_turn = true
+	GameState.is_player_turn = true
 	attacked_this_turn = false
 	if _check_for_stalemate():
 		return
@@ -210,9 +215,11 @@ func _direct_attack(card, attacker_owner) -> void:
 	if attacker_owner == GameState.OWNER_PLAYER:
 		opponent_health = max(0, opponent_health - card.attack)
 		opp_side.get_node("Hp/OppHp").text = str(opponent_health)
+		flash_damage_color(opp_side.get_node("Hp/OppHp"), Color.RED, 0.2)
 	else:
 		player_health = max(0, player_health - card.attack)
 		player_side.get_node("Hp/PlayerHp").text = str(player_health)
+		flash_damage_color(player_side.get_node("Hp/PlayerHp"), Color.RED, 0.2)
 
 	if player_health == 0 or opponent_health == 0:
 		end_game()
@@ -223,6 +230,13 @@ func _direct_attack(card, attacker_owner) -> void:
 	await wait(TURN_TIME)
 
 	card.z_index = 1
+
+
+func flash_damage_color(label, flash_color, duration):
+	var original_color = label.modulate
+	label.modulate = flash_color
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate", original_color, duration)
 
 
 func _clash(attacking_card, defending_card, attacker_owner) -> void:
@@ -307,6 +321,7 @@ func end_game():
 	if game_over:
 		return
 	game_over = true
+	PlayerInputs.block_pause = true
 	MultiplayerManager.game_active = false
 	enable_attack_btn(false)
 	enable_end_turn_btn(false)
@@ -341,6 +356,7 @@ func _end_game_stalemate() -> void:
 	if game_over:
 		return
 	game_over = true
+	PlayerInputs.block_pause = true
 	enable_attack_btn(false)
 	enable_end_turn_btn(false)
 	result_screen.visible = true

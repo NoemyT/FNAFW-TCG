@@ -17,6 +17,15 @@ atlas = ExtResource("2_57cdw")
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kf3g"]
 atlas = ExtResource("3_byhbu")
 
+[sub_resource type="Curve" id="Curve_o73f6"]
+_limits = [-0.15, 0.15, 0.0, 1.0]
+_data = [Vector2(0, 0.15), 0.0, 0.0, 0, 0, Vector2(0.49999994, 0.0050561875), 0.0, 0.0, 0, 0, Vector2(0.9999999, -0.14325842), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_rtwd1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25257733, 0.516854), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.7474227, 0.50561804), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [node name="OppSide" type="Node2D" unique_id=187769977]
 
 [node name="Placements" type="Node2D" parent="." unique_id=276555147]
@@ -108,6 +117,8 @@ vertical_alignment = 1
 script = ExtResource("7_4uqwu")
 hand_y_pos = 140
 is_opp = true
+rot_curve = SubResource("Curve_o73f6")
+height_curve = SubResource("Curve_rtwd1")
 
 [node name="FieldManager" type="Node2D" parent="." unique_id=88687000]
 script = ExtResource("9_wsoeo")

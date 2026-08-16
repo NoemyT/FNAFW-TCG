@@ -7,6 +7,7 @@ var pause_menu: Control = null
 var pause_menu_opp: Control = null
 var paused = false
 var opponent_paused = false
+var block_pause = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -17,6 +18,10 @@ func _process(delta) -> void:
 	if not pause_menu:
 		return
 	if MultiplayerManager.disconnect_menu and MultiplayerManager.disconnect_menu.visible:
+		return
+
+	if block_pause:
+		esc_hold_time = 0.0
 		return
 
 	if Input.is_action_pressed("QuitOrPause"):
@@ -39,6 +44,8 @@ func _input(event) -> void:
 
 
 func trigger_pause_menu():
+	if block_pause:
+		return
 	if opponent_paused and not paused:
 		return
 

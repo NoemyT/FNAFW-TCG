@@ -38,7 +38,7 @@ player_side_path = NodePath("../PlayerSide")
 
 [node name="ResultScreenVictory" parent="." unique_id=186214863 instance=ExtResource("5_a4myu")]
 visible = false
-z_index = 12
+z_index = 14
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0
@@ -46,7 +46,7 @@ offset_bottom = 600.0
 
 [node name="PauseMenu" parent="." unique_id=396849778 instance=ExtResource("6_gap0t")]
 visible = false
-z_index = 12
+z_index = 13
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0
@@ -54,7 +54,7 @@ offset_bottom = 600.0
 
 [node name="DisconnectMenu" parent="." unique_id=627034204 instance=ExtResource("7_50fhk")]
 visible = false
-z_index = 12
+z_index = 13
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0
@@ -62,7 +62,7 @@ offset_bottom = 600.0
 
 [node name="PauseMenuOpp" parent="." unique_id=235125222 instance=ExtResource("8_bphni")]
 visible = false
-z_index = 12
+z_index = 13
 offset_left = 960.0
 offset_top = 600.0
 offset_right = 960.0

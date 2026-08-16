@@ -11,6 +11,8 @@ var current_mode: GameMode = GameMode.NONE
 var current_ai_type: AIType = AIType.NONE
 var current_pvp_type: PVPType = PVPType.NONE
 
+var is_player_turn := false
+
 func set_ai_mode(type: AIType) -> void:
 	current_mode = GameMode.AI
 	current_ai_type = type

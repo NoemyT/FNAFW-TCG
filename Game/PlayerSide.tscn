@@ -23,6 +23,11 @@ size = Vector2(100, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_him7f"]
 atlas = ExtResource("5_c3soy")
 
+[sub_resource type="Curve" id="Curve_2kf3g"]
+_limits = [-0.15, 0.15, 0.0, 1.0]
+_data = [Vector2(0, -0.15), 0.0, 0.0, 0, 0, Vector2(0.49999997, 0.0016853958), 0.0, 0.0, 0, 0, Vector2(0.99514556, 0.15), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="PlayerSide" type="Node2D" unique_id=88612947]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1630855984]
@@ -173,6 +178,7 @@ vertical_alignment = 1
 [node name="Hand" type="Node2D" parent="." unique_id=1744494174]
 script = ExtResource("11_c1x7w")
 hand_y_pos = 1060
+rot_curve = SubResource("Curve_2kf3g")
 
 [node name="FieldManager" type="Node2D" parent="." unique_id=1179653372]
 script = ExtResource("13_nm3ih")

@@ -2,6 +2,8 @@ extends Node2D
 
 @export var hand_y_pos = 1000
 @export var is_opp: bool
+@export var rot_curve: Curve
+@export var max_height_offset = 30.0
 
 const CARD_WIDTH = 130
 const BASE_WIDTH = 1920
@@ -18,15 +20,34 @@ func add_card_to_hand(card, speed):
 			hand.append(card)
 		update_hand_pos(speed)
 	else:
-		animate_card_to_pos(card, card.hand_position, DEFAULT_CARD_MOVE_SPEED)
+		var index = hand.find(card)
+		var rot_from_curve = get_rotation_for_index(index)
+		animate_card_to_pos(card, card.hand_position, DEFAULT_CARD_MOVE_SPEED, rot_from_curve)
 
 
 func update_hand_pos(speed):
 	for i in range(hand.size()):
-		var new_pos = Vector2(calculate_card_pos(i), hand_y_pos)
+		var new_pos = Vector2(calculate_card_pos(i), calculate_card_y(i))
 		var card = hand[i]
 		card.hand_position = new_pos
-		animate_card_to_pos(card, new_pos, speed)
+		var rot_from_curve = get_rotation_for_index(i)
+		animate_card_to_pos(card, new_pos, speed, rot_from_curve)
+
+
+func get_rotation_for_index(index):
+	if hand.size() <= 1:
+		return rot_curve.sample(0.5)
+	var t = float(index) / float(hand.size() - 1)
+	return rot_curve.sample(t)
+
+
+func calculate_card_y(index):
+	if hand.size() <= 1:
+		return hand_y_pos
+	var t = float(index) / float(hand.size() - 1)
+	var parabola = pow((t - 0.5) * 2.0, 2)
+	var direction = -1.0 if is_opp else 1.0
+	return hand_y_pos + parabola * max_height_offset * direction
 
 
 func calculate_card_pos(index):
@@ -36,13 +57,14 @@ func calculate_card_pos(index):
 	return x_offset
 
 
-func animate_card_to_pos(card, pos, speed):
+func animate_card_to_pos(card, pos, speed, rot):
 	card.get_node("Area2D/CollisionShape2D").disabled = true
 
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(card, "position", pos, speed)
 	tween.tween_property(card, "scale", Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE), speed)
+	tween.tween_property(card, "rotation", rot, speed)
 	tween.chain().tween_callback(func():
 		if is_instance_valid(card) and not card.card_placement:
 			card.get_node("Area2D/CollisionShape2D").disabled = false
