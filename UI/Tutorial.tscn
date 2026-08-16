@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dfkws1x07x2ki" path="res://UI/UI_Scripts/tutorial.gd" id="1_qu5wh"]
 [ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="2_apw85"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="2_qouqw"]
-[ext_resource type="VideoStream" uid="uid://b5m0d6sbrxrje" path="res://Assets/Tutorial/place.ogv" id="4_apw85"]
-[ext_resource type="VideoStream" uid="uid://ckwsymux7h3mf" path="res://Assets/Tutorial/attack.ogv" id="5_5wnqk"]
-[ext_resource type="VideoStream" uid="uid://bxgw1ln77jkj2" path="res://Assets/Tutorial/skill.ogv" id="6_1xsou"]
+[ext_resource type="VideoStream" uid="uid://dxu4h0vd1i4ct" path="res://Assets/Tutorial/placing.ogv" id="4_apw85"]
+[ext_resource type="VideoStream" uid="uid://djf7c3782whbu" path="res://Assets/Tutorial/attacking.ogv" id="5_5wnqk"]
+[ext_resource type="VideoStream" uid="uid://dip0ob20s8pim" path="res://Assets/Tutorial/skill.ogv" id="6_1xsou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_opivs"]
 shader = ExtResource("2_apw85")
@@ -301,7 +301,7 @@ text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_c
 
 [p fill]The cards in FNAF WORLD TCG, consist of 2 types and 5 colors. The types are [b]Entity[/b] and [b]Skill[/b], with the entity cards being divided by the colors: [color=red]RED[/color], [color=green]GREEN[/color], [color=yellow]YELLOW[/color] and [color=blue]BLUE[/color], while the skill cards are colored [color=violet]PURPLE[/color].[/p]
 
-[center][img width=100]res://Assets/Tutorial/Card.png[/img][/center]
+[center][img width=100]res://Assets/Tutorial/Freddy.png[/img][/center]
 [center][font_size=12]- Freddy is a entity card, of the [color=green]Green[/color] group[/font_size][/center]
 
 [center][img width=18]res://Assets/Icons/kenney_board-game-icons/card_down_outline.png[/img] [b][outline_size=2][outline_color=red]ARENA[/outline_color][/outline_size][/b][/center]
@@ -369,7 +369,7 @@ text = "[center][img width=18]res://Assets/Icons/kenney_board-game-icons/cards_f
 
 [center][img width=400]res://Assets/Tutorial/ArenaWithCards.png[/img][/center]
 
-[center][font_size=12]- By starting an attack, Nightmare Fredbear and Plushtrap as well as Phantom BB and Nightmare Freddy would engage on clash attacks for being part of the same color group, while Nightmarionne would directly attack the opponents health points as it isn't being blocked by another [color=green]green[/color] entity.[/font_size][/center]
+[center][font_size=12]- By starting an attack, Golden Freddy and Fredbear, Springtrap and Toy Bonnie, as well as Withered Bonnie and Nightmare would engage on clash attacks for being part of the same color group, while Phantom Chica would directly attack the opponents health points as she isn't being blocked by another [color=green]green[/color] entity.[/font_size][/center]
 
 [center][img width=18]res://Assets/Icons/kenney_board-game-icons/book_open.png[/img] [b][outline_size=2][outline_color=red]SKILLS[/outline_color][/outline_size][/b][/center]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://hp5501jkltbv" path="res://Assets/Cards/cardbacks4092021.png" id="1_axqsc"]
 [ext_resource type="Script" uid="uid://dbqngbvbwakmc" path="res://Game/Scripts/card.gd" id="1_nxe46"]
 [ext_resource type="Texture2D" uid="uid://bh7qm0ut1ogyv" path="res://Assets/Cards/pixelCardAssest_V01.png" id="2_nxe46"]
-[ext_resource type="Texture2D" uid="uid://uuhjax2qyb5i" path="res://Assets/Characters/nightmareFreddy.png" id="4_nxe46"]
+[ext_resource type="Texture2D" uid="uid://cq0yt00sr1tt5" path="res://Assets/Characters/freddy.png" id="4_nxe46"]
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="4_xwtu2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0orm"]
@@ -756,7 +756,6 @@ region_rect = Rect2(776, 5, 100, 128)
 metadata/_edit_lock_ = true
 
 [node name="Art" type="Node2D" parent="." unique_id=1504464684]
-visible = false
 scale = Vector2(1.5, 1.5)
 
 [node name="Border" type="Sprite2D" parent="Art" unique_id=900758069]
@@ -787,7 +786,7 @@ position = Vector2(-31.333332, -8)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_xdu63")
 region_enabled = true
-region_rect = Rect2(483, 187, 8, 12)
+region_rect = Rect2(500, 187, 8, 12)
 
 [node name="Image" type="Sprite2D" parent="Art" unique_id=49404237]
 position = Vector2(11, 15)
@@ -821,7 +820,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_xwtu2")
 theme_override_font_sizes/font_size = 17
-text = "Crying Child"
+text = "Freddy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -836,7 +835,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_xwtu2")
 theme_override_font_sizes/font_size = 22
-text = "9"
+text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -851,7 +850,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_xwtu2")
 theme_override_font_sizes/font_size = 22
-text = "9"
+text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 

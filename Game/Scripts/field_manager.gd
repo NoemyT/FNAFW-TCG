@@ -11,6 +11,7 @@ signal card_placed(card)
 const COLLISION_MASK_CARD = 1
 const DEFAULT_CARD_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 1
+const DEFAULT_CARD_ROTATION = 0
 const ENLARGE_CARD_SCALE = 1.1
 const ON_FIELD_Z_INDEX = 1
 const CARD_MOVING_Z_INDEX = 3
@@ -93,6 +94,7 @@ func _place_card(card, slot) -> void:
 	tween.set_parallel(true)
 	tween.tween_property(card, "position", slot.position, DEFAULT_CARD_SPEED)
 	tween.tween_property(card, "scale", Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE), DEFAULT_CARD_SPEED)
+	tween.tween_property(card, "rotation", DEFAULT_CARD_ROTATION, DEFAULT_CARD_SPEED)
 	tween.chain().tween_callback(func(): card.z_index = ON_FIELD_Z_INDEX)
 
 	card.card_placement = slot

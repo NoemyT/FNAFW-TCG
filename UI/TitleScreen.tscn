@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdnn1yfs70us2" path="res://UI/UI_Scripts/title_screen.gd" id="1_jqtpd"]
 [ext_resource type="Texture2D" uid="uid://dve7cr73e8dfr" path="res://Assets/Backgrounds/titleScreen.png" id="2_t8m8c"]
 [ext_resource type="Texture2D" uid="uid://cxlpsb82c5auq" path="res://Assets/Backgrounds/title.png" id="3_qlrno"]
-[ext_resource type="FontFile" uid="uid://4r1mcvgp8e1t" path="res://Assets/Fonts/Orbitron/static/Orbitron-ExtraBold.ttf" id="4_7rrbj"]
+[ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="4_7rrbj"]
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="5_ggdw6"]
 [ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="6_voxst"]
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="7_mhuq5"]
@@ -227,24 +227,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TcgTitle" type="Label" parent="Panel" unique_id=1461187240]
+[node name="TcgTitle" type="RichTextLabel" parent="Panel" unique_id=68365369]
 texture_filter = 2
 layout_mode = 0
 offset_left = 1252.0
 offset_top = 173.0
-offset_right = 1551.9995
+offset_right = 1551.9929
 offset_bottom = 310.0
 rotation = -0.17453292
 scale = Vector2(2, 2)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5803922)
 theme_override_colors/font_outline_color = Color(0.9607843, 0.003921569, 0.16470589, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5803922)
+theme_override_constants/shadow_outline_size = 2
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 20
-theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("4_7rrbj")
-theme_override_font_sizes/font_size = 100
-text = "TCG"
+theme_override_fonts/normal_font = ExtResource("4_7rrbj")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]TCG[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -269,7 +270,7 @@ layout_mode = 0
 offset_left = 785.0
 offset_top = 892.0
 offset_right = 1135.0
-offset_bottom = 992.0023
+offset_bottom = 992.00024
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_ggdw6")
 theme_override_font_sizes/font_size = 32
@@ -283,7 +284,7 @@ z_index = 1
 layout_mode = 0
 offset_left = 1310.0
 offset_top = 892.0
-offset_right = 1660.0027
+offset_right = 1660.0028
 offset_bottom = 992.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_ggdw6")
@@ -349,6 +350,16 @@ theme_override_font_sizes/font_size = 28
 text = "Original Soundtrack By Leon Riskin - @Leon_Riskin"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Notice" type="Label" parent="Panel" unique_id=433100444]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 590.0
+offset_bottom = 26.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+text = "FANGAME | NON-COMMERCIAL | EDUCATIONAL PURPOSES ONLY"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669007494]
 libraries/ = SubResource("AnimationLibrary_ianhm")

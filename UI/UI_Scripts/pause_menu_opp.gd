@@ -13,6 +13,7 @@ var time_left = HOSTAGE_TIMEOUT
 func _ready() -> void:
 	hide() 
 	PlayerInputs.pause_menu_opp = self
+	PlayerInputs.tutorial_opp = $Tutorial
 	visibility_changed.connect(_on_visibility_changed)
 	$Panel/SoundButton.button_pressed = AudioController.mute
 	$Panel/SoundButton.icon = SOUND_OFF if AudioController.mute else SOUND_ON

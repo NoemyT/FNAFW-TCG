@@ -16,6 +16,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 		target_card.card_placement.get_node("AnimationPlayer").play("MegaBite")
 		target_card.health = max(0, target_card.health - DAMAGE)
 		target_card.get_node("HpL").text = str(target_card.health)
+		duel_manager_ref.damage_color(target_card.get_node("HpL"), Color.RED, 0.2)
 		if target_card.health == 0:
 			cards_to_destroy.append(target_card)
 	await duel_manager_ref.wait(1.0)
@@ -47,6 +48,7 @@ func trigger_skill_opp(duel_manager_ref, skill_card, input_manager_ref):
 		target_card.card_placement.get_node("AnimationPlayer").play("MegaBite")
 		target_card.health = max(0, target_card.health - DAMAGE)
 		target_card.get_node("HpL").text = str(target_card.health)
+		duel_manager_ref.damage_color(target_card.get_node("HpL"), Color.RED, 0.2)
 		if target_card.health == 0:
 			cards_to_destroy.append(target_card)
 	await duel_manager_ref.wait(1.0)

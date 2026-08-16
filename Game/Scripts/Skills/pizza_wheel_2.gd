@@ -12,6 +12,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	for card in duel_manager_ref.opp_cards_on_field:
 		card.health = max(0, card.health - DAMAGE)
 		card.get_node("HpL").text = str(card.health)
+		duel_manager_ref.damage_color(card.get_node("HpL"), Color.RED, 0.2)
 		if card.health == 0:
 			cards_to_destroy.append(card)
 	await duel_manager_ref.wait(1.0)
@@ -33,6 +34,7 @@ func trigger_skill_opp(duel_manager_ref, skill_card, input_manager_ref):
 	for card in duel_manager_ref.player_cards_on_field:
 		card.health = max(0, card.health - DAMAGE)
 		card.get_node("HpL").text = str(card.health)
+		duel_manager_ref.damage_color(card.get_node("HpL"), Color.RED, 0.2)
 		if card.health == 0:
 			cards_to_destroy.append(card)
 	await duel_manager_ref.wait(1.0)

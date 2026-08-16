@@ -5,6 +5,8 @@ const HOLD_DURATION = 1.5
 var esc_hold_time = 0.0
 var pause_menu: Control = null
 var pause_menu_opp: Control = null
+var tutorial: Control = null
+var tutorial_opp: Control = null
 var paused = false
 var opponent_paused = false
 var block_pause = false
@@ -61,6 +63,14 @@ func trigger_pause_menu():
 		notify_opponent_pause.rpc(paused)
 
 
+func force_close_tutorials():
+	block_pause = false
+	if tutorial and tutorial.visible:
+		tutorial.visible = false
+	if tutorial_opp and tutorial_opp.visible:
+		tutorial_opp.visible = false
+
+
 @rpc("any_peer")
 func notify_opponent_pause(is_paused):
 	opponent_paused = is_paused
@@ -70,26 +80,15 @@ func notify_opponent_pause(is_paused):
 		get_tree().paused = true
 		pause_menu_opp.show()
 	else:
+		force_close_tutorials()
 		pause_menu_opp.hide()
 		get_tree().paused = false
-
-
-@rpc("any_peer")
-func notify_opponent_quit():
-	opponent_paused = false
-	if pause_menu_opp:
-		get_tree().paused = false
-		pause_menu_opp.hide()
-	if paused:
-		if pause_menu:
-			pause_menu.hide()
-		get_tree().paused = false
-		paused = false
 
 
 @warning_ignore("unused_parameter")
 func _on_peer_disconnected(peer_id) -> void:
 	opponent_paused = false
+	force_close_tutorials()
 	if pause_menu_opp:
 		get_tree().paused = false
 		pause_menu_opp.hide()

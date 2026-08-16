@@ -5,6 +5,7 @@ const SOUND_OFF = preload("res://Assets/Icons/kenney_game-icons/audioOff.png")
 
 func _ready() -> void:
 	PlayerInputs.pause_menu = self 
+	PlayerInputs.tutorial = $Tutorial
 	hide()
 	$Panel/SoundButton.button_pressed = AudioController.mute
 	$Panel/SoundButton.icon = SOUND_OFF if AudioController.mute else SOUND_ON
@@ -36,5 +37,6 @@ func _on_audio_toggled(toggled_on) -> void:
 
 
 func _on_tutorial_button_pressed() -> void:
+	PlayerInputs.block_pause = true
 	AudioController.play_menu_click()
 	$Tutorial.visible = true

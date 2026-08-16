@@ -282,9 +282,11 @@ func _clash(attacking_card, defending_card, attacker_owner) -> void:
 
 	defending_card.health = max(0, defending_card.health - attacking_card.attack)
 	defending_card.get_node("HpL").text = str(defending_card.health)
+	damage_color(defending_card.get_node("HpL"), Color.RED, 0.2)
 
 	attacking_card.health = max(0, attacking_card.health - defending_card.attack)
 	attacking_card.get_node("HpL").text = str(attacking_card.health)
+	damage_color(attacking_card.get_node("HpL"), Color.RED, 0.2)
 
 	await wait(TURN_TIME)
 	attacking_card.z_index = 1
@@ -300,6 +302,11 @@ func _clash(attacking_card, defending_card, attacker_owner) -> void:
 
 	if destroyed:
 		await wait(TURN_TIME)
+
+
+func damage_color(label, color, duration):
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate", color, duration)
 
 
 func _destroy_card(card, card_owner) -> void:
