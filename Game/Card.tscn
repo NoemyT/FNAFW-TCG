@@ -184,6 +184,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Backgorund:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.141592653589793]
+}
 
 [sub_resource type="Animation" id="Animation_g3edq"]
 resource_name = "card_play_entity"
@@ -748,7 +760,7 @@ z_index = 1
 script = ExtResource("1_nxe46")
 
 [node name="Backgorund" type="Sprite2D" parent="." unique_id=1162287992]
-z_index = -1
+rotation = 3.1415927
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_o0orm")
 region_enabled = true
@@ -756,6 +768,7 @@ region_rect = Rect2(776, 5, 100, 128)
 metadata/_edit_lock_ = true
 
 [node name="Art" type="Node2D" parent="." unique_id=1504464684]
+z_index = -1
 scale = Vector2(1.5, 1.5)
 
 [node name="Border" type="Sprite2D" parent="Art" unique_id=900758069]

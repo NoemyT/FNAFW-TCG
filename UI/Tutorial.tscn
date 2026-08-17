@@ -431,5 +431,6 @@ theme_override_font_sizes/font_size = 20
 text = "X"
 flat = true
 
+[connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_clicked"]
 [connection signal="meta_clicked" from="TabContainer/About 1/Right" to="." method="_on_right_meta_clicked"]
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

@@ -8,3 +8,7 @@ func _on_close_pressed() -> void:
 
 func _on_right_meta_clicked(meta) -> void:
 	OS.shell_open(str(meta))
+
+
+func _on_tab_container_tab_clicked(_tab) -> void:
+	AudioController.play_menu_click()

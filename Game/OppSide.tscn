@@ -27,28 +27,28 @@ point_count = 3
 [node name="Placements" type="Node2D" parent="." unique_id=276555147]
 
 [node name="CardPlacement" parent="Placements" unique_id=482274551 instance=ExtResource("1_esvlj")]
-position = Vector2(420, 780)
+position = Vector2(420, 670)
 scale = Vector2(1.5, 1.5)
 card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "red"
 
 [node name="CardPlacement2" parent="Placements" unique_id=1710303725 instance=ExtResource("1_esvlj")]
-position = Vector2(625, 420)
+position = Vector2(625, 527)
 scale = Vector2(1.5, 1.5)
 card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "green"
 
 [node name="CardPlacement3" parent="Placements" unique_id=831951211 instance=ExtResource("1_esvlj")]
-position = Vector2(625, 670)
+position = Vector2(625, 780)
 scale = Vector2(1.5, 1.5)
 card_placement_owner = "opponent"
 card_placement_type = "entity"
 card_placement_color = "blue"
 
 [node name="CardPlacement4" parent="Placements" unique_id=573258610 instance=ExtResource("1_esvlj")]
-position = Vector2(420, 527)
+position = Vector2(420, 420)
 scale = Vector2(1.5, 1.5)
 card_placement_owner = "opponent"
 card_placement_type = "entity"
@@ -70,6 +70,7 @@ hand_path = NodePath("../Hand")
 field_manager_path = NodePath("../FieldManager")
 
 [node name="Art" type="Sprite2D" parent="Deckpile" unique_id=143951774]
+rotation = 3.1415927
 texture = SubResource("AtlasTexture_ppvt0")
 region_enabled = true
 region_rect = Rect2(776, 5, 100, 128)

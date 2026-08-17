@@ -41,25 +41,25 @@ region_rect = Rect2(1, 1, 850, 530)
 [node name="Placements" type="Node2D" parent="." unique_id=199736919]
 
 [node name="CardPlacement" parent="Placements" unique_id=482274551 instance=ExtResource("3_ai2pf")]
-position = Vector2(1500, 670)
+position = Vector2(1500, 780)
 scale = Vector2(1.5, 1.5)
 card_placement_type = "entity"
 card_placement_color = "red"
 
 [node name="CardPlacement2" parent="Placements" unique_id=152021840 instance=ExtResource("3_ai2pf")]
-position = Vector2(1295, 527)
+position = Vector2(1295, 420)
 scale = Vector2(1.5, 1.5)
 card_placement_type = "entity"
 card_placement_color = "green"
 
 [node name="CardPlacement3" parent="Placements" unique_id=1745109210 instance=ExtResource("3_ai2pf")]
-position = Vector2(1295, 780)
+position = Vector2(1295, 670)
 scale = Vector2(1.5, 1.5)
 card_placement_type = "entity"
 card_placement_color = "blue"
 
 [node name="CardPlacement4" parent="Placements" unique_id=1127750158 instance=ExtResource("3_ai2pf")]
-position = Vector2(1500, 420)
+position = Vector2(1500, 527)
 scale = Vector2(1.5, 1.5)
 card_placement_type = "entity"
 card_placement_color = "yellow"
