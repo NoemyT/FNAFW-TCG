@@ -30,5 +30,3 @@ func apply_placement_color():
 func apply_placement_texture():
 	if ICON_TEXTURE.has(card_placement_type):
 		$Art/Type.texture = ICON_TEXTURE[card_placement_type]
-	else:
-		push_warning("No texture found for type: " + card_placement_type)

@@ -33,10 +33,14 @@ func card_selected(card):
 
 
 func try_place_card(card):
-	if GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_PLAYER:
+	if owner_id == GameState.OWNER_PLAYER:
 		var duel_manager = get_node(duel_manager_path)
-		if not duel_manager.is_my_turn:
-			return null
+		if GameState.current_mode == GameState.GameMode.PVP:
+			if not duel_manager.is_my_turn:
+				return null
+		elif GameState.current_mode == GameState.GameMode.AI:
+			if duel_manager.is_opp_turn:
+				return null
 
 	var slot = _find_open_slot_for(card)
 	if not slot:

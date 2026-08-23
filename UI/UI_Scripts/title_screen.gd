@@ -10,15 +10,6 @@ func _ready() -> void:
 	$Panel/SoundButton.icon = SOUND_OFF if AudioController.mute else SOUND_ON
 
 
-func hide_menu():
-	$".".mouse_filter = MOUSE_FILTER_IGNORE
-	$Art.visible = false
-	$Panel.visible = false
-	$Panel/AiButton.disabled = true
-	$Panel/PvpButton.disabled = true
-	$Panel/ExitButton.disabled = true
-
-
 func _on_ai_button_pressed() -> void:
 	AudioController.play_menu_click()
 	AudioController.stop_menu_music()
