@@ -760,6 +760,7 @@ z_index = 1
 script = ExtResource("1_nxe46")
 
 [node name="Backgorund" type="Sprite2D" parent="." unique_id=1162287992]
+z_index = -1
 rotation = 3.1415927
 scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_o0orm")
@@ -768,7 +769,6 @@ region_rect = Rect2(776, 5, 100, 128)
 metadata/_edit_lock_ = true
 
 [node name="Art" type="Node2D" parent="." unique_id=1504464684]
-z_index = -1
 scale = Vector2(1.5, 1.5)
 
 [node name="Border" type="Sprite2D" parent="Art" unique_id=900758069]

@@ -21,8 +21,9 @@ func create_card(card_name, owner_id):
 
 	new_card.card_type = card_data["type"]
 	new_card.card_color = card_data["color"]
+	new_card.card_name = card_data["card_name"]
 
-	new_card.get_node("Name").text = card_data["name"]
+	new_card.get_node("Name").text = card_data["card_name"]
 
 	if new_card.card_type == "entity":
 		new_card.get_node("Skill").visible = false

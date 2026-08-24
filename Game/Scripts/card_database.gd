@@ -2,7 +2,7 @@ extends Node
 
 const CARDS = {
 	"animdude" : {
-		"name": "Animdude",
+		"card_name": "Animdude",
 		"attack": 7,
 		"health": 6,
 		"char_region": Rect2(2, 0, 250, 250),
@@ -15,7 +15,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"balloonBoy" : {
-		"name": "Balloon Boy",
+		"card_name": "Balloon Boy",
 		"attack": 2,
 		"health": 2,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -28,7 +28,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"bonnie" : {
-		"name": "Bonnie",
+		"card_name": "Bonnie",
 		"attack": 4,
 		"health": 4,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -41,7 +41,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"chica" : {
-		"name": "Chica",
+		"card_name": "Chica",
 		"attack": 3,
 		"health": 4,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -54,7 +54,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"cryingChild" : {
-		"name": "Crying Child",
+		"card_name": "Crying Child",
 		"attack": 1,
 		"health": 2,
 		"char_region": Rect2(62, 86, 138, 158),
@@ -67,7 +67,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"foxy" : {
-		"name": "Foxy",
+		"card_name": "Foxy",
 		"attack": 5,
 		"health": 3,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -80,7 +80,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"fredbear" : {
-		"name": "Fredbear",
+		"card_name": "Fredbear",
 		"attack": 7,
 		"health": 7,
 		"char_region": Rect2(48, 39, 165, 254),
@@ -93,7 +93,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"freddy" : {
-		"name": "Freddy",
+		"card_name": "Freddy",
 		"attack": 4,
 		"health": 5,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -106,7 +106,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"funtimeFoxy" : {
-		"name": "Funtime Foxy",
+		"card_name": "Funtime Foxy",
 		"attack": 5,
 		"health": 6,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -119,7 +119,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"goldenFreddy" : {
-		"name": "Golden Freddy",
+		"card_name": "Golden Freddy",
 		"attack": 7,
 		"health": 7,
 		"char_region": Rect2(56, 8, 152, 240),
@@ -132,7 +132,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"mangle" : {
-		"name": "Mangle",
+		"card_name": "Mangle",
 		"attack": 6,
 		"health": 3,
 		"char_region": Rect2(57, 26, 167, 219),
@@ -145,7 +145,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"marionette" : {
-		"name": "Marionette",
+		"card_name": "Marionette",
 		"attack": 5,
 		"health": 6,
 		"char_region": Rect2(57, 26, 167, 219),
@@ -158,7 +158,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmare" : {
-		"name": "Nightmare",
+		"card_name": "Nightmare",
 		"attack": 7,
 		"health": 5,
 		"char_region": Rect2(23, 5, 205, 286),
@@ -171,7 +171,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareBB" : {
-		"name": "Nightmare BB",
+		"card_name": "Nightmare BB",
 		"attack": 4,
 		"health": 3,
 		"char_region": Rect2(41, 9, 192, 237),
@@ -184,7 +184,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareBonnie" : {
-		"name": "NM Bonnie",
+		"card_name": "NM Bonnie",
 		"attack": 6,
 		"health": 5,
 		"char_region": Rect2(14, 3, 204, 243),
@@ -197,7 +197,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareChica" : {
-		"name": "NM Chica",
+		"card_name": "NM Chica",
 		"attack": 5,
 		"health": 6,
 		"char_region": Rect2(60, 3, 158, 243),
@@ -210,7 +210,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareFoxy" : {
-		"name": "NM Foxy",
+		"card_name": "NM Foxy",
 		"attack": 6,
 		"health": 5,
 		"char_region": Rect2(18, 10, 181, 236),
@@ -223,7 +223,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareFredbear" : {
-		"name": "NM Fredbear",
+		"card_name": "NM Fredbear",
 		"attack": 7,
 		"health": 7,
 		"char_region": Rect2(27, 4, 201, 287),
@@ -236,7 +236,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmareFreddy" : {
-		"name": "NM Freddy",
+		"card_name": "NM Freddy",
 		"attack": 6,
 		"health": 4,
 		"char_region": Rect2(31, 2, 188, 243),
@@ -249,7 +249,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"nightmarionne" : {
-		"name": "Nightmarionne",
+		"card_name": "Nightmarionne",
 		"attack": 6,
 		"health": 6,
 		"char_region": Rect2(29, 252, 203, 250),
@@ -262,7 +262,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomBB" : {
-		"name": "Phantom BB",
+		"card_name": "Phantom BB",
 		"attack": 2,
 		"health": 3,
 		"char_region": Rect2(55, 16, 155, 226),
@@ -275,7 +275,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomChica" : {
-		"name": "PT Chica",
+		"card_name": "PT Chica",
 		"attack": 3,
 		"health": 3,
 		"char_region": Rect2(55, 16, 155, 226),
@@ -288,7 +288,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomFoxy" : {
-		"name": "PT Foxy",
+		"card_name": "PT Foxy",
 		"attack": 5,
 		"health": 2,
 		"char_region": Rect2(41, 12, 168, 230),
@@ -301,7 +301,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomFreddy" : {
-		"name": "PT Freddy",
+		"card_name": "PT Freddy",
 		"attack": 4,
 		"health": 4,
 		"char_region": Rect2(54, 12, 167, 233),
@@ -314,7 +314,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomMangle" : {
-		"name": "PT Mangle",
+		"card_name": "PT Mangle",
 		"attack": 4,
 		"health": 3,
 		"char_region": Rect2(24, 50, 197, 195),
@@ -327,7 +327,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"phantomMarionette" : {
-		"name": "PT Marionette",
+		"card_name": "PT Marionette",
 		"attack": 2,
 		"health": 5,
 		"char_region": Rect2(64, 15, 141, 230),
@@ -340,7 +340,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"plushtrap" : {
-		"name": "Plushtrap",
+		"card_name": "Plushtrap",
 		"attack": 4,
 		"health": 2,
 		"char_region": Rect2(54, 10, 141, 230),
@@ -353,7 +353,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"purpleguy" : {
-		"name": "Purple Guy",
+		"card_name": "Purple Guy",
 		"attack": 7,
 		"health": 6,
 		"char_region": Rect2(64, 15, 141, 230),
@@ -366,7 +366,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"springtrap" : {
-		"name": "Springtrap",
+		"card_name": "Springtrap",
 		"attack": 7,
 		"health": 7,
 		"char_region": Rect2(55, 16, 145, 228),
@@ -379,7 +379,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"toyBonnie" : {
-		"name": "Toy Bonnie",
+		"card_name": "Toy Bonnie",
 		"attack": 3,
 		"health": 5,
 		"char_region": Rect2(55, 16, 145, 228),
@@ -392,7 +392,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"toyChica" : {
-		"name": "Toy Chica",
+		"card_name": "Toy Chica",
 		"attack": 2,
 		"health": 6,
 		"char_region": Rect2(55, 16, 145, 228),
@@ -405,7 +405,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"toyFreddy" : {
-		"name": "Toy Freddy",
+		"card_name": "Toy Freddy",
 		"attack": 4,
 		"health": 5,
 		"char_region": Rect2(55, 11, 178, 233),
@@ -418,7 +418,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"witheredBonnie" : {
-		"name": "WR Bonnie",
+		"card_name": "WR Bonnie",
 		"attack": 6,
 		"health": 4,
 		"char_region": Rect2(55, 11, 137, 233),
@@ -431,7 +431,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"witheredChica" : {
-		"name": "WR Chica",
+		"card_name": "WR Chica",
 		"attack": 5,
 		"health": 5,
 		"char_region": Rect2(55, 11, 152, 233),
@@ -444,7 +444,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"witheredFoxy" : {
-		"name": "WR Foxy",
+		"card_name": "WR Foxy",
 		"attack": 7,
 		"health": 2,
 		"char_region": Rect2(55, 11, 152, 233),
@@ -457,7 +457,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"witheredFreddy" : {
-		"name": "WR Freddy",
+		"card_name": "WR Freddy",
 		"attack": 6,
 		"health": 4,
 		"char_region": Rect2(55, 11, 175, 233),
@@ -470,7 +470,7 @@ const CARDS = {
 		"skill_script": null
 	},
 	"pizzaWheel" : {
-		"name": "Pizza Wheel",
+		"card_name": "Pizza Wheel",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(17, 1, 150, 150),
@@ -483,7 +483,7 @@ const CARDS = {
 		"skill_script": "res://Game/Scripts/Skills/pizza_wheel.gd"
 	},
 	"pizzaWheel2" : {
-		"name": "Pizza Wheel 2",
+		"card_name": "Pizza Wheel 2",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(4, 31, 220, 220),
@@ -496,7 +496,7 @@ const CARDS = {
 		"skill_script": "res://Game/Scripts/Skills/pizza_wheel_2.gd"
 	},
 	"4thWall" : {
-		"name": "4th Wall",
+		"card_name": "4th Wall",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(5, 1, 192, 370),
@@ -509,7 +509,7 @@ const CARDS = {
 		"skill_script": "res://Game/Scripts/Skills/4th_wall.gd"
 	},
 	"jackOBomb" : {
-		"name": "Jack-O-Bomb",
+		"card_name": "Jack-O-Bomb",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(106, 203, 100, 100),
@@ -522,7 +522,7 @@ const CARDS = {
 		"skill_script": "res://Game/Scripts/Skills/jack_o_bomb.gd"
 	},
 	"megaBite" : {
-		"name": "Mega Bite",
+		"card_name": "Mega Bite",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(1214, 13, 300, 300),
@@ -535,7 +535,7 @@ const CARDS = {
 		"skill_script": "res://Game/Scripts/Skills/mega_bite.gd"
 	},
 	"slasher" : {
-		"name": "Slasher",
+		"card_name": "Slasher",
 		"attack": null,
 		"health": null,
 		"char_region": Rect2(6, 305, 200, 75),
