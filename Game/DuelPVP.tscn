@@ -25,7 +25,7 @@ script = ExtResource("3_dmjdk")
 player_side_path = NodePath("../PlayerSide")
 opp_side_path = NodePath("../OppSide")
 input_manager_path = NodePath("../InputManager")
-result_screen_path = NodePath("../ResultScreenVictory")
+result_screen_path = NodePath("../ResultScreen")
 pause_menu_path = NodePath("../PauseMenu")
 pause_menu_opp_path = NodePath("../PauseMenuOpp")
 player_skills_path = NodePath("../PlayerSide/FieldSkills")
@@ -36,7 +36,7 @@ coin_flip_path = NodePath("../CoinFlip")
 script = ExtResource("4_lwclv")
 player_side_path = NodePath("../PlayerSide")
 
-[node name="ResultScreenVictory" parent="." unique_id=186214863 instance=ExtResource("5_a4myu")]
+[node name="ResultScreen" parent="." unique_id=186214863 instance=ExtResource("5_a4myu")]
 visible = false
 z_index = 14
 offset_left = 960.0
