@@ -26,6 +26,6 @@ func _ready() -> void:
 	opp_side.get_node("Hp/OppHp").text = str(STARTING_HEALTH)
 
 	if GameState.current_pvp_type == GameState.PVPType.HOST:
-		await player_side.get_node("Deckpile").draw_first_hand_networked(true)
+		await player_side.get_node("Deckpile").draw_first_hand_networked()
 	elif GameState.current_pvp_type == GameState.PVPType.CLIENT:
-		player_side.get_node("Deckpile").draw_first_hand_networked(false)
+		player_side.get_node("Deckpile").draw_first_hand_networked()
