@@ -1,5 +1,25 @@
 extends Node
 
+## Autoload (Singleton) holding the definitions of every card in the game.
+##
+## Each entry is keyed by the character or skill name and describes both the
+## card's gameplay attributes and how its artwork should be cropped and
+## positioned. CardFactory reads from here to build card instances.
+##
+## Entry format:
+##   "card_name"     - display name shown on the card
+##   "attack"        - attack value, null for skill cards
+##   "health"        - health value, null for skill cards
+##   "char_region"   - region of the character spritesheet to crop
+##   "color_region"  - region of the card assets sheet for the color indicator
+##   "char_position" - artwork position within the card
+##   "scale"         - artwork scale within the card
+##   "type"          - "entity" or "skill"
+##   "color"         - color group; entities use the four playable colors,
+##                     skills use purple
+##   "skill"         - description shown on skill cards, null for entities
+##   "skill_script"  - path to the skill behaviour, null for entities
+
 const CARDS = {
 	"animdude" : {
 		"card_name": "Animdude",
@@ -549,6 +569,8 @@ const CARDS = {
 	}
 }
 
+## Builds the deck used at the start of a match: one copy of each entity and
+## three copies of each skill, shuffled. Called by Deck when a match begins.
 func build_shuffled_deck():
 	var deck: Array = []
 	for card_key in CARDS.keys():
@@ -562,6 +584,9 @@ func build_shuffled_deck():
 	return deck
 
 
+## Returns how many cards a full deck holds, following the same one-per-entity
+## and three-per-skill rule as above. Used by the opponent's deck display in
+## PvP, which needs the count without building an actual deck.
 func get_total_deck_size():
 	var total := 0
 	for card_key in CARDS.keys():
