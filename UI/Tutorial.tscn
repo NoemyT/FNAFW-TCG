@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brytqyplwvp40"]
 
 [ext_resource type="Script" uid="uid://dfkws1x07x2ki" path="res://UI/UI_Scripts/tutorial.gd" id="1_qu5wh"]
-[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="2_apw85"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/BlurEffect.gdshader" id="2_apw85"]
 [ext_resource type="FontFile" uid="uid://7cptxtf1djw2" path="res://Assets/Fonts/Orbitron/static/Orbitron-Bold.ttf" id="2_qouqw"]
 [ext_resource type="VideoStream" uid="uid://dxu4h0vd1i4ct" path="res://Assets/Tutorial/placing.ogv" id="4_apw85"]
 [ext_resource type="VideoStream" uid="uid://djf7c3782whbu" path="res://Assets/Tutorial/attacking.ogv" id="5_5wnqk"]

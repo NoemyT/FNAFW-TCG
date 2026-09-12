@@ -1,5 +1,10 @@
 extends Label
 
+## Animated dots shown while a PvP connection attempt is in progress.
+##
+## Gives the player feedback that the game is still searching, since hosting and
+## joining can both take a while with no other visible sign of activity.
+
 const DOT_INTERVAL = 0.4
 
 var dot_count := 0
@@ -13,6 +18,7 @@ func _ready() -> void:
 	add_child(timer)
 
 
+## Shows the indicator and begins the animation.
 func start():
 	dot_count = 0
 	text = ""
@@ -20,11 +26,13 @@ func start():
 	timer.start()
 
 
+## Hides the indicator, called when the attempt succeeds, fails or is cancelled.
 func stop():
 	visible = false
 	timer.stop()
 
 
+## Cycles between one and three dots.
 func _on_tick() -> void:
 	dot_count = (dot_count % 3) + 1
 	text = ".".repeat(dot_count)

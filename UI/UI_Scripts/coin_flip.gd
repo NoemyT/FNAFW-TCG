@@ -1,5 +1,12 @@
 extends Control
 
+## Coin flip animation that announces who plays first.
+##
+## Purely presentational: the duel managers decide the turn order and pass the
+## result in, then wait for this animation to finish before starting the match.
+## Each player sees the side matching their own outcome, so both see heads or
+## tails according to whether they are the one starting.
+
 signal flip_finished
 
 @onready var coin_sprite: AnimatedSprite2D = $Panel/AnimatedSprite2D
@@ -16,6 +23,8 @@ func _ready() -> void:
 	visible = false
 
 
+## Plays the full sequence: spin, land on the result, hold it, then hide.
+## Awaited by the duel managers, which only unlock the match once it returns.
 func flip(local_player_starts):
 	AudioController.play_coin()
 	visible = true

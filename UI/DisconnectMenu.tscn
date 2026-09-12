@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="1_b2ode"]
 [ext_resource type="Script" uid="uid://bsmy4nbt17pf1" path="res://UI/UI_Scripts/disconnect_menu.gd" id="1_finxk"]
-[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_sjgvo"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/BlurEffect.gdshader" id="1_sjgvo"]
 [ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="2_sjgvo"]
 [ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="3_8mvnf"]
 [ext_resource type="StyleBox" uid="uid://xbxpbp3ny0tx" path="res://Styles/hov_pres_button.tres" id="3_finxk"]

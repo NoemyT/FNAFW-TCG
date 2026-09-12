@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b80b7y67p3srg"]
 
 [ext_resource type="Script" uid="uid://c3k30shxxg5n4" path="res://UI/UI_Scripts/pause_menu_opp.gd" id="1_6g3bf"]
-[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/DisconnectMenu.gdshader" id="1_wmow6"]
+[ext_resource type="Shader" uid="uid://rokhglfkelan" path="res://UI/UI_Scripts/BlurEffect.gdshader" id="1_wmow6"]
 [ext_resource type="StyleBox" uid="uid://dllrjh1ghwoen" path="res://Styles/menu_box.tres" id="2_6g3bf"]
 [ext_resource type="FontFile" uid="uid://dk8pmmhi206et" path="res://Assets/Fonts/Orbitron/static/Orbitron-Regular.ttf" id="3_ch3o7"]
 [ext_resource type="StyleBox" uid="uid://dk8i5p8kyyswb" path="res://Styles/normal_button.tres" id="4_vynn4"]
