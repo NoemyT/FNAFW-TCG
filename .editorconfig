@@ -7,4 +7,4 @@ insert_final_newline = true
 
 [*.gd]
 indent_style = tab
-indent_siza = 4
+indent_size = 4
