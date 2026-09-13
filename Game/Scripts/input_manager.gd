@@ -29,7 +29,8 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		raycast_at_cursor()
+		if event.pressed:
+			raycast_at_cursor()
 
 
 ## Detects what is under the cursor and dispatches accordingly: clicking a card
@@ -42,16 +43,27 @@ func raycast_at_cursor():
 	parameters.position = get_global_mouse_position()
 	parameters.collide_with_areas = true
 	var result = space_state.intersect_point(parameters)
-	if result.size() > 0:
-		var result_collision_mask = result[0].collider.collision_mask
-		if result_collision_mask == COLLISION_MASK_CARD:
-			var card_found = result[0].collider.get_parent()
-			if card_found:
-				field_manager_reference.card_selected(card_found)
-		elif result_collision_mask == COLLISION_MASK_DECK:
-			# Drawing differs between modes: in PvP the draw has to be
-			# broadcast so the opponent sees it happen.
-			if GameState.current_mode == GameState.GameMode.AI:
-				deck_reference.draw_card_local()
-			elif GameState.current_mode == GameState.GameMode.PVP:
-				deck_reference.deck_clicked_networked()
+	if result.is_empty():
+		return
+
+	# The cursor can be over several colliders at once, so they are sorted out
+	# by collision mask before deciding what was actually clicked.
+	var cards = []
+	var deck_hit = false
+	for hit in result:
+		match hit.collider.collision_mask:
+			COLLISION_MASK_CARD:
+				cards.append(hit)
+			COLLISION_MASK_DECK:
+				deck_hit = true
+
+	if not cards.is_empty():
+		# Overlapping cards are resolved by depth, so the click lands on the
+		# one the player can actually see on top.
+		var top_card = field_manager_reference.get_highest_z_card(cards)
+		field_manager_reference.card_selected(top_card)
+	elif deck_hit:
+		if GameState.current_mode == GameState.GameMode.AI:
+			deck_reference.draw_card_local()
+		elif GameState.current_mode == GameState.GameMode.PVP:
+			deck_reference.deck_clicked_networked()

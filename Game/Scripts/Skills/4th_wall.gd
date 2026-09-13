@@ -1,12 +1,27 @@
 extends Node
 
+## 4th Wall: deals 3 damage to every enemy card on the field.
+##
+## Area skill: damages every enemy card on the field at once.
+##
+## Both entry points run the same effect, mirrored: trigger_skill() is called
+## when the local player plays the card, and trigger_skill_opp() when the
+## opponent does, each hitting the other side's cards. Being fully
+## deterministic, this skill needs no synchronization in PvP: both instances
+## reach the same result on their own.
+
 const DAMAGE = 3
 
+## Runs the effect when the local player plays this card. Input is locked for
+## the duration so nothing else can happen mid animation, and released once the
+## skill has fully resolved.
 func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	duel_manager_ref.enable_end_turn_btn(false)
 	duel_manager_ref.enable_attack_btn(false)
 	await duel_manager_ref.wait(1.0)
+	# Cards are collected rather than destroyed inside the loop, so that the
+	# damage numbers are all visible before anything leaves the field.
 	var cards_to_destroy = []
 	AudioController.play_4th_wall()
 	duel_manager_ref.player_skills_node.get_node("AnimationPlayer").play("4thWall")
@@ -21,6 +36,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	if cards_to_destroy.size() > 0:
 		for card in cards_to_destroy:
 			duel_manager_ref._destroy_card(card, GameState.OWNER_OPPONENT)
+	# The skill card is spent, leaving the field along with whatever it killed.
 	duel_manager_ref._destroy_card(skill_card, GameState.OWNER_PLAYER)
 	await duel_manager_ref.wait(1.0)
 	duel_manager_ref.enable_end_turn_btn(true)
@@ -28,6 +44,8 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = false
 
 
+## Runs the effect when the opponent plays this card, hitting the local
+## player's cards instead.
 func trigger_skill_opp(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	await duel_manager_ref.wait(1.0)

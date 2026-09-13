@@ -48,7 +48,7 @@ func play_defeat_music():
 	$Defeat.play()
 
 
-func play_draw():
+func play_draw_music():
 	$Noise.play()
 	$Draw.play()
 

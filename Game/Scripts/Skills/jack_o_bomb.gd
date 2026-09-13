@@ -1,5 +1,17 @@
 extends Node
 
+## Jack-O-Bomb: deals 1 to 3 damage twice to a random enemy card.
+##
+## Single target skill: damages one random enemy card.
+##
+## Because the target is rolled at random, PvP needs the result carried over:
+## the player who plays the card rolls it and relays it through FieldManager,
+## while the other instance waits on skill_result_received rather than rolling
+## its own. Rolling on both sides would have each see a different outcome.
+ 
+## Runs the effect when the local player plays this card. Input is locked for
+## the duration so nothing else can happen mid animation, and released once the
+## skill has fully resolved.
 func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	duel_manager_ref.enable_end_turn_btn(false)
@@ -14,6 +26,8 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 			"damage_1": damage_1,
 			"damage_2": damage_2
 		})
+	# Cards are collected rather than destroyed inside the loop, so that the
+	# damage numbers are all visible before anything leaves the field.
 	var cards_to_destroy = []
 	if target_card:
 		target_card.card_placement.get_node("AnimationPlayer").play("JackObomb")
@@ -30,6 +44,7 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	if cards_to_destroy.size() > 0:
 		for card in cards_to_destroy:
 			duel_manager_ref._destroy_card(card, GameState.OWNER_OPPONENT)
+	# The skill card is spent, leaving the field along with whatever it killed.
 	duel_manager_ref._destroy_card(skill_card, GameState.OWNER_PLAYER)
 	await duel_manager_ref.wait(1.0)
 	duel_manager_ref.enable_end_turn_btn(true)
@@ -37,6 +52,8 @@ func trigger_skill(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = false
 
 
+## Runs the effect when the opponent plays this card, hitting the local
+## player's cards instead.
 func trigger_skill_opp(duel_manager_ref, skill_card, input_manager_ref):
 	input_manager_ref.inputs_disabled = true
 	var target_card
