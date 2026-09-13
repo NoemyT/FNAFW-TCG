@@ -259,7 +259,7 @@ func resolve_attacks(attacking_owner):
 			await _clash(card, blocker, attacking_owner)
 		else:
 			await _direct_attack(card, attacking_owner)
-			if opponent_health == 0:
+			if player_health == 0 or opponent_health == 0:
 				return
 
 

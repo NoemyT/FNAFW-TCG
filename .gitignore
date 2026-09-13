@@ -23,5 +23,8 @@ bin/
 *.apk
 *.exe
 
+# Tmp files
+*.tmp
+
 # Project assets (not redistributed — see credits)
 Assets/

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dg1kkd3ic38cg"]
 
-[ext_resource type="Script" uid="uid://bhwa5cdthlbtr" path="res://Config/audio_controller.gd" id="1_j2fq7"]
+[ext_resource type="Script" uid="uid://bhwa5cdthlbtr" path="res://Config/Scripts/audio_controller.gd" id="1_j2fq7"]
 [ext_resource type="AudioStream" uid="uid://6pa48qng5ess" path="res://Assets/Sounds/01 One For The Road.mp3" id="1_kc1ty"]
 [ext_resource type="AudioStream" uid="uid://dqsjk5185jirf" path="res://Assets/Sounds/04 Adventure Ahead.mp3" id="2_2oruy"]
 [ext_resource type="AudioStream" uid="uid://3u63mvnt2q6q" path="res://Assets/Sounds/05 Victory!.mp3" id="3_qlmi2"]
