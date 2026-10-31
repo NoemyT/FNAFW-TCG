@@ -40,6 +40,8 @@ func _ready() -> void:
 
 	_build_deck()
 
+	draws_this_turn = 0
+
 	if GameState.current_mode == GameState.GameMode.AI:
 		_draw_starting_hand_local()
 	elif GameState.current_mode == GameState.GameMode.PVP and owner_id == GameState.OWNER_OPPONENT:
