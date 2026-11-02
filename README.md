@@ -50,7 +50,7 @@ You can also run two instances on the same machine to test PvP, though only one 
 
 **Placing cards.** Each side of the field has four colored slots, one per color group. A card can only be placed in a slot matching its own color, limiting the field to four entities per player. Skill cards go into a separate slot.
 
-**Drawing.** No draws on turn one. From turn two onward, up to 3 cards per turn, with a maximum hand size of 7.
+**Drawing.** Each player can draw up to 3 cards per turn, with a maximum hand size of 7.
 
 **Combat.** Pressing Attack resolves all your entities at once. Each card looks for an enemy card of the same color:
 - **Match found** → both cards deal damage to each other. Any card reduced to 0 health is destroyed and sent to the graveyard.
